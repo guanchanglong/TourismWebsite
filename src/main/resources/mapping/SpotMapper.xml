@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xupt.demo1.dao.SpotDao">
+
+    <insert id="insertSpotData" parameterType="com.xupt.demo1.entity.Spot">
+        insert into t_spot(name,area,info,picture,price) values(#{spot.name},#{spot.area},#{spot.info},#{spot.picture},#{spot.price});
+    </insert>
+
+    <select id="findAllByName" resultType="com.xupt.demo1.entity.Spot">
+        select * from t_spot where name like #{name}
+    </select>
+
+    <select id="findAll" resultType="com.xupt.demo1.entity.Spot">
+        select * from t_spot
+    </select>
+    
+    <select id="findFourData" resultType="com.xupt.demo1.entity.Spot">
+        select * from t_spot limit 4;
+    </select>
+
+    <select id="findSpotById" resultType="com.xupt.demo1.entity.Spot">
+        select * from t_spot where id = #{spotId}
+    </select>
+
+</mapper>

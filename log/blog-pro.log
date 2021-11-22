@@ -1,0 +1,2 @@
+2021-09-15 15:12:54.865  WARN 18512 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.xupt.demo1]' package. Please check your configuration.
+2021-09-15 15:12:55.500  WARN 18512 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)

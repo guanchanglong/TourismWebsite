@@ -1,0 +1,230 @@
+2021-11-21 09:55:21.373  INFO 9480 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 9480 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-11-21 09:55:21.377  INFO 9480 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-11-21 09:55:23.335  INFO 9480 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-21 09:55:23.342  INFO 9480 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-21 09:55:23.343  INFO 9480 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-11-21 09:55:23.445  INFO 9480 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-21 09:55:23.445  INFO 9480 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2030 ms
+2021-11-21 09:55:24.447  INFO 9480 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-21 09:55:24.456  INFO 9480 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 3.821 seconds (JVM running for 5.019)
+2021-11-21 09:55:43.350  INFO 9480 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-11-21 09:55:43.354  INFO 9480 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-21 09:55:43.354  INFO 9480 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-21 09:55:43.355  INFO 9480 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-21 09:55:43.472  INFO 9480 --- [http-nio-8080-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-11-21 09:55:43.478  INFO 9480 --- [http-nio-8080-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-11-21 09:55:43.541  INFO 9480 --- [http-nio-8080-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@38fe582]}
+2021-11-21 09:55:43.563  INFO 9480 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-21 09:55:44.459  INFO 9480 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-21 09:55:44.598  INFO 9480 --- [http-nio-8080-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-11-21 09:55:47.500  INFO 9480 --- [http-nio-8080-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toTicketPage;jsessionid=EADE682625FCD711E84D37FCF9CAC437', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toHotelPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@38fe582]}
+2021-11-21 09:55:47.501  INFO 9480 --- [http-nio-8080-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：user/ticket
+2021-11-21 09:55:54.617  INFO 9480 --- [http-nio-8080-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/trainClasses/searchClasses', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.TrainClassesController.searchClasses', args=[{}, org.apache.catalina.session.StandardSessionFacade@38fe582, 2021-11-21, 北京, 上海]}
+2021-11-21 09:55:55.693 ERROR 9480 --- [http-nio-8080-exec-8] c.x.d.h.ControllerExceptionHandler       : Request URL : /trainClasses/searchClasses,Exception : null
+2021-11-21 09:55:55.745  INFO 9480 --- [http-nio-8080-exec-3] com.xupt.demo1.aspect.LogAspect          : Request : {url='/trainClasses/searchClasses', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.TrainClassesController.searchClasses', args=[{}, org.apache.catalina.session.StandardSessionFacade@38fe582, 2021-11-21, 北京, 上海]}
+2021-11-21 09:55:56.221 ERROR 9480 --- [http-nio-8080-exec-3] c.x.d.h.ControllerExceptionHandler       : Request URL : /trainClasses/searchClasses,Exception : null
+2021-11-21 09:59:04.880  INFO 10360 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 10360 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-11-21 09:59:04.881  INFO 10360 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-11-21 09:59:05.979  INFO 10360 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-21 09:59:05.986  INFO 10360 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-21 09:59:05.987  INFO 10360 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-11-21 09:59:06.043  INFO 10360 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-21 09:59:06.043  INFO 10360 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1131 ms
+2021-11-21 09:59:06.878  INFO 10360 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-21 09:59:06.885  INFO 10360 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.458 seconds (JVM running for 3.513)
+2021-11-21 09:59:10.780  INFO 10360 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; JSESSIONID=EADE682625FCD711E84D37FCF9CAC437] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-11-21 09:59:10.784  INFO 10360 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-21 09:59:10.785  INFO 10360 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-21 09:59:10.785  INFO 10360 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-11-21 09:59:15.934  INFO 10360 --- [http-nio-8080-exec-3] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-11-21 09:59:15.940  INFO 10360 --- [http-nio-8080-exec-3] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-11-21 09:59:15.964  INFO 10360 --- [http-nio-8080-exec-4] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@72bdc544]}
+2021-11-21 09:59:15.981  INFO 10360 --- [http-nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-21 09:59:16.594  INFO 10360 --- [http-nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-21 09:59:16.625  INFO 10360 --- [http-nio-8080-exec-4] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-11-21 09:59:18.162  INFO 10360 --- [http-nio-8080-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toTicketPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toHotelPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@72bdc544]}
+2021-11-21 09:59:18.162  INFO 10360 --- [http-nio-8080-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：user/ticket
+2021-11-21 09:59:23.111  INFO 10360 --- [http-nio-8080-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/trainClasses/searchClasses', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.TrainClassesController.searchClasses', args=[{}, org.apache.catalina.session.StandardSessionFacade@72bdc544, 2021-11-21, 北京, 上海]}
+2021-11-21 09:59:23.665 ERROR 10360 --- [http-nio-8080-exec-8] c.x.d.h.ControllerExceptionHandler       : Request URL : /trainClasses/searchClasses,Exception : syntax error, pos 1, line 1, column 2<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>铁路客户服务中心</title>
+<link href="/mormhweb/images/global.css" rel="stylesheet" type="text/css">
+<link href="/mormhweb/images/err.css" rel="stylesheet" type="text/css"/>
+<style type="text/css"> 
+<!--
+html,body{background:#fff;}
+
+
+-->
+</style>
+
+
+</head>
+
+<body>
+<div class="err_text">
+						 <ul id="error" >
+                         <li id="err_top">
+                         
+                         </li>
+                                                  <li id="err_bot">　　网络可能存在问题，请您重试一下！
+												  
+												  <div class="time">						 <SCRIPT language="javascript">
+<!--
+function initArray() {
+	for (i = 0; i < initArray.arguments.length; i++)
+		this[i] = initArray.arguments[i];
+}
+var isnMonths = new initArray("1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月");
+var isnDays = new initArray("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日");
+today = new Date();
+hrs = today.getHours();
+min = today.getMinutes();
+sec = today.getSeconds();
+clckh = "" + ((hrs > 12) ? hrs - 12 : hrs);
+clckm = ((min < 10) ? "0" : "") + min;
+clcks = ((sec < 10) ? "0" : "") + sec;
+clck = (hrs >= 12) ? "下午" : "上午";
+var stnr = "";
+var ns = "0123456789";
+var a = "";
+
+function getFullYear(d) {
+	yr = d.getYear();
+	if (yr < 1000)
+		yr += 1900;
+	return yr;
+}
+
+document.write(getFullYear(today) + "年" + isnMonths[today.getMonth()] + today.getDate() + "日" + " " + clckh + ":" + clckm + ":" + clcks + " " +  isnDays[today.getDay()]);
+
+//-->
+</SCRIPT></div>
+							
+                         
+                         </li>
+
+                         </ul>
+
+</div>
+</body>
+</html>
+2021-11-21 09:59:23.714  INFO 10360 --- [http-nio-8080-exec-9] com.xupt.demo1.aspect.LogAspect          : Request : {url='/trainClasses/searchClasses', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.TrainClassesController.searchClasses', args=[{}, org.apache.catalina.session.StandardSessionFacade@72bdc544, 2021-11-21, 北京, 上海]}
+2021-11-21 09:59:24.185 ERROR 10360 --- [http-nio-8080-exec-9] c.x.d.h.ControllerExceptionHandler       : Request URL : /trainClasses/searchClasses,Exception : syntax error, pos 1, line 1, column 2<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>铁路客户服务中心</title>
+<link href="/mormhweb/images/global.css" rel="stylesheet" type="text/css">
+<link href="/mormhweb/images/err.css" rel="stylesheet" type="text/css"/>
+<style type="text/css"> 
+<!--
+html,body{background:#fff;}
+
+
+-->
+</style>
+
+
+</head>
+
+<body>
+<div class="err_text">
+						 <ul id="error" >
+                         <li id="err_top">
+                         
+                         </li>
+                                                  <li id="err_bot">　　网络可能存在问题，请您重试一下！
+												  
+												  <div class="time">						 <SCRIPT language="javascript">
+<!--
+function initArray() {
+	for (i = 0; i < initArray.arguments.length; i++)
+		this[i] = initArray.arguments[i];
+}
+var isnMonths = new initArray("1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月");
+var isnDays = new initArray("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日");
+today = new Date();
+hrs = today.getHours();
+min = today.getMinutes();
+sec = today.getSeconds();
+clckh = "" + ((hrs > 12) ? hrs - 12 : hrs);
+clckm = ((min < 10) ? "0" : "") + min;
+clcks = ((sec < 10) ? "0" : "") + sec;
+clck = (hrs >= 12) ? "下午" : "上午";
+var stnr = "";
+var ns = "0123456789";
+var a = "";
+
+function getFullYear(d) {
+	yr = d.getYear();
+	if (yr < 1000)
+		yr += 1900;
+	return yr;
+}
+
+document.write(getFullYear(today) + "年" + isnMonths[today.getMonth()] + today.getDate() + "日" + " " + clckh + ":" + clckm + ":" + clcks + " " +  isnDays[today.getDay()]);
+
+//-->
+</SCRIPT></div>
+							
+                         
+                         </li>
+
+                         </ul>
+
+</div>
+</body>
+</html>
+2021-11-21 10:02:05.134  INFO 3784 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 3784 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-11-21 10:02:05.136  INFO 3784 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-11-21 10:02:05.954  INFO 3784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-21 10:02:05.960  INFO 3784 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-21 10:02:05.960  INFO 3784 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-11-21 10:02:06.008  INFO 3784 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-21 10:02:06.009  INFO 3784 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 846 ms
+2021-11-21 10:02:06.721  INFO 3784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-21 10:02:06.728  INFO 3784 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.009 seconds (JVM running for 2.837)
+2021-11-21 10:02:19.502  INFO 3784 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; JSESSIONID=C7968F5F0FC159AB372172D417F7C1F0; __session:0.19866045377376906:=http:] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-11-21 10:02:19.507  INFO 3784 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-21 10:02:19.507  INFO 3784 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-21 10:02:19.508  INFO 3784 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-21 10:02:19.522  INFO 3784 --- [http-nio-8080-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-11-21 10:02:19.525  INFO 3784 --- [http-nio-8080-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-11-21 10:02:19.547  INFO 3784 --- [http-nio-8080-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@63cd6a56]}
+2021-11-21 10:02:19.561  INFO 3784 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-21 10:02:20.171  INFO 3784 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-21 10:02:20.201  INFO 3784 --- [http-nio-8080-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-11-21 10:02:21.416  INFO 3784 --- [http-nio-8080-exec-5] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toTicketPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toHotelPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@63cd6a56]}
+2021-11-21 10:02:21.416  INFO 3784 --- [http-nio-8080-exec-5] com.xupt.demo1.aspect.LogAspect          : Result：user/ticket
+2021-11-21 10:02:26.999  INFO 3784 --- [http-nio-8080-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/trainClasses/searchClasses', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.TrainClassesController.searchClasses', args=[{}, org.apache.catalina.session.StandardSessionFacade@63cd6a56, 2021-11-21, 北京, 上海]}
+2021-11-21 10:02:27.334  INFO 3784 --- [http-nio-8080-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：user/ticket
+2021-11-21 11:27:01.863  INFO 11028 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 11028 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-11-21 11:27:01.865  INFO 11028 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-11-21 11:27:02.654  INFO 11028 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-21 11:27:02.659  INFO 11028 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-21 11:27:02.659  INFO 11028 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-11-21 11:27:02.708  INFO 11028 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-21 11:27:02.708  INFO 11028 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 817 ms
+2021-11-21 11:27:03.414  INFO 11028 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-21 11:27:03.420  INFO 11028 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 1.914 seconds (JVM running for 2.751)
+2021-11-21 11:27:09.682  INFO 11028 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; JSESSIONID=05917A4F5C4422DA549DCCA7A6ED5AD5] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-11-21 11:27:09.686  INFO 11028 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-21 11:27:09.686  INFO 11028 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-21 11:27:09.687  INFO 11028 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-21 11:27:09.700  INFO 11028 --- [http-nio-8080-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-11-21 11:27:09.704  INFO 11028 --- [http-nio-8080-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-11-21 11:27:09.724  INFO 11028 --- [http-nio-8080-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@20e838a0]}
+2021-11-21 11:27:09.738  INFO 11028 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-21 11:27:10.395  INFO 11028 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-21 11:27:10.427  INFO 11028 --- [http-nio-8080-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-11-21 11:27:11.999  INFO 11028 --- [http-nio-8080-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toTicketPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toHotelPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@20e838a0]}
+2021-11-21 11:27:11.999  INFO 11028 --- [http-nio-8080-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：user/ticket
+2021-11-21 11:27:17.507  INFO 11028 --- [http-nio-8080-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/trainClasses/searchClasses', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.TrainClassesController.searchClasses', args=[{}, org.apache.catalina.session.StandardSessionFacade@20e838a0, 2021-11-21, 北京, 上海]}
+2021-11-21 11:27:17.860  INFO 11028 --- [http-nio-8080-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：user/ticket

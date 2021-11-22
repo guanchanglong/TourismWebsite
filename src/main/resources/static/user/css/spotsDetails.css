@@ -1,0 +1,77 @@
+
+.container {
+  width: 100%;
+}
+.container_top {
+  width: 70%;
+  height: 300px;
+  margin: 0 auto;
+}
+.container_top_img {
+  height: 300px;
+  width: 65%;
+  float: left;
+  /* background-color: black; */
+  background-image: url(https://imgs.qunarzz.com/sight/p0/1411/61/d92ba6a30aa12eb0a9a4a9c82214cb8e.water.jpg_710x360_a82b3959.jpg);
+}
+.container_top_text {
+  float: right;
+  margin-right: 6%;
+}
+.container_top_text_title0 {
+  font-size: 20px;
+  color: rgb(52, 52, 143);
+  padding-bottom: 5%;
+}
+.container_top_text_title1 {
+  font-size: 12px;
+  padding-bottom: 5%;
+}
+.container_top_text_location {
+  font-size: 15px;
+  padding-bottom: 45%;
+}
+.container_top_text_price {
+  color: orangered;
+  font-size: 30px;
+}
+.container_top_text_btn {
+  width: 12vh;
+  height: 6vh;
+  background-color: orangered;
+  float: right;
+  color: white;
+}
+.container_top_text_btn:hover {
+  cursor: pointer;
+}
+.container_bottom {
+  margin: 0 auto;
+  margin-top: 5%;
+  width: 70%;
+  position: relative;
+}
+.container_bottom_img{
+  height: 500px;
+  width: 100%;
+}
+.container_bottom_img img{
+  height: 100%;
+  width: 100%;
+}
+.container_bottom_img_describe{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  background-color: #000;
+  opacity: .5;
+}
+.container_bottom_img_describe_mid{
+  width: 60%;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 10%;
+  color: #fff;
+}

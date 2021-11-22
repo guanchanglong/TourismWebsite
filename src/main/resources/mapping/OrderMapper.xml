@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xupt.demo1.dao.OrderDao">
+    <insert id="addOrder" parameterType="com.xupt.demo1.entity.Order">
+        insert into t_order(order_id,user_id,goods_id,goods_type,time,pay_way,status) values(#{order.orderId},#{order.userId},#{order.goodsId},#{order.goodsType},#{order.time},#{order.payWay},#{order.status})
+    </insert>
+
+    <select id="findOrderByUserIdAndShowToUser" resultType="com.xupt.demo1.entity.Order">
+        select * from t_order where user_id = #{userId} and show_to_user = 1
+    </select>
+
+    <update id="updateOrderShowToUser">
+        update t_order set show_to_user = 0 where id = #{orderId}
+    </update>
+</mapper>

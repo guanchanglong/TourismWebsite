@@ -1,0 +1,83 @@
+.userLogin{
+  width: 15%;
+  height: 50px;
+  float: right;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+
+.userLogin_img{
+  width: 35px;
+  height: 35px;
+}
+.userLogin_welcome{
+  font-size: 14px;
+}
+.userLogin_img1{
+  width: 15px;
+  height: 15px;
+}
+.userLogin_hidden{
+  position: absolute;
+  top: 50px;
+  width: 120px;
+  height: 90px;
+  background-color: black;
+  opacity: .8;
+  display: none;
+}
+
+
+.userLogin_hidden_item1{
+  width: 120px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+}
+.userLogin_hidden_item1 img{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.userLogin_hidden_item1 span{
+  font-size: 14px;
+  color: whitesmoke;
+}
+
+
+.userLogin_hidden_item2{
+  width: 120px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+}
+.userLogin_hidden_item2 img{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.userLogin_hidden_item2 span{
+  font-size: 14px;
+  color: whitesmoke;
+}
+
+.userLogin_hidden_item3{
+  width: 120px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+}
+.userLogin_hidden_item3 img{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.userLogin_hidden_item3 span{
+  font-size: 14px;
+  color: whitesmoke;
+}
