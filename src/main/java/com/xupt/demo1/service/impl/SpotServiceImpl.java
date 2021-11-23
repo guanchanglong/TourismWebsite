@@ -114,6 +114,12 @@ public class SpotServiceImpl implements SpotService {
         List<SpotDetail> result = new ArrayList<>();
         for (int spotDetailId:list){
             SpotDetail spotDetail = spotDetailDao.findSpotDetailById(spotDetailId);
+//            if (spotDetail.getTitle()==null){
+//                spotDetail.setTitle("");
+//            }
+//            if (spotDetail.getInfo()==null){
+//
+//            }
             result.add(spotDetail);
         }
         return result;

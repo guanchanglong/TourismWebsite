@@ -98,7 +98,7 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			
 				<ul id="nav">
 					<li class="selected"><a href="index.html" th:href="@{/page/index}">首页</a></li>
 					<li><a href="spots.html" th:href="@{/page/toSpotsPage}">景点</a>
@@ -180,10 +180,26 @@
 			
 			<div class="fourth-spots" th:each="spot:${spotShow}">
 
-				<div class="one-fourth">
+				<div class="one-fourth" th:if="${spot.getId()}!=4">
 					<div class="post-item">
 						<div class="images-place">
-							<img src="../../static/user/images/uploads/220x135/auckland-city.jpg" th:src="${spot.getPicture()}" alt="images" />
+							<img src="../../static/user/images/uploads/220x135/auckland-city.jpg" th:src="${spot.getPicture()}" alt="images" style="width: 219px;height: 135px"/>
+						</div>
+						<div class="post-content">
+							<h4 class="post-title" th:text="${spot.getName()}">马尔代夫旅行</h4>
+							<p class="post-excerpt1" th:text="${spot.getInfo()}">坐落于马尔代夫的xxx岛——马尔代夫的最大岛屿之一。</p>
+						</div>
+						<div class="post-meta">
+							<span class="comment-count">12条留言</span>
+							<a class="read-more" href="#">了解更多</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="one-fourth last" th:if="${spot.getId()}==4">
+					<div class="post-item">
+						<div class="images-place">
+							<img src="../../static/user/images/uploads/220x135/auckland-city.jpg" th:src="${spot.getPicture()}" alt="images" style="width: 219px;height: 135px"/>
 						</div>
 						<div class="post-content">
 							<h4 class="post-title" th:text="${spot.getName()}">马尔代夫旅行</h4>

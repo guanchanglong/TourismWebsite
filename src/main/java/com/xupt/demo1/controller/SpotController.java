@@ -105,7 +105,7 @@ public class SpotController {
         model.addAttribute("user",user);
         model.addAttribute("spot",spot);
         model.addAttribute("spotDetailList",spotDetailList);
-        return "user/spotDetail";
+        return "user/spotsDetails";
     }
 
 }

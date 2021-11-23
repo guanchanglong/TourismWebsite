@@ -52,7 +52,7 @@ public class PageController {
     public String toSpotDetailPage(Model model,HttpSession session){
         User user = (User)session.getAttribute("user");
         model.addAttribute("user",user);
-        return "user/details";
+        return "user/spotsDetails";
     }
 
 }
