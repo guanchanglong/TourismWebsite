@@ -36,7 +36,7 @@
 				<img class="userLogin_img" src="../../static/user/images/user.png" alt="">
 				<span class="userLogin_welcome">欢迎</span>
 				<img class="userLogin_img1" src="../../static/user/images/downsanjiao.png" alt="">
-				<div class="userLogin_hidden">
+				<div class="userLogin_hidden" style="z-index:100">
 					<a href="#" th:href="@{/page/toOrderPage}">
 						<div class="userLogin_hidden_item1">
 							<img src="../../static/user/images/order.png" alt="">
@@ -82,18 +82,57 @@
 
 		<div id="content">
 			<div class="orderItems">
-				<div class="orderItem">
-					<div class="orderItem_name">消费品的名称</div>
+				<h2 style="text-align: center;color: red" th:if="${page}==null">暂无消费记录</h2>
+
+				<div class="orderItem" th:each="orderToShow : ${page.getList()}">
+
+					<div class="orderItem_name" th:text="${orderToShow.getGoodsName()}">消费品的名称</div>
 					<div class="orderItem_center">
 						<span class="orderItem_center_index">1</span>
-						<div class="orderItem_center_img"></div>
-						<div class="orderItem_center_price">消费金额:120</div>
+						<div class="orderItem_center_img">
+							<img src="../../static/user/images/uploads/220x135/auckland-city.jpg" th:src="${orderToShow.getPicture()}"/>
+						</div>
+						<div class="orderItem_center_price" th:text="${orderToShow.getPrice()}">消费金额:120</div>
 						<div class="orderItem_center_btn"><button>删除订单</button></div>
 					</div>
-					<div class="orderItem_time">消费日期：2021/11/21</div>
+					<div class="orderItem_time" th:text="${orderToShow.getTime()}">消费日期：2021/11/21</div>
 				</div>
 
 			</div>
+
+			<br>
+			<br>
+			<div class="pagination" style="display:flex;justify-content:center">
+				<!-- 首页 -->
+				<li style="float: left;list-style: none">
+					<a th:href="'/orders/showOrder?pageNum=1'">首页</a>
+				</li>
+
+				<!-- 上一页 -->
+				<li th:if="${!page.isFirstPage}" style="float: left;list-style: none">
+					<a th:href="'/orders/showOrder?pageNum=' + ${page.getPrePage()}">上一页</a>
+				</li>
+
+				<!-- 中间页 -->
+				<li th:each="pageNum:${#numbers.sequence(1, page.getPages())}" style="float: left;list-style: none">
+					<a th:href="'/orders/showOrder?pageNum=' + ${pageNum}" th:text="${pageNum}" th:if="${pageNum ne page.getPageNum()}"></a>
+					<a th:href="'/orders/showOrder?pageNum=' + ${pageNum}" th:text="${pageNum}" th:if="${pageNum eq page.getPageNum()}" th:style="'font-weight:bold;background: #6faed9;'"></a>
+				</li>
+
+				<!-- 下一页 -->
+				<li th:if="${!page.isIsLastPage()}" style="float: left;list-style: none">
+					<a th:href="'/orders/showOrder?pageNum=' + ${page.getNextPage()}">下一页</a>
+				</li>
+
+				<!-- 尾页 -->
+				<li style="float: left;list-style: none">
+					<a th:href="'/orders/showOrder?pageNum=' + ${page.getLastPage()}">尾页</a>
+				</li>
+
+			</div>
+
+			<br class="clear" />
+
 		</div>
 
 

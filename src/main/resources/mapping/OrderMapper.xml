@@ -5,7 +5,7 @@
 
 <mapper namespace="com.xupt.demo1.dao.OrderDao">
     <insert id="addOrder" parameterType="com.xupt.demo1.entity.Order">
-        insert into t_order(order_id,user_id,goods_id,goods_type,time,pay_way,status) values(#{order.orderId},#{order.userId},#{order.goodsId},#{order.goodsType},#{order.time},#{order.payWay},#{order.status})
+        insert into t_order(order_id,user_id,goods_id,goods_type,time,status) values(#{order.orderId},#{order.userId},#{order.goodsId},#{order.goodsType},#{order.time},#{order.status})
     </insert>
 
     <select id="findOrderByUserIdAndShowToUser" resultType="com.xupt.demo1.entity.Order">

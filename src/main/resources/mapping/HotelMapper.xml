@@ -13,4 +13,8 @@
         select * from t_hotel where name like #{hotelName}
     </select>
 
+    <select id="findAllById" resultType="com.xupt.demo1.entity.Hotel">
+        select * from t_hotel where id = #{hotelId}
+    </select>
+
 </mapper>

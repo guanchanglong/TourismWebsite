@@ -2,19 +2,21 @@ package com.xupt.demo1.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.xupt.demo1.entity.Order;
+import com.xupt.demo1.entity.OrderToShow;
 import com.xupt.demo1.entity.User;
 import com.xupt.demo1.service.OrderService;
-import org.apache.http.HttpEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.jws.WebParam;
 import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author 小关同学
@@ -22,7 +24,7 @@ import java.util.Date;
  * 订单支付接口集合
  */
 @Controller
-@RequestMapping("/order")
+@RequestMapping("/orders")
 public class OrderController {
 
     @Autowired
@@ -32,36 +34,37 @@ public class OrderController {
      * 用户支付商品订单
      * @param model
      * @param session
-     * @param payWay
      * @param goodsType
      * @param goodsId
      * @return
      */
-    @GetMapping("/pay")
+    @PostMapping("/pay")
     public String pay(Model model,
                       HttpSession session,
-                      @RequestParam(value = "payWay") int payWay,
                       @RequestParam(value = "goodsType")int goodsType,
                       @RequestParam(value = "goodsId")int goodsId){
         Order order = new Order();
-        //订单编号
-        order.setOrderId("");
-        //设置用户Id
+        Date today = new Date();
+        //制定日期格式
+        SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
         User user = (User) session.getAttribute("user");
+        //设置用户Id
         order.setUserId(user.getId());
+        //生成订单编号
+        String orderId = "#"+format.format(today)+"T"+goodsType+"I"+goodsId+"U"+user.getId();
+        order.setOrderId(orderId);
+        System.out.println("生成的订单编号："+orderId);
         //设置商品类型(0是景点门票，1是酒店预订)
         order.setGoodsType(goodsType);
         //设置商品id
         order.setGoodsId(goodsId);
-        //设置订单支付方式
-        order.setPayWay(payWay);
         //设置支付状态(已支付)
         order.setStatus(1);
         //设置支付时间
-        order.setTime(new Date());
+        order.setTime(today);
         orderService.addOrder(order);
-        model.addAttribute("message","支付成功");
-        return "";
+        model.addAttribute("user",user);
+        return "user/paySuccess";
     }
 
     /**
@@ -78,9 +81,9 @@ public class OrderController {
                             @RequestParam(value = "pageNum",defaultValue = "1")int pageNum,
                             @RequestParam(value = "size",defaultValue = "10")int size){
         User user = (User)session.getAttribute("user");
-        PageInfo<Order> pageInfo = orderService.findOrderByUserId(user.getId(),pageNum,size);
+        PageInfo<OrderToShow> pageInfo = orderService.findOrderByUserId(user.getId(),pageNum,size);
         model.addAttribute("page",pageInfo);
-        return "";
+        return "user/order";
     }
 
     /**

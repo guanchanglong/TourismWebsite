@@ -3,7 +3,6 @@ package com.xupt.demo1.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.util.Date;
 
 /**
@@ -28,8 +27,6 @@ public class Order {
     private int goodsType;
     //下单日期
     private Date time;
-    //支付方式(1支付宝，2微信，3银行卡)
-    private int payWay;
     //订单状态(1已支付，2退款)
     private int status;
     //是否在客户端显示(0是不显示，1是显示，默认为1)

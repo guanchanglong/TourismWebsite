@@ -13,6 +13,35 @@
   <link rel="stylesheet" href="../../static/user/css/responsive.css"/>
   <link rel="stylesheet" href="../../static/user/css/spotsDetails.css">
   <script src="../../static/user/js/html5.js"></script>
+  <style type="text/css">
+    .black_overlay{
+      display: none; /* 此元素不会被显示*/
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      z-index:1001; /* z-index 属性设置元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。*/
+      -moz-opacity: 0.8;
+      opacity:.80; /* opacity 属性设置元素的不透明级别。*/
+      filter: alpha(opacity=88);
+      /* 所有浏览器都支持 opacity 属性。   注释：IE8 以及更早的版本支持替代的 filter 属性。例如：filter:Alpha(opacity=50)。*/
+    }
+    .white_content {
+      display: none;
+      position: absolute;
+      top: 25%;
+      left: 25%;
+      width: 55%;
+      height: 55%;
+      padding: 20px;
+      border: 10px solid orange;
+      background-color: white;
+      z-index:1002;
+      overflow: auto;
+    }
+  </style>
 </head>
 
 <body class="blog">
@@ -37,7 +66,7 @@
         <img class="userLogin_img" src="../../static/user/images/user.png" alt="">
         <span class="userLogin_welcome">欢迎</span>
         <img class="userLogin_img1" src="../../static/user/images/downsanjiao.png" alt="">
-        <div class="userLogin_hidden">
+        <div class="userLogin_hidden" style="z-index:100">
           <a href="#" th:href="@{/page/toOrderPage}">
             <div class="userLogin_hidden_item1">
               <img src="../../static/user/images/order.png" alt="">
@@ -83,12 +112,28 @@
             <div class="container_top_text_title0" th:text="${spot.getName()}">秦始皇帝陵博物馆（兵马俑）</div>
             <div class="container_top_text_title1" th:text="${spot.getInfo()}">秦始皇的地下御林库</div>
             <div class="container_top_text_location" th:text="${spot.getArea()}">位 置：陕西省西安市临潼区...</div>
-            <div>
-              <div class="container_top_text_price" th:text="${spot.getPrice()}">￥120起</div>
-              <button class="container_top_text_btn">立即预定</button>
-            </div>
+            <form action="#" th:action="@{/orders/pay}" method="post">
+                <div class="container_top_text_price" th:text="${spot.getPrice()}">￥120起</div>
+                <input name="goodsType" type="hidden" value="0"/>
+                <input name="goodsId" type="hidden" th:value="${spot.getId()}"/>
+              <div th:if="${user}==null">
+                <button class="container_top_text_btn" onclick="judge();return false;">立即预定</button>
+              </div>
+              <div th:if="${user}!=null">
+                <button class="container_top_text_btn submit">立即预定</button>
+              </div>
+            </form>
           </div>
         </div>
+
+        <div id="light" class="white_content">
+          请登录后再操作！！！
+          <br>
+          <a href="login.html" th:href="@{/user/toLoginPage}">登录</a>
+          <br>
+          <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">点这里关闭本窗口</a>
+        </div>
+        <div id="fade" class="black_overlay"></div>
 
         <div class="container_bottom" th:each="detail : ${spotDetailList}">
 
@@ -175,6 +220,11 @@
     }
 
   })
+
+  function judge(){
+    document.getElementById('light').style.display='block';
+    document.getElementById('fade').style.display='block'
+  }
 </script>
 </body>
 </html>

@@ -16,4 +16,7 @@ public interface HotelDao {
     List<Hotel> findAll();
 
     List<Hotel> findAllByName(@Param("hotelName") String hotelName);
+
+    Hotel findAllById(@Param("hotelId")int hotelId);
+
 }

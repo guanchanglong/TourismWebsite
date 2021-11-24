@@ -35,7 +35,7 @@
 
   width: 25%;
   height: 140px;
-  background: url(../../../static/user/images/uploads/220x135/auckland-city.jpg) no-repeat;
+  /*background: url(../../../static/user/images/uploads/220x135/auckland-city.jpg) no-repeat;*/
   background-size: 100% 100%;
   margin-right: 10%;
 }

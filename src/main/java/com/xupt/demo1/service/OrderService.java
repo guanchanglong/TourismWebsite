@@ -2,6 +2,7 @@ package com.xupt.demo1.service;
 
 import com.github.pagehelper.PageInfo;
 import com.xupt.demo1.entity.Order;
+import com.xupt.demo1.entity.OrderToShow;
 
 /**
  * @author 小关同学
@@ -10,7 +11,7 @@ import com.xupt.demo1.entity.Order;
 public interface OrderService {
     void addOrder(Order order);
 
-    PageInfo<Order> findOrderByUserId(int userId, int pageNum, int size);
+    PageInfo<OrderToShow> findOrderByUserId(int userId, int pageNum, int size);
 
     void updateOrderShowToUser(int orderId);
 }
