@@ -67,8 +67,8 @@
         <span class="userLogin_welcome">欢迎</span>
         <img class="userLogin_img1" src="../../static/user/images/downsanjiao.png" alt="">
         <div class="userLogin_hidden" style="z-index:100">
-          <a href="#" th:href="@{/page/toOrderPage}">
-            <div class="userLogin_hidden_item1">
+          <a href="#" th:href="@{/orders/showOrder}">
+          <div class="userLogin_hidden_item1">
               <img src="../../static/user/images/order.png" alt="">
               <span>我的订单</span>
             </div>
@@ -113,7 +113,7 @@
             <div class="container_top_text_title1" th:text="${spot.getInfo()}">秦始皇的地下御林库</div>
             <div class="container_top_text_location" th:text="${spot.getArea()}">位 置：陕西省西安市临潼区...</div>
             <form action="#" th:action="@{/orders/pay}" method="post">
-                <div class="container_top_text_price" th:text="${spot.getPrice()}">￥120起</div>
+                <div class="container_top_text_price" th:text="'￥'+${spot.getPrice()}+'起'">￥120起</div>
                 <input name="goodsType" type="hidden" value="0"/>
                 <input name="goodsId" type="hidden" th:value="${spot.getId()}"/>
               <div th:if="${user}==null">

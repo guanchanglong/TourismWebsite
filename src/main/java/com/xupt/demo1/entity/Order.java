@@ -31,6 +31,14 @@ public class Order {
     private int status;
     //是否在客户端显示(0是不显示，1是显示，默认为1)
     private int showToUser;
+    //金额
+    private double price;
+    //名称
+    private String goodsName;
+    //图片
+    private String picture;
+    //对外展示的时间
+    private String timeToShow;
 
 }
 //下单日期

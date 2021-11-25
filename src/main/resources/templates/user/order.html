@@ -37,8 +37,8 @@
 				<span class="userLogin_welcome">欢迎</span>
 				<img class="userLogin_img1" src="../../static/user/images/downsanjiao.png" alt="">
 				<div class="userLogin_hidden" style="z-index:100">
-					<a href="#" th:href="@{/page/toOrderPage}">
-						<div class="userLogin_hidden_item1">
+					<a href="#" th:href="@{/orders/showOrder}">
+					<div class="userLogin_hidden_item1">
 							<img src="../../static/user/images/order.png" alt="">
 							<span>我的订单</span>
 						</div>
@@ -82,27 +82,27 @@
 
 		<div id="content">
 			<div class="orderItems">
-				<h2 style="text-align: center;color: red" th:if="${page}==null">暂无消费记录</h2>
+				<h2 style="text-align: center;color: red" th:if="${page.getList().size()}==0">暂无消费记录</h2>
 
 				<div class="orderItem" th:each="orderToShow : ${page.getList()}">
 
 					<div class="orderItem_name" th:text="${orderToShow.getGoodsName()}">消费品的名称</div>
 					<div class="orderItem_center">
-						<span class="orderItem_center_index">1</span>
+						<span class="orderItem_center_index"></span>
 						<div class="orderItem_center_img">
-							<img src="../../static/user/images/uploads/220x135/auckland-city.jpg" th:src="${orderToShow.getPicture()}"/>
+							<img src="../../static/user/images/uploads/220x135/auckland-city.jpg" th:src="${orderToShow.getPicture()}" style="width: 220px;height: 135px"/>
 						</div>
-						<div class="orderItem_center_price" th:text="${orderToShow.getPrice()}">消费金额:120</div>
-						<div class="orderItem_center_btn"><button>删除订单</button></div>
+						<div class="orderItem_center_price" th:text="'消费金额:'+${orderToShow.getPrice()}+'￥'">消费金额:120</div>
+						<div class="orderItem_center_btn"><a href="#" th:href="'/orders/deleteOrderRecord?orderId='+${orderToShow.getId()}"><button>删除订单</button></a></div>
 					</div>
-					<div class="orderItem_time" th:text="${orderToShow.getTime()}">消费日期：2021/11/21</div>
+					<div class="orderItem_time" th:text="${orderToShow.getTimeToShow()}">消费日期：2021/11/21</div>
 				</div>
 
 			</div>
 
 			<br>
 			<br>
-			<div class="pagination" style="display:flex;justify-content:center">
+			<div class="pagination" style="display:flex;justify-content:center" th:if="${page.getList().size()}!=0">
 				<!-- 首页 -->
 				<li style="float: left;list-style: none">
 					<a th:href="'/orders/showOrder?pageNum=1'">首页</a>

@@ -73,7 +73,7 @@
 				<span class="userLogin_welcome">欢迎</span>
 				<img class="userLogin_img1" src="../../static/user/images/downsanjiao.png" alt="">
 				<div class="userLogin_hidden" style="z-index:100">
-					<a href="#" th:href="@{/page/toOrderPage}">
+					<a href="#" th:href="@{/orders/showOrder}">
 						<div class="userLogin_hidden_item1">
 							<img src="../../static/user/images/order.png" alt="">
 							<span>我的订单</span>
@@ -191,7 +191,7 @@
 						</div>
 						<div class="post-meta">
 							<span class="comment-count">12条留言</span>
-							<a class="read-more" href="#">了解更多</a>
+							<a class="read-more" href="#" th:href="'/spot/showSpotDetail?spotId='+ ${spot.getId()}">了解更多</a>
 						</div>
 					</div>
 				</div>
@@ -207,7 +207,7 @@
 						</div>
 						<div class="post-meta">
 							<span class="comment-count">12条留言</span>
-							<a class="read-more" href="#">了解更多</a>
+							<a class="read-more" href="#" th:href="'/spot/showSpotDetail?spotId='+ ${spot.getId()}">了解更多</a>
 						</div>
 					</div>
 				</div>

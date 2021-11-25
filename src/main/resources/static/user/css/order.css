@@ -1,12 +1,14 @@
 .orderItems{
   width: 100%;
 }
+
 .orderItem{
   width: 100%;
   height: 220px;
   background-color: rgba(0,0,0,0.3);
   margin-bottom: 10px;
 }
+
 .orderItem_name{
   width: 45%;
   font-size: 20px;
@@ -15,11 +17,13 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
 .orderItem_center{
   width: 100%;
   height: 140px;
   display: flex;
 }
+
 .orderItem_center_index{
   display: inline-block;
   width: 10%;
@@ -28,17 +32,16 @@
   line-height: 140px;
   font-size: 20px;
   padding-right: 10px;
-
   color: white;
 }
-.orderItem_center_img{
 
+.orderItem_center_img{
   width: 25%;
   height: 140px;
-  /*background: url(../../../static/user/images/uploads/220x135/auckland-city.jpg) no-repeat;*/
   background-size: 100% 100%;
   margin-right: 10%;
 }
+
 .orderItem_center_price{
   width: 25%;
   height: 140px;
@@ -47,13 +50,14 @@
   font-size: 20px;
   color: white;
 }
+
 .orderItem_center_btn{
   width: 20%;
   height: 140px;
   line-height: 140px;
   margin: 0 auto;
-  
 }
+
 .orderItem_center_btn button{
   width: 12vh;
   height: 6vh;
@@ -61,6 +65,7 @@
   background-color: orangered;
   color: white;
 }
+
 .orderItem_time{
   width: 80%;
   text-align: center;

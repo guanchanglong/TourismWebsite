@@ -4,11 +4,26 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.xupt.demo1.dao.OrderDao">
+
+    <resultMap id="orderMap" type="com.xupt.demo1.entity.Order">
+        <id property="id" column="id"/>
+        <result property="orderId" column="order_id"/>
+        <result property="userId" column="user_id"/>
+        <result property="goodsId" column="goods_id"/>
+        <result property="goodsType" column="goods_type"/>
+        <result property="time" column="time"/>
+        <result property="status" column="status"/>
+        <result property="showToUser" column="show_to_user"/>
+        <result property="price" column="price"/>
+        <result property="goodsName" column="goods_name"/>
+        <result property="picture" column="picture"/>
+    </resultMap>
+
     <insert id="addOrder" parameterType="com.xupt.demo1.entity.Order">
-        insert into t_order(order_id,user_id,goods_id,goods_type,time,status) values(#{order.orderId},#{order.userId},#{order.goodsId},#{order.goodsType},#{order.time},#{order.status})
+        insert into t_order(order_id,user_id,goods_id,goods_type,time,status,show_to_user,goods_name,price,picture) values(#{order.orderId},#{order.userId},#{order.goodsId},#{order.goodsType},#{order.time},#{order.status},1,#{order.goodsName},#{order.price},#{order.picture})
     </insert>
 
-    <select id="findOrderByUserIdAndShowToUser" resultType="com.xupt.demo1.entity.Order">
+    <select id="findOrderByUserIdAndShowToUser" resultMap="orderMap">
         select * from t_order where user_id = #{userId} and show_to_user = 1
     </select>
 
