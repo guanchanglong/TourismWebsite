@@ -1,10 +1,12 @@
 package com.xupt.demo1.controller.admin;
 
-import com.alibaba.fastjson.JSONObject;
 import com.xupt.demo1.entity.User;
 import com.xupt.demo1.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import javax.servlet.http.HttpSession;
 
 /**
@@ -13,24 +15,19 @@ import javax.servlet.http.HttpSession;
  * 管理员登录 和 管理用户行为
  */
 @CrossOrigin
-@RestController
+@Controller
 @RequestMapping("/admin/user")
 public class AUserController {
 
     @Autowired
     private UserService userService;
 
-    /**
-     * 管理员登录
-     * @param param
-     * @param session
-     * @return
-     */
+
     @PostMapping("/login")
-    public String login(@RequestBody JSONObject param,
-                                    HttpSession session){
-        String email = param.getString("email");
-        String password = param.getString("password");
+    public String login(@RequestParam String email,
+                        @RequestParam String password,
+                        HttpSession session,
+                        RedirectAttributes attributes){
         User user = userService.adminLogin(email,password);
         if (user!=null){
             //将密码清空再存放到session中
@@ -38,9 +35,10 @@ public class AUserController {
             session.setAttribute("adminUser",user);
             //设置session一个小时后就过期
             session.setMaxInactiveInterval(3600);
-            return "";
+            return "admin/index";
         }else{
-            return "";
+            attributes.addFlashAttribute("message","邮箱或密码错误");
+            return "redirect:/admin/page/toLoginPage";
         }
     }
 
