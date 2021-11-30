@@ -1,5 +1,5 @@
 <!DOCTYPE html><!--[if IE 8]><html lang="en" class="ie8 no-js"><![endif]--><!--[if IE 9]><html lang="en" class="ie9 no-js"><![endif]--><!--[if!IE]><!-->
-<html lang="zxx">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <!--<![endif]--><!-- Begin Head -->
 <head>
 <title>酒店管理</title>
@@ -36,19 +36,10 @@
         </a>
       </div>
       <div class="header-right">
-        <div class="serch-wrapper">
-          <form>
-            <input type="text" placeholder="搜索">
-          </form>
-          <a class="search-close" href="javascript:void(0);"><span class="icofont-close-line"></span></a></div>
         <div class="header-left">
           <div class="header-links"><a href="javascript:void(0);" class="toggle-btn"><span></span></a></div>
           <div class="header-links search-link"><a class="search-toggle" href="javascript:void(0);">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve">
-              <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23
-                                    s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92
-                                    c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17
-                                    s-17-7.626-17-17S14.61,6,23.984,6z"/>
             </svg>
           </a></div>
         </div>
@@ -85,9 +76,9 @@
                 <h4>管理员11</h4>
               </div>
               <ul>
-                <li><a href="profile.html"><i class="far fa-edit"></i>个人资料 </a></li>
-                <li><a href="setting.html"><i class="fas fa-cog"></i>系统设置 </a></li>
-                <li><a href="login.html"><i class="fas fa-sign-out-alt"></i>退出登录 </a></li>
+                <li><a href="profile.html" th:href="@{/admin/page/toProfilePage}"><i class="far fa-edit"></i>个人资料 </a></li>
+                <li><a href="setting.html" th:href="@{/admin/page/toSettingPage}"><i class="fas fa-cog"></i>系统设置 </a></li>
+                <li><a href="login.html" th:href="@{/admin/user/loginOut}"><i class="fas fa-sign-out-alt"></i>退出登录 </a></li>
               </ul>
             </div>
           </div>
@@ -114,12 +105,12 @@
             <span class="menu-text">订单管理 </span>
           </a>
           <ul class="sub-menu">
-            <li><a href="index.html"><span class="icon-dash"></span><span class="menu-text">业绩总览 </span></a></li>
-            <li><a href="order-list.html"><span class="icon-dash"></span><span class="menu-text">订单列表 </span></a></li>
+            <li><a href="index.html" th:href="@{/admin/page/toIndexPage}"><span class="icon-dash"></span><span class="menu-text">业绩总览 </span></a></li>
+            <li><a href="order-list.html" th:href="@{/admin/page/toOrderListPage}"><span class="icon-dash"></span><span class="menu-text">订单列表 </span></a></li>
           </ul>
         </li>
 
-        <li><a href="hotel.html"><span class="icon-menu feather-icon">
+        <li><a href="hotel.html" th:href="@{/admin/page/toHotelPage}"><span class="icon-menu feather-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-package">
             <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
             <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
@@ -128,7 +119,7 @@
           </svg>
           </span><span class="menu-text">酒店管理 </span></a></li>
 
-        <li><a href="spots.html"><span class="icon-menu feather-icon">
+        <li><a href="spots.html" th:href="@{/admin/page/toSpotsPage}"><span class="icon-menu feather-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map">
             <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
             <line x1="8" y1="2" x2="8" y2="18"></line>
@@ -136,7 +127,7 @@
           </svg>
           </span><span class="menu-text">景点管理 </span></a></li>
 
-        <li><a href="users.html"><span class="icon-menu feather-icon">
+        <li><a href="users.html" th:href="@{/admin/page/toUsersPage}"><span class="icon-menu feather-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
             <circle cx="9" cy="7" r="4"></circle>
@@ -155,15 +146,16 @@
 
   <!-- Container Start -->
   <div class="main-wrapper main-wrapper-2" style="position:relative">
-    <div class="main-content" style="position:absolute;top:50%;left:20%"><!-- Page Title Start -->
+    <div class="main-content" style="position:absolute;top:50%;left:20%">
 
         <div class="margin-left">
-          <form id="myform" class="form-horizontal" role="form" action="/admin/addClass" method="post" onsubmit="return checkEmpty()">
+          <form id="myform" class="form-horizontal" role="form" action="#" th:action="@{/admin/hotel/addHotel}" method="post" onsubmit="return checkEmpty()">
+            <h2 th:text="${message}" style="color: green;">添加成功</h2>
             <div class="form-group">
               <label class="col-sm-2 control-label">酒店名称：</label>
               <div class="col-sm-6">
                 <div class="field">
-                  <input name="className" type="text" class="form-control" id="className" placeholder="请输入酒店名称">
+                  <input name="hotelName" type="text" class="form-control" id="hotelName" placeholder="请输入酒店名称">
                 </div>
               </div>
             </div>
@@ -171,7 +163,7 @@
               <label class="col-sm-2 control-label">酒店封面图片链接：</label>
               <div class="col-sm-6">
                 <div class="field">
-                  <input name="className" type="text" class="form-control" id="className" placeholder="请输入酒店封面图片链接">
+                  <input name="hotelPicture" type="text" class="form-control" id="hotelPicture" placeholder="请输入酒店封面图片链接">
                 </div>
               </div>
             </div>
@@ -179,7 +171,7 @@
               <label class="col-sm-2 control-label">酒店地址：</label>
               <div class="col-sm-6">
                 <div class="field">
-                  <input name="className" type="text" class="form-control" id="className" placeholder="请输入酒店地址">
+                  <input name="hotelAddress" type="text" class="form-control" id="hotelAddress" placeholder="请输入酒店地址">
                 </div>
               </div>
             </div>
@@ -187,7 +179,7 @@
               <label class="col-sm-2 control-label">酒店联系方式：</label>
               <div class="col-sm-6">
                 <div class="field">
-                  <input name="className" type="text" class="form-control" id="className" placeholder="请输入酒店联系方式">
+                  <input name="hotelPhone" type="text" class="form-control" id="hotelPhone" placeholder="请输入酒店联系方式">
                 </div>
               </div>
             </div>
@@ -195,7 +187,7 @@
               <label class="col-sm-2 control-label">酒店类型：</label>
               <div class="col-sm-6">
                 <div class="field">
-                  <input name="className" type="text" class="form-control" id="className" placeholder="请输入酒店类型">
+                  <input name="hotelType" type="text" class="form-control" id="hotelType" placeholder="请输入酒店类型">
                 </div>
               </div>
             </div>
@@ -203,7 +195,7 @@
               <label class="col-sm-2 control-label">酒店简介：</label>
               <div class="col-sm-6">
                 <div class="field">
-                  <textarea name="classInfo" id="classInfo" cols="5" rows="5" class="form-control" placeholder="请输入酒店简介"></textarea>
+                  <textarea name="hotelInfo" id="hotelInfo" cols="5" rows="5" class="form-control" placeholder="请输入酒店简介"></textarea>
                 </div>
               </div>
             </div>
@@ -211,8 +203,6 @@
               <div class="col-sm-2 control-label"
                    style="color: red; font-weight: bold;"></div>
               <div class="col-sm-6">
-                <!--              <h4 th:text="${fail}" style="color: red"></h4>-->
-                <!--              <h4 th:text="${success}" style="color: green"></h4>-->
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button type="submit" class="btn btn-primary">提 交</button>
                 <button type="button" class="btn btn-warning" onclick="clearInput()">重置</button>

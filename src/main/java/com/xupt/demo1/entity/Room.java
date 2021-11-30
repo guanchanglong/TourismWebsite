@@ -20,9 +20,9 @@ public class Room {
     //房间简介
     private String info;
     //房间类型
-    private String bedType;
+    private String type;
     //房间价格
     private int price;
-    //早餐详情
-    private String breakfast;
+    //对应酒店id
+    private int hotelId;
 }

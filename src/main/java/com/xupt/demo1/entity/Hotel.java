@@ -18,16 +18,12 @@ public class Hotel {
     private String picture;
     //酒店名称
     private String name;
-    //酒店简介(不超过30个字)
+    //酒店简介
     private String info;
     //展示价格
-    private int priceToShow;
+    private String address;
     //联系方式
     private String phone;
-    //基本信息
-    private String basicInformation;
-    //酒店详细介绍
-    private String infoDetail;
-    //膳食安排
-    private String eatDetail;
+    //酒店类型
+    private String type;
 }

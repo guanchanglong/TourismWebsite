@@ -1,5 +1,5 @@
 <!DOCTYPE html><!--[if IE 8]><html lang="en" class="ie8 no-js"><![endif]--><!--[if IE 9]><html lang="en" class="ie9 no-js"><![endif]--><!--[if!IE]><!-->
-<html lang="zxx">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <!--<![endif]--><!-- Begin Head -->
 <head>
 <title>酒店管理</title>
@@ -68,9 +68,9 @@
                 <h4>管理员11</h4>
               </div>
               <ul>
-                <li><a href="profile.html"><i class="far fa-edit"></i>个人资料 </a></li>
-                <li><a href="setting.html"><i class="fas fa-cog"></i>系统设置 </a></li>
-                <li><a href="login.html"><i class="fas fa-sign-out-alt"></i>退出登录 </a></li>
+                <li><a href="profile.html" th:href="@{/admin/page/toProfilePage}"><i class="far fa-edit"></i>个人资料 </a></li>
+                <li><a href="setting.html" th:href="@{/admin/page/toSettingPage}"><i class="fas fa-cog"></i>系统设置 </a></li>
+                <li><a href="login.html" th:href="@{/admin/user/loginOut}"><i class="fas fa-sign-out-alt"></i>退出登录 </a></li>
               </ul>
             </div>
           </div>
@@ -98,12 +98,12 @@
             <span class="menu-text">订单管理 </span>
           </a>
           <ul class="sub-menu">
-            <li><a href="index.html"><span class="icon-dash"></span><span class="menu-text">业绩总览 </span></a></li>
-            <li><a href="order-list.html"><span class="icon-dash"></span><span class="menu-text">订单列表 </span></a></li>
+            <li><a href="index.html" th:href="@{/admin/page/toIndexPage}"><span class="icon-dash"></span><span class="menu-text">业绩总览 </span></a></li>
+            <li><a href="order-list.html" th:href="@{/admin/page/toOrderListPage}"><span class="icon-dash"></span><span class="menu-text">订单列表 </span></a></li>
           </ul>
         </li>
 
-        <li><a href="hotel.html"><span class="icon-menu feather-icon">
+        <li><a href="hotel.html" th:href="@{/admin/page/toHotelPage}"><span class="icon-menu feather-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-package">
             <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
             <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
@@ -112,7 +112,7 @@
           </svg>
           </span><span class="menu-text">酒店管理 </span></a></li>
 
-        <li><a href="spots.html"><span class="icon-menu feather-icon">
+        <li><a href="spots.html" th:href="@{/admin/page/toSpotsPage}"><span class="icon-menu feather-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map">
             <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
             <line x1="8" y1="2" x2="8" y2="18"></line>
@@ -120,7 +120,7 @@
           </svg>
           </span><span class="menu-text">景点管理 </span></a></li>
 
-        <li><a href="users.html"><span class="icon-menu feather-icon">
+        <li><a href="users.html" th:href="@{/admin/page/toUsersPage}"><span class="icon-menu feather-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
             <circle cx="9" cy="7" r="4"></circle>
@@ -148,7 +148,7 @@
             <div class="ad-breadcrumb">
               <ul>
                 <li>
-                  <div class="add-group border-right"><a class="ad-btn" href="hotel-add.html">添加酒店</a></div>
+                  <div class="add-group border-right"><a class="ad-btn" href="hotel-add.html" th:href="@{/admin/page/toHotelAddPage}">添加酒店</a></div>
                 </li>
               </ul>
             </div>
@@ -159,95 +159,34 @@
 
       <!-- Table Start -->
       <div class="row ad-btm-space">
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12">
-          <div class="int-blog-sidebar">
-            <div class="int-sidebar-box">
-              <h4>查询</h4>
-              <div class="int-search-btn">
-                <div class="input-group">
-                  <input type="text" placeholder="查询酒店">
-                  <div class="input-group-append">
-                    <button type="button">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.239 30.239" width="18" height="18">
-                      <g>
-                        <g>
-                          <path d="M20.194,3.46c-4.613-4.613-12.121-4.613-16.734,0c-4.612,4.614-4.612,12.121,0,16.735   c4.108,4.107,10.506,4.547,15.116,1.34c0.097,0.459,0.319,0.897,0.676,1.254l6.718,6.718c0.979,0.977,2.561,0.977,3.535,0   c0.978-0.978,0.978-2.56,0-3.535l-6.718-6.72c-0.355-0.354-0.794-0.577-1.253-0.674C24.743,13.967,24.303,7.57,20.194,3.46z    M18.073,18.074c-3.444,3.444-9.049,3.444-12.492,0c-3.442-3.444-3.442-9.048,0-12.492c3.443-3.443,9.048-3.443,12.492,0   C21.517,9.026,21.517,14.63,18.073,18.074z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#ffffff"></path>
-                        </g>
-                      </g>
-                    </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="int-sidebar-box">
-              <h4>价格区间</h4>
-              <div class="int-blog-category-mini">
-                <div class="range-slider">
-                  <div class="price-range">
-                    <p><span id="amount"></span></p>
-                  </div>
-                  <div id="slider-range" class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
-                    <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
-                    <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span></div>
-                </div>
-              </div>
-            </div>
-            <div class="int-sidebar-box recent-blog-one">
-              <h4>种类</h4>
-              <div class="int-blog-category-mini">
-                <ul>
-                  <li><a href="javascript:;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="8px">
-                      <path fill-rule="evenodd" fill=" " d="M0.038,4.720 L6.164,4.710 C6.558,4.710 6.878,4.392 6.878,3.999 L6.878,2.016 L9.967,3.999 L5.777,6.688 C5.445,6.901 5.349,7.342 5.563,7.673 C5.777,8.004 6.219,8.099 6.551,7.886 L11.673,4.597 C11.877,4.466 12.000,4.241 12.000,3.999 C12.000,3.756 11.877,3.531 11.673,3.400 L6.551,0.112 C6.331,-0.030 6.051,-0.040 5.822,0.085 C5.592,0.210 5.449,0.449 5.449,0.710 L5.449,3.286 L0.000,3.286 "/>
-                    </svg>
-                    连锁酒店 </a></li>
-                  <li><a href="javascript:;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="8px">
-                      <path fill-rule="evenodd" fill=" " d="M0.038,4.720 L6.164,4.710 C6.558,4.710 6.878,4.392 6.878,3.999 L6.878,2.016 L9.967,3.999 L5.777,6.688 C5.445,6.901 5.349,7.342 5.563,7.673 C5.777,8.004 6.219,8.099 6.551,7.886 L11.673,4.597 C11.877,4.466 12.000,4.241 12.000,3.999 C12.000,3.756 11.877,3.531 11.673,3.400 L6.551,0.112 C6.331,-0.030 6.051,-0.040 5.822,0.085 C5.592,0.210 5.449,0.449 5.449,0.710 L5.449,3.286 L0.000,3.286 "/>
-                    </svg>
-                    精品酒店 </a></li>
-                  <li><a href="javascript:;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="8px">
-                      <path fill-rule="evenodd" fill=" " d="M0.038,4.720 L6.164,4.710 C6.558,4.710 6.878,4.392 6.878,3.999 L6.878,2.016 L9.967,3.999 L5.777,6.688 C5.445,6.901 5.349,7.342 5.563,7.673 C5.777,8.004 6.219,8.099 6.551,7.886 L11.673,4.597 C11.877,4.466 12.000,4.241 12.000,3.999 C12.000,3.756 11.877,3.531 11.673,3.400 L6.551,0.112 C6.331,-0.030 6.051,-0.040 5.822,0.085 C5.592,0.210 5.449,0.449 5.449,0.710 L5.449,3.286 L0.000,3.286 "/>
-                    </svg>
-                    度假公寓 </a>
-                  </li>
-                  <li><a href="javascript:;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="8px">
-                      <path fill-rule="evenodd" fill=" " d="M0.038,4.720 L6.164,4.710 C6.558,4.710 6.878,4.392 6.878,3.999 L6.878,2.016 L9.967,3.999 L5.777,6.688 C5.445,6.901 5.349,7.342 5.563,7.673 C5.777,8.004 6.219,8.099 6.551,7.886 L11.673,4.597 C11.877,4.466 12.000,4.241 12.000,3.999 C12.000,3.756 11.877,3.531 11.673,3.400 L6.551,0.112 C6.331,-0.030 6.051,-0.040 5.822,0.085 C5.592,0.210 5.449,0.449 5.449,0.710 L5.449,3.286 L0.000,3.286 "/>
-                    </svg>
-                    主题酒店 </a></li>
-                  <li><a href="javascript:;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="8px">
-                      <path fill-rule="evenodd" fill=" " d="M0.038,4.720 L6.164,4.710 C6.558,4.710 6.878,4.392 6.878,3.999 L6.878,2.016 L9.967,3.999 L5.777,6.688 C5.445,6.901 5.349,7.342 5.563,7.673 C5.777,8.004 6.219,8.099 6.551,7.886 L11.673,4.597 C11.877,4.466 12.000,4.241 12.000,3.999 C12.000,3.756 11.877,3.531 11.673,3.400 L6.551,0.112 C6.331,-0.030 6.051,-0.040 5.822,0.085 C5.592,0.210 5.449,0.449 5.449,0.710 L5.449,3.286 L0.000,3.286 "/>
-                    </svg>
-                    地区酒店 </a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-9 col-lg-8 col-md-8 col-sm-12">
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-15">
           <table class="table table-styled mb-0">
+
             <thead>
             <tr>
-              <th>序号</th>
               <th>酒店名</th>
               <th>状态</th>
               <th>地点</th>
               <th>详细信息</th>
+              <th>房间设置</th>
               <th>操作</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <td>1</td>
-              <td>秋果酒店(西安钟楼南门小雁塔南稍门地铁站店)</td>
+
+            <tr th:if="${page.getList().size()}==0">
+              <td colspan="7" style="text-align: center">暂无酒店数据</td>
+            </tr>
+
+            <tr th:each="hotel:${page.getList()}">
+              <td th:text="${hotel.getName()}">秋果酒店(西安钟楼南门小雁塔南稍门地铁站店)</td>
               <td>营业</td>
-              <td>陕西西安</td>
-              <td><a class="badge badge-primary" href="hotel-detail.html">查看详细信息</a></td>
-              <td class="relative"><a class="action-btn " href="javascript:void(0); ">
+              <td th:text="${hotel.getAddress()}">陕西西安</td>
+              <td><a class="badge badge-primary" href="hotel-detail.html" th:href="@{/admin/page/toHotelDetailPage}">查看详细信息</a></td>
+              <td><a class="badge badge-primary" href="hotel-detail.html" th:href="'/admin/page/toRoomPage?hotelId=' + ${hotel.getId()}">房间设置</a></td>
+              <td class="relative">
+                <a class="action-btn " href="javascript:void(0); ">
                 <svg class="default-size " viewBox="0 0 341.333 341.333 ">
                   <g>
                     <g>
@@ -262,231 +201,44 @@
               </a>
                 <div class="action-option ">
                   <ul>
-                    <li><a href="hotel-modify.html"><i class="far fa-edit mr-2 "></i>修改</a></li>
+                    <li><a href="hotel-modify.html" th:href="@{/admin/page/toHotelModifyPage}"><i class="far fa-edit mr-2 "></i>修改</a></li>
                     <li><a href="javascript:void(0); "><i class="far fa-trash-alt mr-2 "></i>删除</a></li>
                   </ul>
-                </div></td>
+                </div>
+              </td>
             </tr>
-            <tr>
-              <td>2</td>
-              <td>雅夫酒店(西安钟鼓楼店)</td>
-              <td>营业</td>
-              <td>陕西西安</td>
-              <td><a class="badge badge-primary" href="hotel-detail.html">查看详细信息</a></td>
-              <td class="relative"><a class="action-btn " href="javascript:void(0); ">
-                <svg class="default-size " viewBox="0 0 341.333 341.333 ">
-                  <g>
-                    <g>
-                      <g>
-                        <path d="M170.667,85.333c23.573,0,42.667-19.093,42.667-42.667C213.333,19.093,194.24,0,170.667,0S128,19.093,128,42.667 C128,66.24,147.093,85.333,170.667,85.333z "></path>
-                        <path d="M170.667,128C147.093,128,128,147.093,128,170.667s19.093,42.667,42.667,42.667s42.667-19.093,42.667-42.667 S194.24,128,170.667,128z "></path>
-                        <path d="M170.667,256C147.093,256,128,275.093,128,298.667c0,23.573,19.093,42.667,42.667,42.667s42.667-19.093,42.667-42.667 C213.333,275.093,194.24,256,170.667,256z "></path>
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-              </a>
-                <div class="action-option ">
-                  <ul>
-                    <li><a href="hotel-modify.html"><i class="far fa-edit mr-2 "></i>修改</a></li>
-                    <li><a href="javascript:void(0); "><i class="far fa-trash-alt mr-2 "></i>删除</a></li>
-                  </ul>
-                </div></td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>桔子水晶西安北站行政中心酒店</td>
-              <td>营业</td>
-              <td>陕西西安</td>
-              <td><a class="badge badge-primary" href="hotel-detail.html">查看详细信息</a></td>
-              <td class="relative"><a class="action-btn " href="javascript:void(0); ">
-                <svg class="default-size " viewBox="0 0 341.333 341.333 ">
-                  <g>
-                    <g>
-                      <g>
-                        <path d="M170.667,85.333c23.573,0,42.667-19.093,42.667-42.667C213.333,19.093,194.24,0,170.667,0S128,19.093,128,42.667 C128,66.24,147.093,85.333,170.667,85.333z "></path>
-                        <path d="M170.667,128C147.093,128,128,147.093,128,170.667s19.093,42.667,42.667,42.667s42.667-19.093,42.667-42.667 S194.24,128,170.667,128z "></path>
-                        <path d="M170.667,256C147.093,256,128,275.093,128,298.667c0,23.573,19.093,42.667,42.667,42.667s42.667-19.093,42.667-42.667 C213.333,275.093,194.24,256,170.667,256z "></path>
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-              </a>
-                <div class="action-option ">
-                  <ul>
-                    <li><a href="hotel-modify.html"><i class="far fa-edit mr-2 "></i>修改</a></li>
-                    <li><a href="javascript:void(0); "><i class="far fa-trash-alt mr-2 "></i>删除</a></li>
-                  </ul>
-                </div></td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>星辰酒店(西安钟鼓楼回民街店) </td>
-              <td>营业</td>
-              <td>陕西西安</td>
-              <td><a class="badge badge-primary" href="hotel-detail.html">查看详细信息</a></td>
-              <td class="relative"><a class="action-btn " href="javascript:void(0); ">
-                <svg class="default-size " viewBox="0 0 341.333 341.333 ">
-                  <g>
-                    <g>
-                      <g>
-                        <path d="M170.667,85.333c23.573,0,42.667-19.093,42.667-42.667C213.333,19.093,194.24,0,170.667,0S128,19.093,128,42.667 C128,66.24,147.093,85.333,170.667,85.333z "></path>
-                        <path d="M170.667,128C147.093,128,128,147.093,128,170.667s19.093,42.667,42.667,42.667s42.667-19.093,42.667-42.667 S194.24,128,170.667,128z "></path>
-                        <path d="M170.667,256C147.093,256,128,275.093,128,298.667c0,23.573,19.093,42.667,42.667,42.667s42.667-19.093,42.667-42.667 C213.333,275.093,194.24,256,170.667,256z "></path>
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-              </a>
-                <div class="action-option ">
-                  <ul>
-                    <li><a href="hotel-modify.html"><i class="far fa-edit mr-2 "></i>修改</a></li>
-                    <li><a href="javascript:void(0); "><i class="far fa-trash-alt mr-2 "></i>删除</a></li>
-                  </ul>
-                </div></td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>丽晶庭院酒店(西安钟鼓楼回民街地铁站店) </td>
-              <td>营业</td>
-              <td>陕西西安</td>
-              <td><a class="badge badge-primary" href="hotel-detail.html">查看详细信息</a></td>
-              <td class="relative"><a class="action-btn " href="javascript:void(0); ">
-                <svg class="default-size " viewBox="0 0 341.333 341.333 ">
-                  <g>
-                    <g>
-                      <g>
-                        <path d="M170.667,85.333c23.573,0,42.667-19.093,42.667-42.667C213.333,19.093,194.24,0,170.667,0S128,19.093,128,42.667 C128,66.24,147.093,85.333,170.667,85.333z "></path>
-                        <path d="M170.667,128C147.093,128,128,147.093,128,170.667s19.093,42.667,42.667,42.667s42.667-19.093,42.667-42.667 S194.24,128,170.667,128z "></path>
-                        <path d="M170.667,256C147.093,256,128,275.093,128,298.667c0,23.573,19.093,42.667,42.667,42.667s42.667-19.093,42.667-42.667 C213.333,275.093,194.24,256,170.667,256z "></path>
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-              </a>
-                <div class="action-option ">
-                  <ul>
-                    <li><a href="hotel-modify.html"><i class="far fa-edit mr-2 "></i>修改</a></li>
-                    <li><a href="javascript:void(0); "><i class="far fa-trash-alt mr-2 "></i>删除</a></li>
-                  </ul>
-                </div></td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>气象宾馆(西安钟楼北安远门地铁站店) </td>
-              <td>营业</td>
-              <td>陕西西安</td>
-              <td><a class="badge badge-primary" href="hotel-detail.html">查看详细信息</a></td>
-              <td class="relative"><a class="action-btn " href="javascript:void(0); ">
-                <svg class="default-size " viewBox="0 0 341.333 341.333 ">
-                  <g>
-                    <g>
-                      <g>
-                        <path d="M170.667,85.333c23.573,0,42.667-19.093,42.667-42.667C213.333,19.093,194.24,0,170.667,0S128,19.093,128,42.667 C128,66.24,147.093,85.333,170.667,85.333z "></path>
-                        <path d="M170.667,128C147.093,128,128,147.093,128,170.667s19.093,42.667,42.667,42.667s42.667-19.093,42.667-42.667 S194.24,128,170.667,128z "></path>
-                        <path d="M170.667,256C147.093,256,128,275.093,128,298.667c0,23.573,19.093,42.667,42.667,42.667s42.667-19.093,42.667-42.667 C213.333,275.093,194.24,256,170.667,256z "></path>
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-              </a>
-                <div class="action-option ">
-                  <ul>
-                    <li><a href="hotel-modify.html"><i class="far fa-edit mr-2 "></i>修改</a></li>
-                    <li><a href="javascript:void(0); "><i class="far fa-trash-alt mr-2 "></i>删除</a></li>
-                  </ul>
-                </div></td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>未来生活·悦莅酒店(西安经开区凤城五路地铁站店) </td>
-              <td>营业</td>
-              <td>陕西西安</td>
-              <td><a class="badge badge-primary" href="hotel-detail.html">查看详细信息</a></td>
-              <td class="relative"><a class="action-btn " href="javascript:void(0); ">
-                <svg class="default-size " viewBox="0 0 341.333 341.333 ">
-                  <g>
-                    <g>
-                      <g>
-                        <path d="M170.667,85.333c23.573,0,42.667-19.093,42.667-42.667C213.333,19.093,194.24,0,170.667,0S128,19.093,128,42.667 C128,66.24,147.093,85.333,170.667,85.333z "></path>
-                        <path d="M170.667,128C147.093,128,128,147.093,128,170.667s19.093,42.667,42.667,42.667s42.667-19.093,42.667-42.667 S194.24,128,170.667,128z "></path>
-                        <path d="M170.667,256C147.093,256,128,275.093,128,298.667c0,23.573,19.093,42.667,42.667,42.667s42.667-19.093,42.667-42.667 C213.333,275.093,194.24,256,170.667,256z "></path>
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-              </a>
-                <div class="action-option ">
-                  <ul>
-                    <li><a href="hotel-modify.html"><i class="far fa-edit mr-2 "></i>修改</a></li>
-                    <li><a href="javascript:void(0); "><i class="far fa-trash-alt mr-2 "></i>删除</a></li>
-                  </ul>
-                </div></td>
-            </tr>
-            <tr>
-              <td>8</td>
-              <td>西安诺世嘉顿酒店</td>
-              <td>营业</td>
-              <td>陕西西安</td>
-              <td><a class="badge badge-primary" href="hotel-detail.html">查看详细信息</a></td>
-              <td class="relative"><a class="action-btn " href="javascript:void(0); ">
-                <svg class="default-size " viewBox="0 0 341.333 341.333 ">
-                  <g>
-                    <g>
-                      <g>
-                        <path d="M170.667,85.333c23.573,0,42.667-19.093,42.667-42.667C213.333,19.093,194.24,0,170.667,0S128,19.093,128,42.667 C128,66.24,147.093,85.333,170.667,85.333z "></path>
-                        <path d="M170.667,128C147.093,128,128,147.093,128,170.667s19.093,42.667,42.667,42.667s42.667-19.093,42.667-42.667 S194.24,128,170.667,128z "></path>
-                        <path d="M170.667,256C147.093,256,128,275.093,128,298.667c0,23.573,19.093,42.667,42.667,42.667s42.667-19.093,42.667-42.667 C213.333,275.093,194.24,256,170.667,256z "></path>
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-              </a>
-                <div class="action-option ">
-                  <ul>
-                    <li><a href="hotel-modify.html"><i class="far fa-edit mr-2 "></i>修改</a></li>
-                    <li><a href="javascript:void(0); "><i class="far fa-trash-alt mr-2 "></i>删除</a></li>
-                  </ul>
-                </div></td>
-            </tr>
-            <tr>
-              <td>9</td>
-              <td>西安诺世嘉顿酒店</td>
-              <td>营业</td>
-              <td>陕西西安</td>
-              <td><a class="badge badge-primary" href="hotel-detail.html">查看详细信息</a></td>
-              <td class="relative"><a class="action-btn " href="javascript:void(0); ">
-                <svg class="default-size " viewBox="0 0 341.333 341.333 ">
-                  <g>
-                    <g>
-                      <g>
-                        <path d="M170.667,85.333c23.573,0,42.667-19.093,42.667-42.667C213.333,19.093,194.24,0,170.667,0S128,19.093,128,42.667 C128,66.24,147.093,85.333,170.667,85.333z "></path>
-                        <path d="M170.667,128C147.093,128,128,147.093,128,170.667s19.093,42.667,42.667,42.667s42.667-19.093,42.667-42.667 S194.24,128,170.667,128z "></path>
-                        <path d="M170.667,256C147.093,256,128,275.093,128,298.667c0,23.573,19.093,42.667,42.667,42.667s42.667-19.093,42.667-42.667 C213.333,275.093,194.24,256,170.667,256z "></path>
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-              </a>
-                <div class="action-option ">
-                  <ul>
-                    <li><a href="hotel-modify.html"><i class="far fa-edit mr-2 "></i>修改</a></li>
-                    <li><a href="javascript:void(0); "><i class="far fa-trash-alt mr-2 "></i>删除</a></li>
-                  </ul>
-                </div></td>
-            </tr>
+
             </tbody>
           </table>
 
-
-          <div class="text-right">
+          <div class="text-right" style="display:flex;justify-content:center" th:if="${page.getList().size()}!=0">
             <nav class="d-inline-block">
               <ul class="pagination mb-0 ">
-                <li class="page-item disabled "><a class="page-link" href="javascript:void(0);" tabindex="-1"><i class="fas fa-chevron-left"></i></a></li>
-                <li class="page-item active "><a class="page-link " href="javascript:void(0); ">1</a></li>
-                <li class="page-item "><a class="page-link " href="javascript:void(0); ">2</a></li>
-                <li class="page-item "><a class="page-link " href="javascript:void(0); ">3</a></li>
-                <li class="page-item "><a class="page-link " href="javascript:void(0); "><i class="fas fa-chevron-right "></i></a></li>
+
+                <li class="page-item" style="float: left;list-style: none">
+                  <a class="page-link" th:href="'/admin/page/toHotelPage?pageNum=1'">首页</a>
+                </li>
+
+                <!-- 上一页 -->
+                <li class="page-item " th:if="${!page.isFirstPage}" style="float: left;list-style: none">
+                  <a class="page-link" th:href="'/admin/page/toHotelPage?pageNum=' + ${page.getPrePage()}">上一页</a>
+                </li>
+
+                <!-- 中间页 -->
+                <li class="page-item active" th:each="pageNum:${#numbers.sequence(1, page.getPages())}" style="float: left;list-style: none">
+                  <a class="page-link" th:href="'/admin/page/toHotelPage?pageNum=' + ${pageNum}" th:text="${pageNum}" th:if="${pageNum ne page.getPageNum()}"></a>
+                  <a class="page-link" th:href="'/admin/page/toHotelPage?pageNum=' + ${pageNum}" th:text="${pageNum}" th:if="${pageNum eq page.getPageNum()}" th:style="'font-weight:bold;background: #6faed9;'"></a>
+                </li>
+
+                <!-- 下一页 -->
+                <li class="page-item " th:if="${!page.isIsLastPage()}" style="float: left;list-style: none">
+                  <a class="page-link" th:href="'/admin/page/toHotelPage?pageNum=' + ${page.getNextPage()}">下一页</a>
+                </li>
+
+                <!-- 尾页 -->
+                <li class="page-item " style="float: left;list-style: none">
+                  <a class="page-link" th:href="'/admin/page/toHotelPage?pageNum=' + ${page.getLastPage()}">尾页</a>
+                </li>
               </ul>
             </nav>
           </div>

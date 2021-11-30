@@ -1,6 +1,10 @@
 package com.xupt.demo1.dao;
 
+import com.xupt.demo1.entity.Room;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * @author 小关同学
@@ -8,4 +12,15 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface RoomDao {
+
+    List<Room> findByHotelId(@Param("hotelId") int hotelId);
+
+    void addRoom(@Param("room") Room room);
+
+    Room findById(@Param("roomId") int roomId);
+
+    void updateRoom(@Param("room") Room room);
+
+    void deleteRoom(@Param("roomId") int roomId);
+
 }

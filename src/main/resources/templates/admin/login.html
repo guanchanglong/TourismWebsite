@@ -28,7 +28,8 @@
       </div>
       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
         <div class="ad-auth-content">
-          <form action="#" method="post" th:method="post" th:action="@{/admin/user/login}">
+
+          <form action="#" method="post" th:action="@{/admin/user/login}">
 
             <h2><span class="primary">Hello,</span>Welcome!</h2>
             <p>请输入你的信息以继续</p>
@@ -73,6 +74,7 @@
               <div class="ui mini negative message" style="color: red;text-align: center" th:unless="${#strings.isEmpty(message)}" th:text="${message}">用户名和密码错误</div>
             </div>
           </form>
+
         </div>
       </div>
     </div>

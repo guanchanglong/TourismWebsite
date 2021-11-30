@@ -25,6 +25,7 @@ public class HotelServiceImpl implements HotelService {
      * @param size 每页的数目
      * @return
      */
+    @Override
     public PageInfo<Hotel> findAll(int pageNum,int size){
         PageHelper.startPage(pageNum,size);
         List<Hotel> list = hotelDao.findAll();
@@ -38,10 +39,21 @@ public class HotelServiceImpl implements HotelService {
      * @param size
      * @return
      */
+    @Override
     public PageInfo<Hotel> findAllByName(String hotelName,int pageNum,int size){
         PageHelper.startPage(pageNum,size);
         List<Hotel> list = hotelDao.findAllByName(hotelName);
         return new PageInfo<>(list);
+    }
+
+    @Override
+    public void addHotel(Hotel hotel){
+        hotelDao.addHotel(hotel);
+    }
+
+    @Override
+    public Hotel findHotelById(int hotelId){
+        return hotelDao.findAllById(hotelId);
     }
 
 }

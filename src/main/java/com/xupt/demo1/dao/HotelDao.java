@@ -19,4 +19,6 @@ public interface HotelDao {
 
     Hotel findAllById(@Param("hotelId")int hotelId);
 
+    void addHotel(@Param("hotel") Hotel hotel);
+
 }

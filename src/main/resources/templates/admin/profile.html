@@ -1,5 +1,5 @@
 <!DOCTYPE html><!--[if IE 8]><html lang="en" class="ie8 no-js"><![endif]--><!--[if IE 9]><html lang="en" class="ie9 no-js"><![endif]--><!--[if!IE]><!-->
-<html lang="zxx">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <!--<![endif]--><!-- Begin Head -->
 <head>
 <title>个人设置</title>
@@ -70,9 +70,9 @@
                 <h4>管理员11</h4>
               </div>
               <ul>
-                <li><a href="profile.html"><i class="far fa-edit"></i>个人资料 </a></li>
-                <li><a href="setting.html"><i class="fas fa-cog"></i>系统设置 </a></li>
-                <li><a href="#" th:href="@{/admin/loginOut}"><i class="fas fa-sign-out-alt"></i>退出登录 </a></li>
+                <li><a href="profile.html" th:href="@{/admin/page/toProfilePage}"><i class="far fa-edit"></i>个人资料 </a></li>
+                <li><a href="setting.html" th:href="@{/admin/page/toSettingPage}"><i class="fas fa-cog"></i>系统设置 </a></li>
+                <li><a href="login.html" th:href="@{/admin/user/loginOut}"><i class="fas fa-sign-out-alt"></i>退出登录 </a></li>
               </ul>
             </div>
           </div>
@@ -97,12 +97,12 @@
             <span class="menu-text">订单管理 </span>
           </a>
           <ul class="sub-menu">
-            <li><a href="index.html"><span class="icon-dash"></span><span class="menu-text">业绩总览 </span></a></li>
-            <li><a href="order-list.html"><span class="icon-dash"></span><span class="menu-text">订单列表 </span></a></li>
+            <li><a href="index.html" th:href="@{/admin/page/toIndexPage}"><span class="icon-dash"></span><span class="menu-text">业绩总览 </span></a></li>
+            <li><a href="order-list.html" th:href="@{/admin/page/toOrderListPage}"><span class="icon-dash"></span><span class="menu-text">订单列表 </span></a></li>
           </ul>
         </li>
 
-        <li><a href="hotel.html"><span class="icon-menu feather-icon">
+        <li><a href="hotel.html" th:href="@{/admin/page/toHotelPage}"><span class="icon-menu feather-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-package">
             <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
             <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
@@ -111,7 +111,7 @@
           </svg>
           </span><span class="menu-text">酒店管理 </span></a></li>
 
-        <li><a href="spots.html"><span class="icon-menu feather-icon">
+        <li><a href="spots.html" th:href="@{/admin/page/toSpotsPage}"><span class="icon-menu feather-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map">
             <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
             <line x1="8" y1="2" x2="8" y2="18"></line>
@@ -119,7 +119,7 @@
           </svg>
           </span><span class="menu-text">景点管理 </span></a></li>
 
-        <li><a href="users.html"><span class="icon-menu feather-icon">
+        <li><a href="users.html" th:href="@{/admin/page/toUsersPage}"><span class="icon-menu feather-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
             <circle cx="9" cy="7" r="4"></circle>

@@ -11,4 +11,8 @@ public interface HotelService {
     PageInfo<Hotel> findAll(int pageNum, int size);
 
     PageInfo<Hotel> findAllByName(String hotelName,int pageNum,int size);
+
+    void addHotel(Hotel hotel);
+
+    Hotel findHotelById(int hotelId);
 }

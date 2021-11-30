@@ -5,7 +5,17 @@
 
 <mapper namespace="com.xupt.demo1.dao.HotelDao">
 
-    <select id="findAll" resultType="com.xupt.demo1.entity.Hotel">
+    <resultMap id="hotelMap" type="com.xupt.demo1.entity.Hotel">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="picture" column="picture"/>
+        <result property="phone" column="phone"/>
+        <result property="type" column="type"/>
+        <result property="address" column="address"/>
+        <result property="info" column="info"/>
+    </resultMap>
+
+    <select id="findAll" resultMap="hotelMap">
         select * from t_hotel
     </select>
 
@@ -13,8 +23,12 @@
         select * from t_hotel where name like #{hotelName}
     </select>
 
-    <select id="findAllById" resultType="com.xupt.demo1.entity.Hotel">
+    <select id="findAllById" resultMap="hotelMap">
         select * from t_hotel where id = #{hotelId}
     </select>
+
+    <insert id="addHotel" parameterType="com.xupt.demo1.entity.Hotel">
+        insert into t_hotel(name,picture,phone,type,info,address) values(#{hotel.name},#{hotel.picture},#{hotel.phone},#{hotel.type},#{hotel.info},#{hotel.address})
+    </insert>
 
 </mapper>

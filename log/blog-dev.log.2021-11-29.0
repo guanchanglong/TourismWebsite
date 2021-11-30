@@ -1,0 +1,161 @@
+2021-11-29 22:51:06.631  INFO 16240 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 16240 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-11-29 22:51:06.636  INFO 16240 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-11-29 22:51:08.600  INFO 16240 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-29 22:51:08.607  INFO 16240 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-29 22:51:08.607  INFO 16240 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-11-29 22:51:08.715  INFO 16240 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-29 22:51:08.715  INFO 16240 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2043 ms
+2021-11-29 22:51:09.713  INFO 16240 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-29 22:51:09.721  INFO 16240 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 4.172 seconds (JVM running for 5.445)
+2021-11-29 22:51:18.821  INFO 16240 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-11-29 22:51:18.826  INFO 16240 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-29 22:51:18.826  INFO 16240 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-29 22:51:18.826  INFO 16240 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-11-29 22:51:18.842  INFO 16240 --- [http-nio-8080-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-11-29 22:51:18.845  INFO 16240 --- [http-nio-8080-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-11-29 22:51:18.872  INFO 16240 --- [http-nio-8080-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@58565b10]}
+2021-11-29 22:51:18.891  INFO 16240 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-29 22:51:19.943  INFO 16240 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-29 22:51:20.083  INFO 16240 --- [http-nio-8080-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-11-29 22:51:47.736 ERROR 16240 --- [http-nio-8080-exec-9] c.x.d.h.ControllerExceptionHandler       : Request URL : /admin/user/login,Exception : Request method 'GET' not supported
+2021-11-29 22:51:47.939 ERROR 16240 --- [http-nio-8080-exec-2] c.x.d.h.ControllerExceptionHandler       : Request URL : /admin/user/login,Exception : Request method 'GET' not supported
+2021-11-29 23:01:24.517  INFO 12320 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 12320 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-11-29 23:01:24.519  INFO 12320 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-11-29 23:01:25.406  INFO 12320 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-29 23:01:25.412  INFO 12320 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-29 23:01:25.412  INFO 12320 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-11-29 23:01:25.462  INFO 12320 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-29 23:01:25.462  INFO 12320 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 909 ms
+2021-11-29 23:01:26.266  INFO 12320 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-29 23:01:26.273  INFO 12320 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.138 seconds (JVM running for 2.971)
+2021-11-29 23:01:45.998  INFO 12320 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; JSESSIONID=10FE821FF91BE4C37DA667E76710B8AF] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-11-29 23:01:46.002  INFO 12320 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-29 23:01:46.002  INFO 12320 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-29 23:01:46.002  INFO 12320 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-11-29 23:03:42.740  INFO 9612 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 9612 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-11-29 23:03:42.742  INFO 9612 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-11-29 23:03:43.602  INFO 9612 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-29 23:03:43.609  INFO 9612 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-29 23:03:43.609  INFO 9612 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-11-29 23:03:43.659  INFO 9612 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-29 23:03:43.659  INFO 9612 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 887 ms
+2021-11-29 23:03:44.405  INFO 9612 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-29 23:03:44.414  INFO 9612 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.069 seconds (JVM running for 2.889)
+2021-11-29 23:04:18.435  INFO 11768 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 11768 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-11-29 23:04:18.437  INFO 11768 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-11-29 23:04:19.288  INFO 11768 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-29 23:04:19.294  INFO 11768 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-29 23:04:19.294  INFO 11768 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-11-29 23:04:19.362  INFO 11768 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-29 23:04:19.363  INFO 11768 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 897 ms
+2021-11-29 23:04:20.101  INFO 11768 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-29 23:04:20.108  INFO 11768 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.076 seconds (JVM running for 2.935)
+2021-11-29 23:04:27.341  INFO 11768 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; JSESSIONID=CC10FCC1BD7DD04B6C0E2FE12F610D7B] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-11-29 23:04:27.345  INFO 11768 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-29 23:04:27.345  INFO 11768 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-29 23:04:27.346  INFO 11768 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-29 23:04:32.947  INFO 11768 --- [http-nio-8080-exec-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-29 23:04:33.660  INFO 11768 --- [http-nio-8080-exec-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-29 23:04:56.124  INFO 2560 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 2560 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-11-29 23:04:56.126  INFO 2560 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-11-29 23:04:57.018  INFO 2560 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-29 23:04:57.024  INFO 2560 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-29 23:04:57.024  INFO 2560 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-11-29 23:04:57.072  INFO 2560 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-29 23:04:57.073  INFO 2560 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 917 ms
+2021-11-29 23:04:57.790  INFO 2560 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-29 23:04:57.808  INFO 2560 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.063 seconds (JVM running for 2.892)
+2021-11-29 23:05:02.826  INFO 2560 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; JSESSIONID=915EDCFB7FBCAC39CCE61FDF06153388] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-11-29 23:05:02.829  INFO 2560 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-29 23:05:02.829  INFO 2560 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-29 23:05:02.830  INFO 2560 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-29 23:05:02.868  INFO 2560 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-29 23:05:03.690  INFO 2560 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-29 23:05:03.969 ERROR 2560 --- [http-nio-8080-exec-2] c.x.d.h.ControllerExceptionHandler       : Request URL : /admin/user/login,Exception : Request method 'GET' not supported
+2021-11-29 23:05:19.078 ERROR 2560 --- [http-nio-8080-exec-4] c.x.d.h.ControllerExceptionHandler       : Request URL : /admin/user/login,Exception : Request method 'GET' not supported
+2021-11-29 23:05:38.638 ERROR 2560 --- [http-nio-8080-exec-9] c.x.d.h.ControllerExceptionHandler       : Request URL : /admin/user/login,Exception : Request method 'GET' not supported
+2021-11-29 23:08:11.254  INFO 3260 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 3260 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-11-29 23:08:11.256  INFO 3260 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-11-29 23:08:12.148  INFO 3260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-29 23:08:12.154  INFO 3260 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-29 23:08:12.154  INFO 3260 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-11-29 23:08:12.205  INFO 3260 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-29 23:08:12.205  INFO 3260 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 919 ms
+2021-11-29 23:08:12.950  INFO 3260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-29 23:08:12.957  INFO 3260 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.087 seconds (JVM running for 2.923)
+2021-11-29 23:08:30.450  INFO 3260 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; JSESSIONID=DDDC6D12A55A22625B504907139E1DC1] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-11-29 23:08:30.455  INFO 3260 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-29 23:08:30.455  INFO 3260 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-29 23:08:30.456  INFO 3260 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-29 23:08:38.327  INFO 3260 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-29 23:08:39.006  INFO 3260 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-29 23:09:06.200  INFO 14808 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 14808 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-11-29 23:09:06.202  INFO 14808 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-11-29 23:09:07.087  INFO 14808 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-29 23:09:07.094  INFO 14808 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-29 23:09:07.094  INFO 14808 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-11-29 23:09:07.145  INFO 14808 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-29 23:09:07.145  INFO 14808 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 912 ms
+2021-11-29 23:09:07.858  INFO 14808 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-29 23:09:07.865  INFO 14808 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.079 seconds (JVM running for 2.974)
+2021-11-29 23:09:10.623  INFO 14808 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; JSESSIONID=C44B88AF268DFC8BCCF0D47B8FC42BD9] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-11-29 23:09:10.628  INFO 14808 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-29 23:09:10.628  INFO 14808 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-29 23:09:10.629  INFO 14808 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-29 23:09:16.062  INFO 14808 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-29 23:09:16.717  INFO 14808 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-29 23:09:26.691 ERROR 14808 --- [http-nio-8080-exec-8] c.x.d.h.ControllerExceptionHandler       : Request URL : /admin/user/login,Exception : Request method 'GET' not supported
+2021-11-29 23:13:31.497  INFO 12460 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 12460 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-11-29 23:13:31.499  INFO 12460 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-11-29 23:13:32.401  INFO 12460 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-29 23:13:32.407  INFO 12460 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-29 23:13:32.407  INFO 12460 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-11-29 23:13:32.457  INFO 12460 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-29 23:13:32.457  INFO 12460 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 928 ms
+2021-11-29 23:13:33.226  INFO 12460 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-29 23:13:33.234  INFO 12460 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.159 seconds (JVM running for 3.007)
+2021-11-29 23:15:47.918  INFO 12460 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; JSESSIONID=59301AF192D4B4A078EDF23D3B197DBD] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-11-29 23:15:47.922  INFO 12460 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-29 23:15:47.922  INFO 12460 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-29 23:15:47.923  INFO 12460 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-29 23:15:53.223  INFO 12460 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-29 23:15:53.924  INFO 12460 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-29 23:15:54.001 ERROR 12460 --- [http-nio-8080-exec-3] c.x.d.h.ControllerExceptionHandler       : Request URL : /admin/user/login,Exception : Request method 'GET' not supported
+2021-11-29 23:20:19.612  INFO 3780 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 3780 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-11-29 23:20:19.614  INFO 3780 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-11-29 23:20:20.504  INFO 3780 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-29 23:20:20.517  INFO 3780 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-29 23:20:20.518  INFO 3780 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-11-29 23:20:20.577  INFO 3780 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-29 23:20:20.577  INFO 3780 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 934 ms
+2021-11-29 23:20:21.334  INFO 3780 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-29 23:20:21.342  INFO 3780 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.13 seconds (JVM running for 2.975)
+2021-11-29 23:24:42.916  INFO 3780 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; JSESSIONID=1DB84664CC247F7C41D0B0F45FC47743] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-11-29 23:24:42.919  INFO 3780 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-29 23:24:42.920  INFO 3780 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-29 23:24:42.921  INFO 3780 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-29 23:24:42.959  INFO 3780 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-29 23:24:43.701  INFO 3780 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-29 23:24:43.990 ERROR 3780 --- [http-nio-8080-exec-2] c.x.d.h.ControllerExceptionHandler       : Request URL : /admin/user/login,Exception : Request method 'GET' not supported
+2021-11-29 23:26:12.824  INFO 18980 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 18980 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-11-29 23:26:12.827  INFO 18980 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-11-29 23:26:13.713  INFO 18980 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-29 23:26:13.718  INFO 18980 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-29 23:26:13.718  INFO 18980 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-11-29 23:26:13.767  INFO 18980 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-29 23:26:13.768  INFO 18980 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 908 ms
+2021-11-29 23:26:14.503  INFO 18980 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-29 23:26:14.510  INFO 18980 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.066 seconds (JVM running for 2.987)
+2021-11-29 23:26:19.814  INFO 18980 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; JSESSIONID=CA3B8BF8E6B9CAF5980B98088F885843] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-11-29 23:26:19.819  INFO 18980 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-29 23:26:19.819  INFO 18980 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-29 23:26:19.820  INFO 18980 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
