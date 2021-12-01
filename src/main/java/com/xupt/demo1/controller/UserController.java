@@ -45,6 +45,11 @@ public class UserController {
                         RedirectAttributes attributes){
         User user = userService.login(email,password);
         if (user!=null){
+            //账号被封禁
+            if (user.getRole()==2){
+                attributes.addFlashAttribute("message","该账号涉嫌违规");
+                return "redirect:/user/toLoginPage";
+            }
             user.setPassword(null);
             session.setAttribute("user",user);
             //设置用户的session在3个小时后过期
@@ -116,9 +121,6 @@ public class UserController {
                            HttpSession session,
                            RedirectAttributes attributes){
         String trueCode = (String) session.getAttribute("code" + email);
-        System.out.println("该用户对应的session的键：code" + email);
-        System.out.println("系统生成的验证码："+trueCode);
-        System.out.println("用户输入的验证码："+code);
         if (!password.equals(confirmPassword)){
             attributes.addFlashAttribute("message","两次输入的密码不一致");
             return "redirect:/user/toRegisterPage";

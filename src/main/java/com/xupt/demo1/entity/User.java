@@ -22,7 +22,7 @@ public class User {
     private String password;
     //用户名(如果有)
     private String username;
-    //角色权限(0是管理员权限，1是普通用户权限)
+    //角色权限(0是管理员权限，1是普通用户权限，2是被封号的)
     private int role;
 
 }

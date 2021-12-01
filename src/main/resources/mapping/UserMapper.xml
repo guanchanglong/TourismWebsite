@@ -8,8 +8,12 @@
         select * from t_user where email = #{email} and password = #{password};
     </select>
 
-    <select id="findByEmailAndPasswordAndRole" resultType="com.xupt.demo1.entity.User">
+    <select id="findByEmailAndPasswordAndAdminRole" resultType="com.xupt.demo1.entity.User">
         select * from t_user where email = #{email} and password = #{password} and role = 0;
+    </select>
+
+    <select id="findAllCommonUser" resultType="com.xupt.demo1.entity.User">
+        select * from t_user where role != 0
     </select>
 
     <insert id="insertUser">

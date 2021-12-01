@@ -24,7 +24,25 @@
     </select>
 
     <update id="updateRoom" parameterType="com.xupt.demo1.entity.Room">
-        update t_room set title = #{room.title},picture = #{room.picture},type = #{room.type},price = #{room.price},info = #{room.info} where id = #{room.id}
+        update t_room
+        <set>
+            <if test="room.title!=null">
+                title = #{room.title},
+            </if>
+            <if test="room.picture!=null">
+                picture = #{room.picture},
+            </if>
+            <if test="room.type">
+                type = #{room.type},
+            </if>
+            <if test="room.price!=0">
+                price = #{room.price},
+            </if>
+            <if test="room.info!=null">
+                info = #{room.info},
+            </if>
+        </set>
+        where id = #{room.id}
     </update>
 
     <insert id="addRoom" parameterType="com.xupt.demo1.entity.Room">
@@ -33,6 +51,10 @@
 
     <delete id="deleteRoom">
         delete from t_room where id = #{roomId}
+    </delete>
+
+    <delete id="deleteByHotelId">
+        delete from t_room where hotel_id = #{hotelId}
     </delete>
 
 </mapper>

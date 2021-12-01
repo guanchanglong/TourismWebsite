@@ -1,5 +1,6 @@
 package com.xupt.demo1.service;
 
+import com.github.pagehelper.PageInfo;
 import com.xupt.demo1.entity.User;
 
 /**
@@ -13,4 +14,6 @@ public interface UserService {
     User adminLogin(String phone,String password);
 
     void register(String email,String password);
+
+    PageInfo<User> findAllCommonUser(int pageNum, int size);
 }

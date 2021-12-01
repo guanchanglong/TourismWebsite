@@ -15,4 +15,8 @@ public interface HotelService {
     void addHotel(Hotel hotel);
 
     Hotel findHotelById(int hotelId);
+
+    void updateHotel(Hotel hotel);
+
+    void deleteHotel(int hotelId);
 }

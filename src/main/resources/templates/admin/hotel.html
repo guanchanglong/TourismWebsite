@@ -201,8 +201,8 @@
               </a>
                 <div class="action-option ">
                   <ul>
-                    <li><a href="hotel-modify.html" th:href="@{/admin/page/toHotelModifyPage}"><i class="far fa-edit mr-2 "></i>修改</a></li>
-                    <li><a href="javascript:void(0); "><i class="far fa-trash-alt mr-2 "></i>删除</a></li>
+                    <li><a href="hotel-modify.html" th:href="'/admin/page/toHotelModifyPage?hotelId=' + ${hotel.getId()}"><i class="far fa-edit mr-2 "></i>修改</a></li>
+                    <li><a href="javascript:void(0); " th:href="'/admin/hotel/deleteHotel?hotelId=' + ${hotel.getId()}"><i class="far fa-trash-alt mr-2 "></i>删除</a></li>
                   </ul>
                 </div>
               </td>

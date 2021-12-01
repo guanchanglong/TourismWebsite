@@ -52,4 +52,8 @@ public class AUserController {
         session.removeAttribute("adminUser");
         return "redirect:/admin/page/toLoginPage";
     }
+
+//    public String showAllCommonUser(){
+//
+//    }
 }

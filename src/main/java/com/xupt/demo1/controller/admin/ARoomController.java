@@ -42,21 +42,40 @@ public class ARoomController {
     public String updateRoom(@RequestParam(value = "roomTitle") String roomTitle,
                              @RequestParam(value = "roomPicture") String roomPicture,
                              @RequestParam(value = "roomType") String roomType,
-                             @RequestParam(value = "roomPrice") int roomPrice,
+                             @RequestParam(value = "roomPrice") String roomPrice,
                              @RequestParam(value = "roomInfo") String roomInfo,
                              @PathVariable(value = "roomId") int roomId,
                              RedirectAttributes attributes){
         Room room = new Room();
         room.setId(roomId);
-        room.setTitle(roomTitle);
-        room.setPicture(roomPicture);
-        room.setType(roomType);
-        room.setPrice(roomPrice);
-        room.setInfo(roomInfo);
+        if (roomTitle.isEmpty()){
+            room.setTitle(null);
+        }else{
+            room.setTitle(roomTitle);
+        }
+        if (roomPicture.isEmpty()){
+            room.setPicture(null);
+        }else{
+            room.setPicture(roomPicture);
+        }
+        if (roomType.isEmpty()){
+            room.setType(null);
+        }else{
+            room.setType(roomType);
+        }
+        if (roomInfo.isEmpty()){
+            room.setInfo(null);
+        }else{
+            room.setInfo(roomInfo);
+        }
+        if (roomPrice.isEmpty()){
+            room.setPrice(0);
+        }else{
+            room.setPrice(Integer.parseInt(roomPrice));
+        }
         roomService.updateRoom(room);
         attributes.addFlashAttribute("message","修改成功");
         return "redirect:/admin/page/toRoomModifyPage?roomId=" + roomId;
-
     }
 
     @GetMapping("/deleteRoom/{hotelId}")

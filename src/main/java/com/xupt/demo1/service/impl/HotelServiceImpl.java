@@ -3,6 +3,7 @@ package com.xupt.demo1.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.xupt.demo1.dao.HotelDao;
+import com.xupt.demo1.dao.RoomDao;
 import com.xupt.demo1.entity.Hotel;
 import com.xupt.demo1.service.HotelService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ import java.util.List;
 public class HotelServiceImpl implements HotelService {
     @Autowired
     private HotelDao hotelDao;
+
+    @Autowired
+    private RoomDao roomDao;
 
     /**
      * 酒店页面的分页
@@ -54,6 +58,19 @@ public class HotelServiceImpl implements HotelService {
     @Override
     public Hotel findHotelById(int hotelId){
         return hotelDao.findAllById(hotelId);
+    }
+
+    @Override
+    public void updateHotel(Hotel hotel){
+        hotelDao.updateHotel(hotel);
+    }
+
+    @Override
+    public void deleteHotel(int hotelId){
+        //删除酒店下对应的房间
+        roomDao.deleteByHotelId(hotelId);
+        //删除酒店
+        hotelDao.deleteHotel(hotelId);
     }
 
 }

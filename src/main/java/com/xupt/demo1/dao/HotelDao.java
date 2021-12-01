@@ -21,4 +21,8 @@ public interface HotelDao {
 
     void addHotel(@Param("hotel") Hotel hotel);
 
+    void updateHotel(@Param("hotel") Hotel hotel);
+
+    void deleteHotel(@Param("hotelId") int hotelId);
+
 }

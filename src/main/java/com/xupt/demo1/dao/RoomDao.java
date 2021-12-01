@@ -23,4 +23,6 @@ public interface RoomDao {
 
     void deleteRoom(@Param("roomId") int roomId);
 
+    void deleteByHotelId(@Param("hotelId") int hotelId);
+
 }

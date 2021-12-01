@@ -157,12 +157,13 @@
     <div class="main-content" style="position:absolute;top:50%;left:20%"><!-- Page Title Start -->
 
       <div class="margin-left">
-        <form id="myform" class="form-horizontal" role="form" action="/admin/addClass" method="post" onsubmit="return checkEmpty()">
+        <form id="myform" class="form-horizontal" role="form" th:action="'/admin/hotel/updateHotel/' + ${hotel.getId()}" method="post" onsubmit="return checkEmpty()">
+          <h2 th:text="${message}" style="color: green;">修改成功</h2>
           <div class="form-group">
             <label class="col-sm-2 control-label">酒店名称：</label>
             <div class="col-sm-6">
               <div class="field">
-                <input name="className" type="text" class="form-control" id="className" placeholder="请输入酒店名称">
+                <input name="hotelName" type="text" class="form-control" id="hotelName" placeholder="请输入酒店名称" th:value="*{hotel.getName()}">
               </div>
             </div>
           </div>
@@ -170,7 +171,7 @@
             <label class="col-sm-2 control-label">酒店封面图片链接：</label>
             <div class="col-sm-6">
               <div class="field">
-                <input name="className" type="text" class="form-control" id="className" placeholder="请输入酒店封面图片链接">
+                <input name="hotelPicture" type="text" class="form-control" id="hotelPicture" placeholder="请输入酒店封面图片链接" th:value="*{hotel.getPicture()}">
               </div>
             </div>
           </div>
@@ -178,7 +179,7 @@
             <label class="col-sm-2 control-label">酒店地址：</label>
             <div class="col-sm-6">
               <div class="field">
-                <input name="className" type="text" class="form-control" id="className" placeholder="请输入酒店地址">
+                <input name="hotelAddress" type="text" class="form-control" id="hotelAddress" placeholder="请输入酒店地址" th:value="*{hotel.getAddress()}">
               </div>
             </div>
           </div>
@@ -186,7 +187,7 @@
             <label class="col-sm-2 control-label">酒店联系方式：</label>
             <div class="col-sm-6">
               <div class="field">
-                <input name="className" type="text" class="form-control" id="className" placeholder="请输入酒店联系方式">
+                <input name="hotelPhone" type="text" class="form-control" id="hotelPhone" placeholder="请输入酒店联系方式" th:value="*{hotel.getPhone()}">
               </div>
             </div>
           </div>
@@ -194,7 +195,7 @@
             <label class="col-sm-2 control-label">酒店类型：</label>
             <div class="col-sm-6">
               <div class="field">
-                <input name="className" type="text" class="form-control" id="className" placeholder="请输入酒店类型">
+                <input name="hotelType" type="text" class="form-control" id="hotelType" placeholder="请输入酒店类型" th:value="*{hotel.getType()}">
               </div>
             </div>
           </div>
@@ -202,7 +203,7 @@
             <label class="col-sm-2 control-label">酒店简介：</label>
             <div class="col-sm-6">
               <div class="field">
-                <textarea name="classInfo" id="classInfo" cols="5" rows="5" class="form-control" placeholder="请输入酒店简介"></textarea>
+                <textarea name="hotelInfo" id="classInfo" cols="5" rows="5" class="form-control" placeholder="请输入酒店简介" th:text="*{hotel.getInfo()}"></textarea>
               </div>
             </div>
           </div>

@@ -19,7 +19,7 @@
         select * from t_hotel
     </select>
 
-    <select id="findAllByName" resultType="com.xupt.demo1.entity.Hotel">
+    <select id="findAllByName" resultMap="hotelMap">
         select * from t_hotel where name like #{hotelName}
     </select>
 
@@ -27,8 +27,43 @@
         select * from t_hotel where id = #{hotelId}
     </select>
 
+    <update id="updateHotel" parameterType="com.xupt.demo1.entity.Hotel">
+        update t_hotel
+        <set>
+            <if test="hotel.name!=null">
+                name = #{hotel.name},
+            </if>
+
+            <if test="hotel.picture!=null">
+                picture = #{hotel.picture},
+            </if>
+
+            <if test="hotel.address!=null">
+                address = #{hotel.address},
+            </if>
+
+            <if test="hotel.phone!=null">
+                phone = #{hotel.phone},
+            </if>
+
+            <if test="hotel.type!=null">
+                type = #{hotel.type},
+            </if>
+
+            <if test="hotel.info!=null">
+                info = #{hotel.info},
+            </if>
+        </set>
+        where id = #{hotel.id}
+
+    </update>
+
     <insert id="addHotel" parameterType="com.xupt.demo1.entity.Hotel">
         insert into t_hotel(name,picture,phone,type,info,address) values(#{hotel.name},#{hotel.picture},#{hotel.phone},#{hotel.type},#{hotel.info},#{hotel.address})
     </insert>
+
+    <delete id="deleteHotel">
+        delete from t_hotel where id = #{hotelId}
+    </delete>
 
 </mapper>

@@ -65,7 +65,14 @@ public class APageController {
     }
 
     @RequestMapping("/toHotelModifyPage")
-    public String toHotelModifyPage(){
+    public String toHotelModifyPage(Model model,
+                                    HttpSession session,
+                                    @RequestParam(value = "hotelId") int hotelId){
+        Hotel hotel = hotelService.findHotelById(hotelId);
+        User user  = (User)session.getAttribute("adminUser");
+
+        model.addAttribute("hotel",hotel);
+        model.addAttribute("adminUser",user);
         return "admin/hotel-modify";
     }
 
