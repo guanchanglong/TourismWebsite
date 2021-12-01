@@ -39,6 +39,52 @@ public class UserServiceImpl implements UserService {
     public PageInfo<User> findAllCommonUser(int pageNum,int size){
         PageHelper.startPage(pageNum, size);
         List<User> list = userDao.findAllCommonUser();
+        for (User user:list){
+            if (user.getUsername()==null||user.getUsername().isEmpty()){
+                user.setUsername("暂无");
+            }
+            if (user.getPhone()==null||user.getPhone().isEmpty()){
+                user.setPhone("暂无");
+            }
+        }
         return new PageInfo<>(list);
+    }
+
+    @Override
+    public void addCommonUser(User user){
+        userDao.addCommonUser(user);
+    }
+
+    @Override
+    public User findByEmail(String email){
+        return userDao.findByEmail(email);
+    }
+
+    @Override
+    public User findById(int userId){
+        return userDao.findById(userId);
+    }
+
+    @Override
+    public void updateUser(User user){
+        userDao.updateUser(user);
+    }
+
+    /**
+     * 管理员改变用户账号状态为被封号
+     * @param userId
+     */
+    @Override
+    public void updateUserStatusToBad(int userId){
+        userDao.updateUserStatusToBad(userId);
+    }
+
+    /**
+     * 管理员改变用户账号为正常
+     * @param userId
+     */
+    @Override
+    public void updateUserStatusToGood(int userId){
+        userDao.updateUserStatusToGood(userId);
     }
 }

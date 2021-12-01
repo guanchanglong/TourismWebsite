@@ -16,4 +16,16 @@ public interface UserService {
     void register(String email,String password);
 
     PageInfo<User> findAllCommonUser(int pageNum, int size);
+
+    void addCommonUser(User user);
+
+    User findByEmail(String email);
+
+    User findById(int userId);
+
+    void updateUser(User user);
+
+    void updateUserStatusToBad(int userId);
+
+    void updateUserStatusToGood(int userId);
 }

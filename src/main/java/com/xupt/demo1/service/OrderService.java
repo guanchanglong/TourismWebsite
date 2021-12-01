@@ -13,4 +13,6 @@ public interface OrderService {
     PageInfo<Order> findOrderByUserId(int userId, int pageNum, int size);
 
     void updateOrderShowToUser(int orderId);
+
+    PageInfo<Order> findByUserId(int userId,int pageNum,int size);
 }

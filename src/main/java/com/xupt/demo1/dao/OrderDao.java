@@ -18,4 +18,6 @@ public interface OrderDao {
     List<Order> findOrderByUserIdAndShowToUser(@Param("userId") int userId);
 
     void updateOrderShowToUser(@Param("orderId")int orderId);
+
+    List<Order> findByUserId(@Param("userId") int userId);
 }

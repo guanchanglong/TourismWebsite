@@ -39,6 +39,19 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public PageInfo<Order> findByUserId(int userId,int pageNum,int size){
+        //按照时间排序
+        PageHelper.startPage(pageNum,size,"time");
+        List<Order> list = orderDao.findByUserId(userId);
+        SimpleDateFormat format = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+        for (Order order:list){
+            String time = format.format(order.getTime());
+            order.setTimeToShow(time);
+        }
+        return new PageInfo<>(list);
+    }
+
+    @Override
     public void updateOrderShowToUser(int orderId){
         orderDao.updateOrderShowToUser(orderId);
     }

@@ -67,8 +67,9 @@ public class UserController {
      * @return
      */
     @GetMapping("/sendEmail")
-    public void sendCode(@RequestParam String targetEmail,
+    public String sendCode(@RequestParam(value = "targetEmail") String targetEmail,
                            HttpSession session){
+
         // 构建一个邮件对象
         SimpleMailMessage message = new SimpleMailMessage();
         // 设置邮件主题
@@ -106,6 +107,8 @@ public class UserController {
 
         System.out.println("发送成功");
 
+        return "user/register";
+
     }
 
     /**
@@ -121,12 +124,14 @@ public class UserController {
                            HttpSession session,
                            RedirectAttributes attributes){
         String trueCode = (String) session.getAttribute("code" + email);
+
         if (!password.equals(confirmPassword)){
             attributes.addFlashAttribute("message","两次输入的密码不一致");
             return "redirect:/user/toRegisterPage";
         }
-        //判断该用户是否存在数据库
-        if(userService.login(email, password)!=null){
+
+        //判断邮箱是否已被注册
+        if(userService.findByEmail(email)!=null){
             attributes.addFlashAttribute("message","该邮箱已被注册");
             return "redirect:/user/toRegisterPage";
         }else{

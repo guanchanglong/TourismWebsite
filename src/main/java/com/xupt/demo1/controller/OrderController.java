@@ -95,7 +95,6 @@ public class OrderController {
                             @RequestParam(value = "size",defaultValue = "10")int size){
         User user = (User)session.getAttribute("user");
         PageInfo<Order> pageInfo = orderService.findOrderByUserId(user.getId(),pageNum,size);
-        System.out.println();
         model.addAttribute("page",pageInfo);
         model.addAttribute("user",user);
         return "user/order";

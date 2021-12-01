@@ -27,6 +27,10 @@
         select * from t_order where user_id = #{userId} and show_to_user = 1
     </select>
 
+    <select id="findByUserId" resultMap="orderMap">
+        select * from t_order where user_id = #{userId}
+    </select>
+
     <update id="updateOrderShowToUser">
         update t_order set show_to_user = 0 where id = #{orderId}
     </update>

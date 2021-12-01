@@ -16,3 +16,5 @@ logging:
   file:
     name: log/blog-dev.log
 
+server:
+  port: 8888

@@ -20,4 +20,16 @@ public interface UserDao {
     void insertUser(@Param("email") String email,@Param("password") String password);
 
     List<User> findAllCommonUser();
+
+    void addCommonUser(@Param("user") User user);
+
+    User findByEmail(@Param("email") String email);
+
+    User findById(@Param("userId") int userId);
+
+    void updateUser(@Param("user") User user);
+
+    void updateUserStatusToBad(@Param("userId") int userId);
+
+    void updateUserStatusToGood(@Param("userId") int userId);
 }

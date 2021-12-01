@@ -13,7 +13,7 @@ $(document).ready(function () {
         withCredentials: true
       },
 
-      url: 'http://localhost:8080/user/sendEmail?targetEmail=' + email,
+      url: 'http://localhost:8888/user/sendEmail?targetEmail=' + email,
 
     });
 

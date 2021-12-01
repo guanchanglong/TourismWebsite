@@ -2,7 +2,7 @@
 <html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <!--<![endif]--><!-- Begin Head -->
 <head>
-<title>酒店管理</title>
+<title>用户管理</title>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta name="description" content="">
@@ -29,20 +29,26 @@
 
   <!--头部内容-->
   <header class="header-wrapper main-header">
-
-
     <div class="header-inner-wrapper">
       <div class="logo-wrapper">
         <a href="index.html" class="admin-logo">
-          <!--这里可以放一个logo-->
           <!--          <img src="../../static/images/旅游发布.png" alt="">-->
         </a>
       </div>
       <div class="header-right">
+        <div class="serch-wrapper">
+          <form>
+            <input type="text" placeholder="搜索">
+          </form>
+          <a class="search-close" href="javascript:void(0);"><span class="icofont-close-line"></span></a></div>
         <div class="header-left">
           <div class="header-links"><a href="javascript:void(0);" class="toggle-btn"><span></span></a></div>
           <div class="header-links search-link"><a class="search-toggle" href="javascript:void(0);">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve">
+              <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23
+                                    s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92
+                                    c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17
+                                    s-17-7.626-17-17S14.61,6,23.984,6z"/>
             </svg>
           </a></div>
         </div>
@@ -77,7 +83,6 @@
         </div>
       </div>
     </div>
-
   </header>
 
 
@@ -134,128 +139,71 @@
   </aside>
 
 
+
+
   <!-- Container Start -->
-  <div class="page-wrapper">
-    <div class="main-content"><!-- Page Title Start -->
+  <div class="main-wrapper main-wrapper-2" style="position: relative">
+    <div class="main-content" style="position:absolute;top:50%;left:20%"><!-- Page Title Start -->
 
-
-      <div class="row">
-        <div class="colxl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-          <div class="page-title-wrapper">
-            <div class="page-title-box">
-              <h4 class="page-title" th:text="${hotel.getName()}">酒店名称</h4>
-            </div>
-            <div class="ad-breadcrumb">
-              <ul>
-                <li>
-                  <div class="add-group border-right"><a class="ad-btn" href="room-add.html" th:href="'/admin/page/toRoomAddPage?hotelId=' + ${hotel.getId()}">添加房间</a></div>
-                </li>
-              </ul>
+      <div class="margin-left">
+        <form id="myform" class="form-horizontal" role="form" action="#" th:action="'/admin/user/updateUser/' + ${commonUser.getId()}" method="post" onsubmit="return checkEmpty()">
+          <h2 th:text="${message}" style="color: green;">修改成功</h2>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">用户名：</label>
+            <div class="col-sm-6">
+              <div class="field">
+                <input name="username" type="text" class="form-control" id="username" placeholder="请输入用户名" th:value="*{commonUser.getUsername()}">
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-
-
-      <!-- Table Start -->
-      <div class="row ad-btm-space">
-
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-15">
-          <table class="table table-styled mb-0" style="text-align: center">
-            <thead>
-            <tr>
-              <th>房间名</th>
-              <th>床型</th>
-              <th>房价</th>
-              <th>图片</th>
-              <th>房间简介</th>
-              <th>操作</th>
-            </tr>
-            </thead>
-            <tbody>
-
-            <tr th:if="${page.getList().size()}==0">
-              <td colspan="6" style="text-align: center">暂无房间数据</td>
-            </tr>
-
-            <tr th:each="room:${page.getList()}">
-              <td th:text="${room.getTitle()}">万澳高级双床房</td>
-              <td th:text="${room.getType()}">双床</td>
-              <td th:text="'￥'+${room.getPrice()}">￥393</td>
-              <td><img src="https://userimg.qunarzz.com/imgs/202103/21/C.3h_lbrLx1MSGwjcbri240.jpg" th:src="${room.getPicture()}" style="width: 220px;height: 135px"></td>
-              <td th:text="${room.getInfo()}">便利设施：多种规格电源插座、220V电压插座、遮光窗帘、手动窗帘、书桌、沙发、备用床具、毯子或被子、针线包、雨伞、闹钟、欢迎礼品、熨衣设备、空调
-                媒体科技：国内长途电话、国际长途电话、有线频道、电视机
-                食品饮料及设施：瓶装水(免费)、电热水壶、迷你吧</td>
-              <td class="relative">
-                <a class="action-btn " href="javascript:void(0); ">
-                <svg class="default-size " viewBox="0 0 341.333 341.333 ">
-                  <g>
-                    <g>
-                      <g>
-                        <path d="M170.667,85.333c23.573,0,42.667-19.093,42.667-42.667C213.333,19.093,194.24,0,170.667,0S128,19.093,128,42.667 C128,66.24,147.093,85.333,170.667,85.333z "></path>
-                        <path d="M170.667,128C147.093,128,128,147.093,128,170.667s19.093,42.667,42.667,42.667s42.667-19.093,42.667-42.667 S194.24,128,170.667,128z "></path>
-                        <path d="M170.667,256C147.093,256,128,275.093,128,298.667c0,23.573,19.093,42.667,42.667,42.667s42.667-19.093,42.667-42.667 C213.333,275.093,194.24,256,170.667,256z "></path>
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-              </a>
-                <div class="action-option ">
-                  <ul>
-                    <li><a href="room-modify.html" th:href="'/admin/page/toRoomModifyPage?roomId=' + ${room.getId()}"><i class="far fa-edit mr-2 "></i>修改</a></li>
-                    <li><a href="javascript:void(0); " th:href="'/admin/room/deleteRoom/'+ ${room.getHotelId()} +'?roomId=' + ${room.getId()}"><i class="far fa-trash-alt mr-2 "></i>删除</a></li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-
-            </tbody>
-          </table>
-
-
-          <div class="text-right" style="display:flex;justify-content:center" th:if="${page.getList().size()}!=0">
-            <nav class="d-inline-block">
-              <ul class="pagination mb-0 ">
-
-                <li class="page-item" style="float: left;list-style: none">
-                  <a class="page-link" th:href="'/admin/page/toRoomPage?pageNum=1&hotelId=' + ${hotel.getId()}">首页</a>
-                </li>
-
-                <!-- 上一页 -->
-                <li class="page-item " th:if="${!page.isFirstPage}" style="float: left;list-style: none">
-                  <a class="page-link" th:href="'/admin/page/toRoomPage?pageNum=' + ${page.getPrePage()} + '&hotelId=' + ${hotel.getId()}">上页</a>
-                </li>
-
-                <!-- 中间页 -->
-                <li class="page-item active" th:each="pageNum:${#numbers.sequence(1, page.getPages())}" style="float: left;list-style: none">
-                  <a class="page-link" th:href="'/admin/page/toRoomPage?pageNum=' + ${pageNum} + '&hotelId=' + ${hotel.getId()}" th:text="${pageNum}" th:if="${pageNum ne page.getPageNum()}"></a>
-                  <a class="page-link" th:href="'/admin/page/toRoomPage?pageNum=' + ${pageNum} + '&hotelId=' + ${hotel.getId()}" th:text="${pageNum}" th:if="${pageNum eq page.getPageNum()}" th:style="'font-weight:bold;background: #6faed9;'"></a>
-                </li>
-
-                <!-- 下一页 -->
-                <li class="page-item " th:if="${!page.isIsLastPage()}" style="float: left;list-style: none">
-                  <a class="page-link" th:href="'/admin/page/toRoomPage?pageNum=' + ${page.getNextPage()} + '&hotelId=' + ${hotel.getId()}">下页</a>
-                </li>
-
-                <!-- 尾页 -->
-                <li class="page-item " style="float: left;list-style: none">
-                  <a class="page-link" th:href="'/admin/page/toRoomPage?pageNum=' + ${page.getLastPage()} + '&hotelId=' + ${hotel.getId()}">尾页</a>
-                </li>
-              </ul>
-            </nav>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">用户邮箱(必填)：</label>
+            <div class="col-sm-6">
+              <div class="field">
+                <input name="userEmail" type="text" class="form-control" id="userEmail" placeholder="请输入用户邮箱" th:value="*{commonUser.getEmail()}">
+              </div>
+            </div>
           </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">用户电话：</label>
+            <div class="col-sm-6">
+              <div class="field">
+                <input name="userPhone" type="text" class="form-control" id="userPhone" placeholder="请输入用户电话" th:value="*{commonUser.getPhone()}">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">用户密码(必填)：</label>
+            <div class="col-sm-6">
+              <div class="field">
+                <input name="password" type="text" class="form-control" id="password" placeholder="请输入用户密码" th:value="*{commonUser.getPassword()}">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-2 control-label"
+                 style="color: red; font-weight: bold;"></div>
+            <div class="col-sm-6">
+              <br>
+              <br>
+              <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button type="submit" class="btn btn-primary">提 交</button>
+              <button type="button" class="btn btn-warning" onclick="clearInput()">重置</button>
+            </div>
+          </div>
+        </form>
 
-
-        </div>
       </div>
 
-
-      <div class="ad-footer-btm">
-        <p>Copyright 2021 © 西安旅游网 All Rights By <a href="www.jq22.com/index.html">521团队</a>.</p>
-      </div>
 
 
     </div>
+
+
+  </div>
   </div>
 </div>
 
@@ -265,5 +213,36 @@
 <script src="../../static/js/popper.min.js"></script>
 <script src="../../static/js/bootstrap.min.js"></script>
 <script src="../../static/js/custom.js"></script>
+
+<script>
+  function checkEmpty(){
+    var hotelName=document.getElementsByName("hotelName");
+    var classInfo=document.getElementsByName("classInfo");
+    for(var j=0;j<hotelName.length;j++){
+      if(isEmpty(hotelName[j].value)){
+        alert("酒店名称不能为空！！！");
+        return false;
+      }
+      if (isEmpty(classInfo[j].value)){
+        alert("酒店简介不能为空！！！");
+        return false;
+      }
+    }
+    return true;
+  }
+  function isEmpty(val) {
+    if (typeof(val) == 'number') {
+      val += '';
+    }
+    var str = val || '';
+    return $.trim(str).length == 0;
+  }
+
+  function clearInput(){
+    $('div input').val('')
+    $('div textarea').val('')
+  }
+</script>
+
 </body>
 </html>

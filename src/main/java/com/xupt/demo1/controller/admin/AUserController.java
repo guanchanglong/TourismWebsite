@@ -53,7 +53,73 @@ public class AUserController {
         return "redirect:/admin/page/toLoginPage";
     }
 
-//    public String showAllCommonUser(){
-//
-//    }
+    @PostMapping("/addUser")
+    public String addUser(@RequestParam(value = "username") String username,
+                          @RequestParam(value = "userEmail") String userEmail,
+                          @RequestParam(value = "userPhone") String userPhone,
+                          @RequestParam(value = "password") String password,
+                          RedirectAttributes attributes){
+        //判断该邮箱是否被注册
+        if (userService.findByEmail(userEmail)!=null){
+            attributes.addFlashAttribute("message","该邮箱已被注册");
+            return "redirect:/admin/page/toUserAddPage";
+        }
+
+        User user = new User();
+        user.setUsername(username);
+        user.setEmail(userEmail);
+        user.setPhone(userPhone);
+        user.setPassword(password);
+        userService.addCommonUser(user);
+        attributes.addFlashAttribute("message","添加成功");
+        return "redirect:/admin/page/toUserAddPage";
+    }
+
+    @PostMapping("/updateUser/{userId}")
+    public String updateUser(@RequestParam(value = "username") String username,
+                             @RequestParam(value = "userEmail") String userEmail,
+                             @RequestParam(value = "userPhone") String userPhone,
+                             @RequestParam(value = "password") String password,
+                             @PathVariable("userId") int userId,
+                             RedirectAttributes attributes){
+        if (userEmail==null||userEmail.isEmpty()){
+            attributes.addFlashAttribute("message","用户邮箱不能为空");
+            return "redirect:/admin/page/toUserModifyPage?userId=" + userId;
+        }
+        if (password==null||password.isEmpty()){
+            attributes.addFlashAttribute("message","密码不能为空");
+            return "redirect:/admin/page/toUserModifyPage?userId=" + userId;
+        }
+
+        User user = new User();
+        user.setId(userId);
+        user.setEmail(userEmail);
+        user.setPassword(password);
+        if (username==null||username.isEmpty()){
+            user.setUsername(null);
+        }else{
+            user.setUsername(username);
+        }
+        if (userPhone==null||userPhone.isEmpty()){
+            user.setPhone(null);
+        }else{
+            user.setPhone(userPhone);
+        }
+
+        userService.updateUser(user);
+        attributes.addFlashAttribute("message","修改成功");
+        return "redirect:/admin/page/toUserModifyPage?userId=" + userId;
+    }
+
+    @RequestMapping("/changeUserStatusToBad")
+    public String changeUserStatusToBad(@RequestParam(value = "userId") int userId){
+        userService.updateUserStatusToBad(userId);
+        return "redirect:/admin/page/toUsersPage";
+    }
+
+    @RequestMapping("/changeUserStatusToGood")
+    public String changeUserStatusToGood(@RequestParam(value = "userId") int userId){
+        userService.updateUserStatusToGood(userId);
+        return "redirect:/admin/page/toUsersPage";
+    }
 }
