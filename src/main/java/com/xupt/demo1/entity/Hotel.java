@@ -26,4 +26,6 @@ public class Hotel {
     private String phone;
     //酒店类型
     private String type;
+    //营业还是停业
+    private int status;
 }

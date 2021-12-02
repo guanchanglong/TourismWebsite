@@ -25,11 +25,11 @@
     </select>
 
     <insert id="insertUser">
-        insert into t_user(email,password,role) values(#{email},#{password},1);
+        insert into t_user(email,password,role) values(#{email},#{password},1)
     </insert>
 
     <insert id="addCommonUser" parameterType="com.xupt.demo1.entity.User">
-        insert into t_user(username,phone,email,password,role) values(#{user.username},#{user.phone},#{user.email},#{user.password},1)
+        insert into t_user(username,phone,email,password,picture,role) values(#{user.username},#{user.phone},#{user.email},#{user.password},#{user.picture},1)
     </insert>
 
     <update id="updateUser" parameterType="com.xupt.demo1.entity.User">
@@ -47,6 +47,9 @@
                 <if test="user.password!=null">
                     password = #{user.password},
                 </if>
+                <if test="user.picture!=null">
+                    picture = #{user.picture},
+                </if>
             </set>
         where id = #{user.id}
     </update>
@@ -58,5 +61,9 @@
     <update id="updateUserStatusToGood">
         update t_user set role = 1 where id = #{userId}
     </update>
+
+    <select id="findCommonByUserName" resultType="com.xupt.demo1.entity.User">
+        select * from t_user where role != 0 and username like #{username}
+    </select>
 
 </mapper>

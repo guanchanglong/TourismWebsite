@@ -13,6 +13,7 @@
         <result property="type" column="type"/>
         <result property="address" column="address"/>
         <result property="info" column="info"/>
+        <result property="status" column="status"/>
     </resultMap>
 
     <select id="findAll" resultMap="hotelMap">
@@ -25,6 +26,10 @@
 
     <select id="findAllById" resultMap="hotelMap">
         select * from t_hotel where id = #{hotelId}
+    </select>
+
+    <select id="findByName" resultMap="hotelMap">
+        select * from t_hotel where name like #{hotelName}
     </select>
 
     <update id="updateHotel" parameterType="com.xupt.demo1.entity.Hotel">
@@ -59,11 +64,19 @@
     </update>
 
     <insert id="addHotel" parameterType="com.xupt.demo1.entity.Hotel">
-        insert into t_hotel(name,picture,phone,type,info,address) values(#{hotel.name},#{hotel.picture},#{hotel.phone},#{hotel.type},#{hotel.info},#{hotel.address})
+        insert into t_hotel(name,picture,phone,type,info,address,status) values(#{hotel.name},#{hotel.picture},#{hotel.phone},#{hotel.type},#{hotel.info},#{hotel.address},1)
     </insert>
 
     <delete id="deleteHotel">
         delete from t_hotel where id = #{hotelId}
     </delete>
+
+    <update id="updateHotelStatusToGood">
+        update t_hotel set status = 1 where id = #{hotelId}
+    </update>
+
+    <update id="updateHotelStatusToBad">
+        update t_hotel set status = 0 where id = #{hotelId}
+    </update>
 
 </mapper>

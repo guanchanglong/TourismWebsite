@@ -91,4 +91,16 @@ public class AHotelController {
         hotelService.deleteHotel(hotelId);
         return "redirect:/admin/page/toHotelPage";
     }
+
+    @GetMapping("/changeHotelStatusToGood")
+    public String changeHotelStatusToGood(@RequestParam("hotelId") int hotelId){
+        hotelService.updateHotelStatusToGood(hotelId);
+        return "redirect:/admin/page/toHotelPage";
+    }
+
+    @GetMapping("/changeHotelStatusToBad")
+    public String changeHotelStatusToBad(@RequestParam("hotelId") int hotelId){
+        hotelService.updateHotelStatusToBad(hotelId);
+        return "redirect:/admin/page/toHotelPage";
+    }
 }

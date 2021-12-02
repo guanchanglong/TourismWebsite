@@ -87,4 +87,13 @@ public class UserServiceImpl implements UserService {
     public void updateUserStatusToGood(int userId){
         userDao.updateUserStatusToGood(userId);
     }
+
+    @Override
+    public PageInfo<User> findCommonByUserName(int pageNum,
+                                               int size,
+                                               String username){
+        PageHelper.startPage(pageNum,size);
+        List<User> list = userDao.findCommonByUserName("%"+username+"%");
+        return new PageInfo<>(list);
+    }
 }

@@ -143,16 +143,18 @@
         <div class="colxl-12 col-lg-12 col-md-12 col-sm-12 col-12">
           <div class="page-title-wrapper">
 
+            <form action="#" method="get" th:action="@{/admin/page/toSearchHotelPage}">
+              <div class="ad-user-btn border-left">
+                <input class="form-control" name="hotelName" type="text" placeholder="搜索酒店" id="text-input">
 
-            <div class="ad-user-btn border-left">
-              <input class="form-control" type="text" placeholder="搜索酒店" id="text-input">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.966 56.966">
-                <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.966 56.966">
+                    <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23
 												s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92
 												c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17
 												s-17-7.626-17-17S14.61,6,23.984,6z"></path>
-              </svg>
-            </div>
+                  </svg>
+              </div>
+            </form>
 
 
             <div class="ad-breadcrumb">
@@ -191,9 +193,10 @@
 
             <tr th:each="hotel:${page.getList()}">
               <td th:text="${hotel.getName()}">秋果酒店(西安钟楼南门小雁塔南稍门地铁站店)</td>
-              <td>营业</td>
+              <td th:if="${hotel.getStatus()}==1">营业</td>
+              <td th:if="${hotel.getStatus()}==0">暂停营业</td>
               <td th:text="${hotel.getAddress()}">陕西西安</td>
-              <td><a class="badge badge-primary" href="hotel-detail.html" th:href="@{/admin/page/toHotelDetailPage}">查看详细信息</a></td>
+              <td><a class="badge badge-primary" href="hotel-detail.html" th:href="'/admin/page/toHotelDetailPage?hotelId=' + ${hotel.getId()}">查看详细信息</a></td>
               <td><a class="badge badge-primary" href="hotel-detail.html" th:href="'/admin/page/toRoomPage?hotelId=' + ${hotel.getId()}">房间设置</a></td>
               <td class="relative">
                 <a class="action-btn " href="javascript:void(0); ">
@@ -213,6 +216,8 @@
                   <ul>
                     <li><a href="hotel-modify.html" th:href="'/admin/page/toHotelModifyPage?hotelId=' + ${hotel.getId()}"><i class="far fa-edit mr-2 "></i>修改</a></li>
                     <li><a href="javascript:void(0); " th:href="'/admin/hotel/deleteHotel?hotelId=' + ${hotel.getId()}"><i class="far fa-trash-alt mr-2 "></i>删除</a></li>
+                    <li th:if="${hotel.getStatus()}==1"><a href="javascript:void(0);" th:href="'/admin/hotel/changeHotelStatusToBad?hotelId=' + ${hotel.getId()}"><i class="far fa-edit mr-2 "></i>停业</a></li>
+                    <li th:if="${hotel.getStatus()}==0"><a href="javascript:void(0);" th:href="'/admin/hotel/changeHotelStatusToGood?hotelId=' + ${hotel.getId()}"><i class="far fa-edit mr-2 "></i>开业</a></li>
                   </ul>
                 </div>
               </td>

@@ -9,9 +9,12 @@ import com.xupt.demo1.service.HotelService;
 import com.xupt.demo1.service.OrderService;
 import com.xupt.demo1.service.RoomService;
 import com.xupt.demo1.service.UserService;
+import org.apache.http.HttpEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -65,8 +68,19 @@ public class APageController {
         return "admin/order-list";
     }
 
+//    @RequestMapping("/toHotelDetailPage")
+//    public String toHotelDetailPage(){
+//        return "admin/hotel-detail";
+//    }
     @RequestMapping("/toHotelDetailPage")
-    public String toHotelDetailPage(){
+    public String toHotelDetailPage(Model model,
+                                HttpSession session,
+                                @RequestParam(value = "hotelId") int hotelId){
+        Hotel hotel = hotelService.findHotelById(hotelId);
+        User user  = (User)session.getAttribute("adminUser");
+
+        model.addAttribute("adminUser",user);
+        model.addAttribute("hotel",hotel);
         return "admin/hotel-detail";
     }
 
@@ -204,6 +218,36 @@ public class APageController {
         model.addAttribute("room",room);
         model.addAttribute("adminUser",user);
         return "admin/room-modify";
+    }
+
+    @GetMapping("/toSearchHotelPage")
+    public String toSearchHotelPage(Model model,
+                                    HttpSession session,
+                                    @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
+                                    @RequestParam(value = "size",defaultValue = "7") int size,
+                                    @RequestParam("hotelName") String hotelName){
+        User user  = (User)session.getAttribute("adminUser");
+        PageInfo<Hotel> page = hotelService.findByName(pageNum, size, hotelName);
+
+        model.addAttribute("hotelName", hotelName);
+        model.addAttribute("adminUser",user);
+        model.addAttribute("page",page);
+        return "admin/hotel-search";
+    }
+
+    @GetMapping("/toSearchUserPage")
+    public String toSearchUserPage(Model model,
+                                   HttpSession session,
+                                   @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
+                                   @RequestParam(value = "size",defaultValue = "7") int size,
+                                   @RequestParam(value = "username") String username){
+        User user  = (User)session.getAttribute("adminUser");
+        PageInfo<User> page = userService.findCommonByUserName(pageNum, size, username);
+
+        model.addAttribute("adminUser",user);
+        model.addAttribute("username",username);
+        model.addAttribute("page",page);
+        return "admin/user-search";
     }
 
 }

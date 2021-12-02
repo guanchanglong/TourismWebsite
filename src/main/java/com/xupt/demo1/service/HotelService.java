@@ -19,4 +19,10 @@ public interface HotelService {
     void updateHotel(Hotel hotel);
 
     void deleteHotel(int hotelId);
+
+    void updateHotelStatusToGood(int hotelId);
+
+    void updateHotelStatusToBad(int hotelId);
+
+    PageInfo<Hotel> findByName(int pageNum,int size,String hotelName);
 }

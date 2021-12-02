@@ -58,6 +58,7 @@ public class AUserController {
                           @RequestParam(value = "userEmail") String userEmail,
                           @RequestParam(value = "userPhone") String userPhone,
                           @RequestParam(value = "password") String password,
+                          @RequestParam(value = "picture") String picture,
                           RedirectAttributes attributes){
         //判断该邮箱是否被注册
         if (userService.findByEmail(userEmail)!=null){
@@ -67,6 +68,7 @@ public class AUserController {
 
         User user = new User();
         user.setUsername(username);
+        user.setPicture(picture);
         user.setEmail(userEmail);
         user.setPhone(userPhone);
         user.setPassword(password);
@@ -80,6 +82,7 @@ public class AUserController {
                              @RequestParam(value = "userEmail") String userEmail,
                              @RequestParam(value = "userPhone") String userPhone,
                              @RequestParam(value = "password") String password,
+                             @RequestParam(value = "picture") String picture,
                              @PathVariable("userId") int userId,
                              RedirectAttributes attributes){
         if (userEmail==null||userEmail.isEmpty()){
@@ -105,7 +108,11 @@ public class AUserController {
         }else{
             user.setPhone(userPhone);
         }
-
+        if (picture==null||picture.isEmpty()){
+            user.setPicture(null);
+        }else{
+            user.setPicture(picture);
+        }
         userService.updateUser(user);
         attributes.addFlashAttribute("message","修改成功");
         return "redirect:/admin/page/toUserModifyPage?userId=" + userId;

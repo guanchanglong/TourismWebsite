@@ -25,4 +25,10 @@ public interface HotelDao {
 
     void deleteHotel(@Param("hotelId") int hotelId);
 
+    void updateHotelStatusToGood(@Param("hotelId") int hotelId);
+
+    void updateHotelStatusToBad(@Param("hotelId") int hotelId);
+
+    List<Hotel> findByName(@Param("hotelName") String hotelName);
+
 }

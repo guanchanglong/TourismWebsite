@@ -28,4 +28,6 @@ public interface UserService {
     void updateUserStatusToBad(int userId);
 
     void updateUserStatusToGood(int userId);
+
+    PageInfo<User> findCommonByUserName(int pageNum, int size, String username);
 }

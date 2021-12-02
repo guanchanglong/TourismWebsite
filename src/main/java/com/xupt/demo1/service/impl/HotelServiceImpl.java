@@ -73,4 +73,23 @@ public class HotelServiceImpl implements HotelService {
         hotelDao.deleteHotel(hotelId);
     }
 
+    @Override
+    public void updateHotelStatusToGood(int hotelId){
+        hotelDao.updateHotelStatusToGood(hotelId);
+    }
+
+    @Override
+    public void updateHotelStatusToBad(int hotelId){
+        hotelDao.updateHotelStatusToBad(hotelId);
+    }
+
+    @Override
+    public PageInfo<Hotel> findByName(int pageNum,
+                                      int size,
+                                      String hotelName){
+        PageHelper.startPage(pageNum,size);
+        List<Hotel> list = hotelDao.findByName("%"+hotelName+"%");
+        return new PageInfo<>(list);
+    }
+
 }
