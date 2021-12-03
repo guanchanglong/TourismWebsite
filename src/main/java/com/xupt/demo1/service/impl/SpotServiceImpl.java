@@ -6,6 +6,8 @@ import com.xupt.demo1.dao.SpotDetailDao;
 import com.xupt.demo1.entity.Spot;
 import com.xupt.demo1.entity.SpotDetail;
 import com.xupt.demo1.service.SpotService;
+import com.xupt.demo1.utils.SpotDataCrawler;
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,7 @@ import com.github.pagehelper.PageInfo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author 小关同学
@@ -123,6 +126,139 @@ public class SpotServiceImpl implements SpotService {
             result.add(spotDetail);
         }
         return result;
+    }
+
+
+    /**
+     * 爬取页数的景点简介数据并保存
+     * @param pageNum 爬取 1~pageNum 页的数据
+     */
+    public void getSpotDataAndSave(int pageNum){
+
+        //现在表中的数据数
+        int spotCount = spotDao.spotCount();
+
+        int index = 1;
+
+        //爬取 1~pageNum 页的数据
+        for(int i = 1;i <= pageNum;i++){
+            //生成1-10的随机数
+            int random = (int)(1+Math.random()*(10-1+1));
+            String str = random+"00";
+            try {
+                Thread.sleep(Integer.parseInt(str));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            //爬取景点数据
+            Set<Spot> list = SpotDataCrawler.requestSpotData("西安",i);
+
+            //为空的话就继续爬，直到获取到数据为止
+            if (list==null){
+                i--;
+            }else{
+                //写入景点数据
+                //这里不采取主键自增的策略，人为插入主键
+                for (Spot spot:list){
+                    if (index <= spotCount){
+                        //如果未超过现有数据的主键值，则直接更新数据
+                        spot.setId(index);
+                        spotDao.updateSpotData(spot);
+                    }else{
+                        //如果超过了现有数据的主键值，则插入新数据
+                        spot.setId(index);
+                        spotDao.insertSpotData(spot);
+                    }
+                    index++;
+                }
+            }
+        }
+    }
+
+
+    /**
+     * 爬取所有景点详细信息数据
+     * @return
+     */
+    public List<Object> getAllDetailData(){
+
+        //获取景点简介数据
+        List<Spot> listSpot = spotDao.findAllReturnIdAndNameAndSpotWebId();
+
+        List<Object> result = new ArrayList<>();
+
+        //开始遍历爬取
+        for (int i = 0;i < listSpot.size();i++){
+            Spot spot = listSpot.get(i);
+            Object[] param = SpotDataCrawler.requestSpotDetailData(spot.getName(),spot.getId(),spot.getSpotWebId());
+
+            //生成1-10的随机数
+            int random = (int)(1+Math.random()*(10-1+1));
+            random *= 100;
+            try {
+                //停顿一段时间，免得被反爬机制检测出来
+                Thread.sleep(random);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            //爬取信息是否成功
+            if (param==null){
+                i--;
+            }else{
+                //成功就添加到集合中去
+                result.add(param);
+            }
+        }
+
+        return result;
+    }
+
+
+    /**
+     * 保存和关联所有景点详细信息
+     * @param param 景点详细信息
+     */
+    public void findAllSpotNameAndSpotWebId(List<Object> param){
+
+        //获取景点详情界面在数据库的长度
+        int totalSpotDetailSize = spotAndSpotDetailDao.countNotNullNum();
+
+        int index = 1;
+
+        //获取所有的景点详细信息
+        for (int i = 0;i < param.size();i++){
+            Object[]data = (Object[]) param.get(i);
+
+            Spot spotToUpdate = (Spot) data[0];
+            if (spotToUpdate!=null){
+                //更新Spot的详细信息
+                spotDao.updateSpot(spotToUpdate,spotToUpdate.getId());
+            }
+
+            //保存每个景点对应的详细信息
+            List<SpotDetail> spotDetails = (List<SpotDetail>) data[1];
+            if (spotDetails!=null){
+                for (SpotDetail spotDetail:spotDetails){
+                    spotDetail.setId(index);
+                    //如果更新的数据量不超过原来数据库有的数据，则做更新操作
+                    //如果超过了，则做插入操作
+                    if (index <= totalSpotDetailSize){
+                        //更新景点详细信息
+                        spotDetailDao.updateSpotDetail(spotDetail);
+                        //更新每个景点详细信息和景点简介信息的关系表
+                        spotAndSpotDetailDao.updateSpotAndSpotDetail(index,spotToUpdate.getId(),index);
+                    }else{
+                        //保存景点详细信息
+                        spotDetailDao.insertSpotDetailData(spotDetail);
+                        //保存每个景点详细信息和景点简介信息的关系表
+                        spotAndSpotDetailDao.saveRelation(index,spotToUpdate.getId(),index);
+                    }
+                    index++;
+                }
+            }
+        }
     }
 
 }

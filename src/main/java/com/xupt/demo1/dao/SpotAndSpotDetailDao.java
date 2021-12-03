@@ -12,4 +12,10 @@ import java.util.List;
 @Mapper
 public interface SpotAndSpotDetailDao {
     List<Integer> findSpotDetailId(@Param("spotId") int spotId);
+
+    void saveRelation(@Param("id")int id,@Param("spotId") int spotId, @Param("spotDetailId") int spotDetailId);
+
+    int countNotNullNum();
+
+    void updateSpotAndSpotDetail(@Param("id")int id,@Param("spotId") int spotId, @Param("spotDetailId") int spotDetailId);
 }

@@ -13,7 +13,9 @@ import java.util.List;
 @Mapper
 public interface SpotDao {
 
-    void insertSpotData(@Param("spot")Spot spot);
+    void updateSpotData(@Param("spot")Spot spot);
+
+    void insertSpotData(@Param("spot") Spot spot);
 
     List<Spot> findAllByName(@Param("name")String name);
 
@@ -22,4 +24,16 @@ public interface SpotDao {
     List<Spot> findFourData();
 
     Spot findSpotById(@Param("spotId") int spotId);
+
+    List<Spot> findAllReturnIdAndNameAndSpotWebId();
+
+    void updateSpot(@Param("spot") Spot spot,@Param("id")int id);
+
+    Spot findAllByIdReturnIdAndNameAndSpotWebId(@Param("id")int id);
+
+    Spot findAllByWebId(@Param("webId")String webId);
+
+    int spotCount();
+
+
 }

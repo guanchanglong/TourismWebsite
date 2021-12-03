@@ -5,24 +5,91 @@
 
 <mapper namespace="com.xupt.demo1.dao.SpotDao">
 
-    <insert id="insertSpotData" parameterType="com.xupt.demo1.entity.Spot">
-        insert into t_spot(name,area,info,picture,price) values(#{spot.name},#{spot.area},#{spot.info},#{spot.picture},#{spot.price});
-    </insert>
+    <resultMap id="spotMap" type="com.xupt.demo1.entity.Spot">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="area" column="area"/>
+        <result property="info" column="info"/>
+        <result property="picture" column="picture"/>
+        <result property="price" column="price"/>
+        <result property="infoDetail" column="info_detail"/>
+        <result property="openTime" column="open_time"/>
+        <result property="spotWebId" column="spot_web_id"/>
+    </resultMap>
 
-    <select id="findAllByName" resultType="com.xupt.demo1.entity.Spot">
-        select * from t_spot where name like #{name}
+    <select id="findAllByName" resultMap="spotMap">
+        select *
+            from t_spot
+                where name like #{name}
     </select>
 
-    <select id="findAll" resultType="com.xupt.demo1.entity.Spot">
-        select * from t_spot
+    <select id="findAll" resultMap="spotMap">
+        select *
+            from t_spot
     </select>
     
-    <select id="findFourData" resultType="com.xupt.demo1.entity.Spot">
-        select * from t_spot limit 4;
+    <select id="findFourData" resultMap="spotMap">
+        select *
+            from t_spot limit 4;
     </select>
 
-    <select id="findSpotById" resultType="com.xupt.demo1.entity.Spot">
-        select * from t_spot where id = #{spotId}
+    <select id="findSpotById" resultMap="spotMap">
+        select *
+            from t_spot
+                where id = #{spotId}
+    </select>
+
+
+
+    <resultMap id="spotCrawlerMap" type="com.xupt.demo1.entity.Spot">
+        <id property="id" column="id" />
+        <result property="name" column="name"/>
+        <result property="spotWebId" column="spot_web_id"/>
+    </resultMap>
+
+    <select id="findAllReturnIdAndNameAndSpotWebId" resultMap="spotCrawlerMap">
+        select id,name,spot_web_id
+            from t_spot;
+    </select>
+
+    <insert id="insertSpotData" parameterType="com.xupt.demo1.entity.Spot">
+        insert into t_spot(id,name,area,info,picture,price,spot_web_id)
+            values(#{spot.id},#{spot.name},#{spot.area},#{spot.info},#{spot.picture},#{spot.price},#{spot.spotWebId});
+    </insert>
+
+    <insert id="updateSpotData" parameterType="com.xupt.demo1.entity.Spot">
+        update t_spot
+            set id = #{spot.id},
+                name = #{spot.name},
+                area = #{spot.area},
+                info = #{spot.info},
+                picture = #{spot.picture},
+                price = #{spot.price},
+                spot_web_id = #{spot.spotWebId}
+    </insert>
+
+    <update id="updateSpot" parameterType="com.xupt.demo1.entity.Spot">
+        update t_spot
+            set info_detail = #{spot.infoDetail},
+                open_time = #{spot.openTime}
+                where id = #{id};
+    </update>
+
+    <select id="findAllByIdReturnIdAndNameAndSpotWebId" resultMap="spotCrawlerMap">
+        select id,name,spot_web_id
+            from t_spot
+                where id = #{id};
+    </select>
+
+    <select id="findAllByWebId" resultType="com.xupt.demo1.entity.Spot">
+        select spot_web_id
+            from t_spot
+                where spot_web_id = #{webId};
+    </select>
+
+    <select id="spotCount" resultType="int">
+        select COUNT(id)
+            from t_spot
     </select>
 
 </mapper>

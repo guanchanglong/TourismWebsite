@@ -9,4 +9,19 @@
         select spot_detail_id from t_spot_and_spot_detail where spot_id = #{spotId}
     </select>
 
+
+    <insert id="saveRelation">
+        insert into t_spot_and_spot_detail(id,spot_id,spot_detail_id) values(#{id},#{spotId},#{spotDetailId});
+    </insert>
+
+    <select id="countNotNullNum" resultType="int">
+        select COUNT(*) from t_spot_and_spot_detail;
+    </select>
+
+    <update id="updateSpotAndSpotDetail">
+        update t_spot_and_spot_detail
+            set spot_id = #{spotId},spot_detail_id = #{spotDetailId}
+                where id = #{id}
+    </update>
+
 </mapper>

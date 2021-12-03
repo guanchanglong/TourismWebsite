@@ -107,22 +107,56 @@
 
       <div class="container">
         <div class="container_top">
-          <img src="https://imgs.qunarzz.com/sight/p0/1411/61/d92ba6a30aa12eb0a9a4a9c82214cb8e.water.jpg_710x360_a82b3959.jpg" th:src="${spot.getPicture()}" style="width: 600px;height: 306px">
+          <div class="container_top_text_title0" th:text="${spot.getName()}" style="text-align: center">秦始皇帝陵博物馆（兵马俑）</div>
+          <img src="https://imgs.qunarzz.com/sight/p0/1411/61/d92ba6a30aa12eb0a9a4a9c82214cb8e.water.jpg_710x360_a82b3959.jpg" th:src="${spot.getPicture()}" style="float: left;width: 600px;height: 306px;">
           <div class="container_top_text">
-            <div class="container_top_text_title0" th:text="${spot.getName()}">秦始皇帝陵博物馆（兵马俑）</div>
-            <div class="container_top_text_title1" th:text="${spot.getInfo()}">秦始皇的地下御林库</div>
-            <div class="container_top_text_location" th:text="${spot.getArea()}">位 置：陕西省西安市临潼区...</div>
-            <form action="#" th:action="@{/orders/pay}" method="post">
+
+            <div class="container_top_text_title1" th:text="${spot.getInfoDetail()}">
+              进了鼓楼城门就是西安有名的回民街了，这里是中外游客的必来之地。回民街在一千多年前的汉朝就是丝绸之路的起点，一些古阿拉伯、波斯等地的商人、使节、学生来到了繁华热闹的长安城后，就在这里经商、留学和做官，一代代繁衍生息，如今约有6万多回族穆斯林在居住在这里，维持着原有的宗教传统和生活习惯。在回族，男性都戴着一顶伊斯兰教的白色小圆帽，女性在结婚以后就要一直戴着头巾，头巾的颜色、花纹及戴法则据各人所好，我们经常可以看到回族妇女戴着头巾，长裾飘飘，在大街上走过。除此以外，回民街上约有大小形态各异、年代不一的10座清真寺。　　回民街街道南北走向，大约500米左右，两旁的路上清一色的仿明清建筑，或餐饮，或器物，均由回民经营，回民饮食讲究卫生，选料严格，技艺精湛祖辈相传，待客殷勤热情周到，在这里可以品尝到西安各种特色小吃。马家腊牛肉、灌汤包子、牛羊肉泡馍、涮羊肉、水盆羊肉等都是很出名的，面点小吃有肉饼、卤汁凉粉、灌汤包子、糊辣汤、油茶、锅贴，甜食有黄桂柿子饼、江米豆沙凉糕、蜂蜜凉糕等几十种，清真小吃的代表平娃烤肉、贾三灌汤包子、红红炒米、金家砂锅都有胃口太好但胃太小的感觉。有人说，陕西的小吃不小，可以和八大菜系的大餐媲美，一定能够让您大饱口福。 在两旁的小商铺里还有各种各样的干果特产，花生酥、绿豆糕、柿子饼、猕猴桃干，您可以品尝哪些更好吃以便和家人共同分享。在回民街的不远处，有一条西祠胡同，里面都是一些仿古玩意，各种各样的首饰、字画、一定能让您大开眼界。古老的回民街在今天依旧很繁华，历史证明了它的优越，是值得人们旅游的好地方。
+            </div>
+
+              <div class="container_top_text_location" th:text="${spot.getArea()}">位 置：陕西省西安市临潼区...</div>
+
+              <form action="#" th:action="@{/orders/pay}" method="post">
                 <div class="container_top_text_price" th:text="'￥'+${spot.getPrice()}+'起'">￥120起</div>
                 <input name="goodsType" type="hidden" value="0"/>
                 <input name="goodsId" type="hidden" th:value="${spot.getId()}"/>
-              <div th:if="${user}==null">
-                <button class="container_top_text_btn" onclick="judge();return false;">立即预定</button>
-              </div>
-              <div th:if="${user}!=null">
-                <button class="container_top_text_btn submit">立即预定</button>
-              </div>
-            </form>
+                <div th:if="${user}==null">
+                  <button class="container_top_text_btn" onclick="judge();return false;">立即预定</button>
+                </div>
+                <div th:if="${user}!=null">
+                  <button class="container_top_text_btn submit">立即预定</button>
+                </div>
+              </form>
+
+          </div>
+
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="container_bottom" th:each="detail : ${spotDetailList}">
+
+          <div class="container_bottom_img">
+            <img src="https://imgs.qunarzz.com/sight/p0/1505/10/100d2e82848fb2.water.jpg_990x390_e895919f.jpg" th:src="${detail.getPicture()}" alt="" style="width: 940px;height: 390px">
+            <div class="container_bottom_img_describe">
+              <h3 style="color: #fff;width: 70%;margin: 0 auto; font-size: 14px" th:text="${detail.getTitle()}">世界第八大奇迹</h3>
+              <p style="color: #fff;width: 70%;margin: 0 auto;" th:text="'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+${detail.getInfo()}">1987年，秦始皇帝陵被列入世界文化遗产保护名录，先后已有200多位国家领导人参观访问，成为中国古代辉煌文明的一张金字名片。</p>
+            </div>
           </div>
         </div>
 
@@ -135,16 +169,8 @@
         </div>
         <div id="fade" class="black_overlay"></div>
 
-        <div class="container_bottom" th:each="detail : ${spotDetailList}">
 
-          <div class="container_bottom_img">
-            <img src="https://imgs.qunarzz.com/sight/p0/1505/10/100d2e82848fb2.water.jpg_990x390_e895919f.jpg" th:src="${detail.getPicture()}" alt="" style="width: 940px;height: 390px">
-            <div class="container_bottom_img_describe">
-              <h3 style="color: #fff;width: 70%;margin: 0 auto; font-size: 14px" th:text="${detail.getTitle()}">世界第八大奇迹</h3>
-              <p style="color: #fff;width: 70%;margin: 0 auto;" th:text="'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+${detail.getInfo()}">1987年，秦始皇帝陵被列入世界文化遗产保护名录，先后已有200多位国家领导人参观访问，成为中国古代辉煌文明的一张金字名片。</p>
-            </div>
-          </div>
-        </div>
+
       </div>
 
 

@@ -1,14 +1,8 @@
 package com.xupt.demo1.controller.admin;
 
 import com.github.pagehelper.PageInfo;
-import com.xupt.demo1.entity.Hotel;
-import com.xupt.demo1.entity.Order;
-import com.xupt.demo1.entity.Room;
-import com.xupt.demo1.entity.User;
-import com.xupt.demo1.service.HotelService;
-import com.xupt.demo1.service.OrderService;
-import com.xupt.demo1.service.RoomService;
-import com.xupt.demo1.service.UserService;
+import com.xupt.demo1.entity.*;
+import com.xupt.demo1.service.*;
 import org.apache.http.HttpEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -40,6 +34,9 @@ public class APageController {
     @Autowired
     private OrderService orderService;
 
+    @Autowired
+    private SpotService spotService;
+
     @RequestMapping("/toLoginPage")
     public String toLoginPage(){
         return "admin/login";
@@ -68,10 +65,6 @@ public class APageController {
         return "admin/order-list";
     }
 
-//    @RequestMapping("/toHotelDetailPage")
-//    public String toHotelDetailPage(){
-//        return "admin/hotel-detail";
-//    }
     @RequestMapping("/toHotelDetailPage")
     public String toHotelDetailPage(Model model,
                                 HttpSession session,
@@ -102,23 +95,21 @@ public class APageController {
     }
 
     @RequestMapping("/toSpotsPage")
-    public String toSpotsPage(){
+    public String toSpotsPage(Model model,
+                              HttpSession session,
+                              @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
+                              @RequestParam(value = "size",defaultValue = "7") int size){
+        User user  = (User)session.getAttribute("adminUser");
+        PageInfo<Spot> page = spotService.findAll(pageNum, size);
+
+        model.addAttribute("adminUser",user);
+        model.addAttribute("page",page);
         return "admin/spots";
     }
 
     @RequestMapping("/toSpotsDetailPage")
     public String toSpotsDetailPage(){
         return "admin/spots-detail";
-    }
-
-    @RequestMapping("/toSpotsAddPage")
-    public String toSpotsAddPage(){
-        return "admin/spots-add";
-    }
-
-    @RequestMapping("/toSpotsModifyPage")
-    public String toSpotsModifyPage(){
-        return "admin/spots-modify";
     }
 
     @RequestMapping("/toUsersPage")

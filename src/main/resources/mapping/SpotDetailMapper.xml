@@ -7,4 +7,15 @@
     <select id="findSpotDetailById" resultType="com.xupt.demo1.entity.SpotDetail">
         select * from t_spot_detail where id = #{spotDetailId}
     </select>
+
+    <insert id="insertSpotDetailData" parameterType="com.xupt.demo1.entity.SpotDetail">
+        insert into t_spot_detail(id,title,info,picture) values(#{spotDetail.id},#{spotDetail.title},#{spotDetail.info},#{spotDetail.picture});
+    </insert>
+
+    <update id="updateSpotDetail" parameterType="com.xupt.demo1.entity.SpotDetail">
+        update t_spot_detail
+            set title = #{spotDetail.title},info = #{spotDetail.info},picture = #{spotDetail.picture}
+                where id = #{spotDetail.id}
+    </update>
+
 </mapper>

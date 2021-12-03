@@ -11,4 +11,9 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface SpotDetailDao {
     SpotDetail findSpotDetailById(@Param("spotDetailId") int spotDetailId);
+
+    void insertSpotDetailData(@Param("spotDetail") SpotDetail spotDetail);
+
+    void updateSpotDetail(@Param("spotDetail") SpotDetail spotDetail);
+
 }

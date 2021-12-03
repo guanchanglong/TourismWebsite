@@ -13,13 +13,18 @@
   float: left;
   /*background-image: url(https://imgs.qunarzz.com/sight/p0/1411/61/d92ba6a30aa12eb0a9a4a9c82214cb8e.water.jpg_710x360_a82b3959.jpg);*/
 }
+.detailImg{
+  float:left;
+  margin-right:10px;
+  margin-bottom:10px;
+}
 .container_top_text {
   width: 30%;
   float: right;
   margin-left: 5%;
 }
 .container_top_text_title0 {
-  font-size: 20px;
+  font-size: 30px;
   color: rgb(52, 52, 143);
   padding-bottom: 5%;
 }
@@ -29,7 +34,7 @@
 }
 .container_top_text_location {
   font-size: 15px;
-  padding-bottom: 45%;
+  padding-bottom: 8%;
 }
 .container_top_text_price {
   color: orangered;

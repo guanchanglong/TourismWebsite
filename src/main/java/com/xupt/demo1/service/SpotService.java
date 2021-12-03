@@ -22,4 +22,10 @@ public interface SpotService {
     Spot findSpotById(int spotId);
 
     List<SpotDetail> findSpotDetailBySpotId(int spotId);
+
+    void getSpotDataAndSave(int pageNum);
+
+    List<Object> getAllDetailData();
+
+    void findAllSpotNameAndSpotWebId(List<Object> param);
 }
