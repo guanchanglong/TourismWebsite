@@ -33,9 +33,22 @@ public class HotelServiceImpl implements HotelService {
     public PageInfo<Hotel> findAll(int pageNum,int size){
         PageHelper.startPage(pageNum,size);
         List<Hotel> list = hotelDao.findAll();
+        for (Hotel hotel:list){
+            //设置酒店的最低价格用于展示
+            Object price = roomDao.findMinPriceByHotelId(hotel.getId());
+            if (price!=null){
+                hotel.setMinPrice(price.toString());
+            }else{
+                hotel.setMinPrice("暂无");
+            }
+            if (hotel.getInfo().length()>50){
+                String info = hotel.getInfo().substring(0,50);
+                info+="...";
+                hotel.setInfo(info);
+            }
+        }
         return new PageInfo<>(list);
     }
-
     /**
      * 按名字查找酒店并分页
      * @param hotelName

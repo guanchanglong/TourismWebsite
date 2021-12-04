@@ -39,6 +39,12 @@ public class Order {
     private String picture;
     //对外展示的时间
     private String timeToShow;
+    //用户名
+    private String username;
+    //用户头像
+    private String userPicture;
+    //用户邮箱
+    private String userEmail;
 
 }
 //下单日期

@@ -129,4 +129,37 @@ public class AUserController {
         userService.updateUserStatusToGood(userId);
         return "redirect:/admin/page/toUsersPage";
     }
+
+    @PostMapping("/adminUpdateEmailAndPassword")
+    public String adminUpdateEmailAndPassword(HttpSession session,
+                                              @RequestParam("email") String email,
+                                              @RequestParam("password") String password,
+                                              @RequestParam("confirmPassword") String confirmPassword,
+                                              RedirectAttributes attributes){
+        User user = (User) session.getAttribute("adminUser");
+        User findUser = userService.findByEmail(email);
+        if (user.getId()!=findUser.getId()){
+            attributes.addFlashAttribute("fail","该邮箱已被人使用");
+            return "redirect:/admin/page/toProfilePage";
+        }
+        if (!password.equals(confirmPassword)){
+            attributes.addFlashAttribute("fail","两次输入的密码不一致");
+            return "redirect:/admin/page/toProfilePage";
+        }
+        attributes.addFlashAttribute("success","更新成功");
+        return "redirect:/admin/page/toProfilePage";
+    }
+
+    @PostMapping("/updateUsernameAndPicture")
+    public String updateUsernameAndPicture(HttpSession session,
+                                           RedirectAttributes attributes,
+                                           @RequestParam("username") String username,
+                                           @RequestParam("picture") String picture){
+        User user = (User)session.getAttribute("adminUser");
+        user.setUsername(username);
+        user.setPicture(picture);
+        userService.updateUsernameAndPicture(user);
+        attributes.addFlashAttribute("message","更新成功");
+        return "redirect:/admin/page/toProfilePage";
+    }
 }

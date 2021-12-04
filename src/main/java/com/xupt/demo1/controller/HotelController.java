@@ -22,22 +22,6 @@ public class HotelController {
     private HotelService hotelService;
 
     /**
-     * 酒店首页数据展示
-     * @param model
-     * @param pageNum
-     * @param size
-     * @return
-     */
-    @GetMapping("/showHotel")
-    public String showHotel(Model model,
-                            @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
-                            @RequestParam(value = "size",defaultValue = "10") int size){
-        PageInfo<Hotel> pageInfo = hotelService.findAll(pageNum, size);
-        model.addAttribute("page", pageInfo);
-        return "user/hotels";
-    }
-
-    /**
      * 按酒店名字查询
      * @param model
      * @param pageNum

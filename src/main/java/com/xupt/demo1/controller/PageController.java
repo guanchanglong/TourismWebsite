@@ -1,9 +1,14 @@
 package com.xupt.demo1.controller;
 
+import com.github.pagehelper.PageInfo;
+import com.xupt.demo1.entity.Hotel;
 import com.xupt.demo1.entity.User;
+import com.xupt.demo1.service.HotelService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
@@ -15,6 +20,9 @@ import java.util.ArrayList;
 @Controller
 @RequestMapping("/page")
 public class PageController {
+
+    @Autowired
+    private HotelService hotelService;
 
     @RequestMapping("/toTicketPage")
     public String toHotelPage(Model model, HttpSession session){
@@ -37,7 +45,12 @@ public class PageController {
     }
 
     @RequestMapping("/toHotelPage")
-    public String toSpotsRecommend(Model model,HttpSession session){
+    public String toSpotsRecommend(Model model,
+                                   HttpSession session,
+                                   @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
+                                   @RequestParam(value = "size",defaultValue = "10") int size){
+        PageInfo<Hotel> pageInfo = hotelService.findAll(pageNum, size);
+        model.addAttribute("page", pageInfo);
         User user = (User)session.getAttribute("user");
         model.addAttribute("user",user);
         return "user/hotels";

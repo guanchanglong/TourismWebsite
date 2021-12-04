@@ -2,7 +2,7 @@
 <html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <!--<![endif]--><!-- Begin Head -->
 <head>
-<title>用户管理</title>
+<title>投诉管理</title>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta name="description" content="">
@@ -29,9 +29,12 @@
 
   <!--头部内容-->
   <header class="header-wrapper main-header">
+
+
     <div class="header-inner-wrapper">
       <div class="logo-wrapper">
         <a href="index.html" class="admin-logo">
+          <!--这里可以放一个logo-->
           <!--          <img src="../../static/images/旅游发布.png" alt="">-->
         </a>
       </div>
@@ -44,17 +47,6 @@
           </a></div>
         </div>
         <div class="header-controls">
-          <!--显示常规设置-->
-          <!--          <div class="setting-wrapper header-links"><a href="javascript:void(0);" class="setting-info"><span class="header-icon">-->
-          <!--            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16">-->
-          <!--              <path d="M7 0h2v3h-2v-3z"></path>-->
-          <!--              <path d="M6 4v3h1v9h2v-9h1v-3z"></path>-->
-          <!--              <path d="M2 0h2v8h-2v-8z"></path>-->
-          <!--              <path d="M1 9v3h1v4h2v-4h1v-3z"></path>-->
-          <!--              <path d="M12 0h2v10h-2v-10z"></path>-->
-          <!--              <path d="M11 11v3h1v2h2v-2h1v-3z"></path>-->
-          <!--            </svg>-->
-          <!--            </span></a></div>-->
 
           <div class="notification-wrapper header-links">
             <a href="javascript:void(0);" class="notification-info"><span class="header-icon">
@@ -99,6 +91,7 @@
         </div>
       </div>
     </div>
+
   </header>
 
 
@@ -151,87 +144,106 @@
   </aside>
 
 
-
-
-
   <!-- Container Start -->
-  <div class="main-wrapper main-wrapper-2" style="position:relative">
-    <div class="main-content" style="position:absolute;top:50%;left:20%">
+  <div class="page-wrapper">
+    <div class="main-content"><!-- Page Title Start -->
 
-        <div class="margin-left">
-          <form id="myform" class="form-horizontal" role="form" action="#" th:action="@{/admin/user/addUser}" method="post" onsubmit="return checkEmpty()">
-            <h2 th:text="${message}" style="color: green;">添加成功</h2>
-            <div class="form-group">
-              <label class="col-sm-2 control-label">用户名：</label>
-              <div class="col-sm-6">
-                <div class="field">
-                  <input name="username" type="text" class="form-control" id="username" placeholder="请输入用户名">
+
+      <!-- Table Start -->
+      <div class="row ad-btm-space">
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-15">
+          <table class="table table-styled mb-0" style="text-align: center">
+            <thead>
+            <tr>
+              <th>投诉人邮箱</th>
+              <th>投诉时间</th>
+              <th>投诉内容</th>
+              <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr th:if="${page.getList().size()}==0">
+              <td colspan="5" style="text-align: center">暂无投诉记录</td>
+            </tr>
+
+            <tr th:each="complaint:${page.getList()}">
+              <td th:text="${complaint.getEmail()}">123456@qq.com</td>
+              <td th:text="${complaint.getTimeToShow()}">2021年12月2日 11:12:13</td>
+              <td th:text="${complaint.getContent()}">系统做的太烂了</td>
+              <td class="relative">
+                <a class="action-btn " href="javascript:void(0); ">
+                <svg class="default-size " viewBox="0 0 341.333 341.333 ">
+                  <g>
+                    <g>
+                      <g>
+                        <path d="M170.667,85.333c23.573,0,42.667-19.093,42.667-42.667C213.333,19.093,194.24,0,170.667,0S128,19.093,128,42.667 C128,66.24,147.093,85.333,170.667,85.333z "></path>
+                        <path d="M170.667,128C147.093,128,128,147.093,128,170.667s19.093,42.667,42.667,42.667s42.667-19.093,42.667-42.667 S194.24,128,170.667,128z "></path>
+                        <path d="M170.667,256C147.093,256,128,275.093,128,298.667c0,23.573,19.093,42.667,42.667,42.667s42.667-19.093,42.667-42.667 C213.333,275.093,194.24,256,170.667,256z "></path>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </a>
+                <div class="action-option ">
+                  <ul>
+                    <li th:if="${complaint.getStatus()}==0"><a href="javascript:void(0);" th:href="'/admin/complaint/updateComplaintStatus?complaintId='+ ${complaint.getId()}"><i class="far fa-trash-alt mr-2 "></i>已处理</a></li>
+                    <li><a href="javascript:void(0);" th:href="'/admin/complaint/deleteComplaint?complaintId='+ ${complaint.getId()}"><i class="far fa-trash-alt mr-2 "></i>删除</a></li>
+                  </ul>
                 </div>
-              </div>
-            </div>
+              </td>
+            </tr>
 
-            <div class="form-group">
-              <label class="col-sm-2 control-label">用户头像图片链接：</label>
-              <div class="col-sm-6">
-                <div class="field">
-                  <input name="picture" type="text" class="form-control" id="picture" placeholder="请输入用户头像图片链接">
-                </div>
-              </div>
-            </div>
+            </tbody>
+          </table>
 
-            <div class="form-group">
-              <label class="col-sm-2 control-label">用户邮箱(必填)：</label>
-              <div class="col-sm-6">
-                <div class="field">
-                  <input name="userEmail" type="text" class="form-control" id="userEmail" placeholder="请输入用户邮箱">
-                </div>
-              </div>
-            </div>
 
-            <div class="form-group">
-              <label class="col-sm-2 control-label">用户电话：</label>
-              <div class="col-sm-6">
-                <div class="field">
-                  <input name="userPhone" type="text" class="form-control" id="userPhone" placeholder="请输入用户电话">
-                </div>
-              </div>
-            </div>
+          <div class="text-right" style="display:flex;justify-content:center" th:if="${page.getList().size()}!=0">
+            <nav class="d-inline-block">
+              <ul class="pagination mb-0 ">
 
-            <div class="form-group">
-              <label class="col-sm-2 control-label">用户密码(必填)：</label>
-              <div class="col-sm-6">
-                <div class="field">
-                  <input name="password" type="text" class="form-control" id="password" placeholder="请输入用户密码">
-                </div>
-              </div>
-            </div>
+                <li class="page-item" style="float: left;list-style: none">
+                  <a class="page-link" th:href="'/admin/page/toUserOrderPage?pageNum=1&userId=' + ${userId}">首页</a>
+                </li>
 
-            <div class="form-group">
-              <div class="col-sm-2 control-label"
-                   style="color: red; font-weight: bold;"></div>
-              <div class="col-sm-6">
-                <br>
-                <br>
-                <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button type="submit" class="btn btn-primary">提 交</button>
-                <button type="button" class="btn btn-warning" onclick="clearInput()">重置</button>
-              </div>
-            </div>
-          </form>
+                <!-- 上一页 -->
+                <li class="page-item " th:if="${!page.isFirstPage}" style="float: left;list-style: none">
+                  <a class="page-link" th:href="'/admin/page/toUserOrderPage?pageNum=' + ${page.getPrePage()} + '&userId=' + ${userId}">上一页</a>
+                </li>
+
+                <!-- 中间页 -->
+                <li class="page-item active" th:each="pageNum:${#numbers.sequence(1, page.getPages())}" style="float: left;list-style: none">
+                  <a class="page-link" th:href="'/admin/page/toUserOrderPage?pageNum=' + ${pageNum} + '&userId=' + ${userId}" th:text="${pageNum}" th:if="${pageNum ne page.getPageNum()}"></a>
+                  <a class="page-link" th:href="'/admin/page/toUserOrderPage?pageNum=' + ${pageNum} + '&userId=' + ${userId}" th:text="${pageNum}" th:if="${pageNum eq page.getPageNum()}" th:style="'font-weight:bold;background: #6faed9;'"></a>
+                </li>
+
+                <!-- 下一页 -->
+                <li class="page-item " th:if="${!page.isIsLastPage()}" style="float: left;list-style: none">
+                  <a class="page-link" th:href="'/admin/page/toUserOrderPage?pageNum=' + ${page.getNextPage()} + '&userId=' + ${userId}">下一页</a>
+                </li>
+
+                <!-- 尾页 -->
+                <li class="page-item " style="float: left;list-style: none">
+                  <a class="page-link" th:href="'/admin/page/toUserOrderPage?pageNum=' + ${page.getPages()} + '&userId=' + ${userId}">尾页</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
 
         </div>
+      </div>
 
+
+      <div class="ad-footer-btm">
+        <p>Copyright 2021 © 西安旅游网 All Rights By <a href="www.jq22.com/index.html">521团队</a>.</p>
+      </div>
 
 
     </div>
-
-
   </div>
 </div>
-
 
 
 <script src="../../static/js/jquery.min.js"></script>
@@ -239,36 +251,5 @@
 <script src="../../static/js/popper.min.js"></script>
 <script src="../../static/js/bootstrap.min.js"></script>
 <script src="../../static/js/custom.js"></script>
-
-<script>
-  function checkEmpty(){
-    var hotelName=document.getElementsByName("hotelName");
-    var classInfo=document.getElementsByName("classInfo");
-    for(var j=0;j<hotelName.length;j++){
-      if(isEmpty(hotelName[j].value)){
-        alert("酒店名称不能为空！！！");
-        return false;
-      }
-      if (isEmpty(classInfo[j].value)){
-        alert("酒店简介不能为空！！！");
-        return false;
-      }
-    }
-    return true;
-  }
-  function isEmpty(val) {
-    if (typeof(val) == 'number') {
-      val += '';
-    }
-    var str = val || '';
-    return $.trim(str).length == 0;
-  }
-
-  function clearInput(){
-    $('div input').val('')
-    $('div textarea').val('')
-  }
-</script>
-
 </body>
 </html>

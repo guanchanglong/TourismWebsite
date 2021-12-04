@@ -97,7 +97,6 @@
 							<a href="#" th:href="'/spot/showSpotDetail?spotId='+ ${spot.getId()}"><div>查看景点>></div></a>
 						</div>
 						<div class="price" th:text="'价格: '+${spot.getPrice()} + '￥'">价格:128</div>
-						<span class="comment">12条留言</span>
 					</div>
 					<img class="item_img" src="../../static/user/images/uploads/220x135/auckland-city.jpg" th:src="${spot.getPicture()}" alt="">
 					<span class="top_describe" th:text="${spot.getName()}">马尔代夫旅行</span>

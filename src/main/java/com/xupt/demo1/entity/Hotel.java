@@ -28,4 +28,6 @@ public class Hotel {
     private String type;
     //营业还是停业
     private int status;
+    //最低价格
+    private String minPrice;
 }

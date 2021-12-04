@@ -96,4 +96,9 @@ public class UserServiceImpl implements UserService {
         List<User> list = userDao.findCommonByUserName("%"+username+"%");
         return new PageInfo<>(list);
     }
+
+    @Override
+    public void updateUsernameAndPicture(User user){
+        userDao.updateUsernameAndPicture(user);
+    }
 }

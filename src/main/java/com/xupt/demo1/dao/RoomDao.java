@@ -1,5 +1,6 @@
 package com.xupt.demo1.dao;
 
+import com.xupt.demo1.entity.Hotel;
 import com.xupt.demo1.entity.Room;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -24,5 +25,7 @@ public interface RoomDao {
     void deleteRoom(@Param("roomId") int roomId);
 
     void deleteByHotelId(@Param("hotelId") int hotelId);
+
+    Object findMinPriceByHotelId(@Param("hotelId") int hotelId);
 
 }

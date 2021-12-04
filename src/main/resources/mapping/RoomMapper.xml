@@ -57,4 +57,8 @@
         delete from t_room where hotel_id = #{hotelId}
     </delete>
 
+    <select id="findMinPriceByHotelId" resultType="int">
+        select min(price) from t_room where hotel_id = #{hotelId};
+    </select>
+
 </mapper>

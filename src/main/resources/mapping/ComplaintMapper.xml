@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xupt.demo1.dao.ComplaintDao">
+    <select id="findAll" resultType="com.xupt.demo1.entity.Complaint">
+        select * from t_complaint
+    </select>
+
+    <select id="findAllByStatus" resultType="com.xupt.demo1.entity.Complaint">
+        select id from t_complaint where status = 0
+    </select>
+
+    <update id="updateStatus">
+        update t_complaint set status = 1 where id = #{complaintId}
+    </update>
+
+    <delete id="deleteComplaint">
+        delete from t_complaint where id = #{complaintId}
+    </delete>
+</mapper>

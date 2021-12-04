@@ -107,7 +107,7 @@ public class OrderController {
     @GetMapping("/deleteOrderRecord")
     public String deleteOrderRecord(@RequestParam(value = "orderId") int orderId){
         orderService.updateOrderShowToUser(orderId);
-        return "redirect:../spot/showOrder";
+        return "redirect:/orders/showOrder";
     }
 
 }

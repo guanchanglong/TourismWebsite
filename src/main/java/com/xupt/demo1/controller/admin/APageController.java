@@ -3,16 +3,15 @@ package com.xupt.demo1.controller.admin;
 import com.github.pagehelper.PageInfo;
 import com.xupt.demo1.entity.*;
 import com.xupt.demo1.service.*;
-import org.apache.http.HttpEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * @author 小关同学
@@ -37,13 +36,31 @@ public class APageController {
     @Autowired
     private SpotService spotService;
 
+    @Autowired
+    private ComplaintService complaintService;
+
     @RequestMapping("/toLoginPage")
     public String toLoginPage(){
         return "admin/login";
     }
 
     @RequestMapping("/toIndexPage")
-    public String toIndexPage(){
+    public String toIndexPage(Model model,
+                              HttpSession session){
+        User user  = (User)session.getAttribute("adminUser");
+        model.addAttribute("adminUser",user);
+
+        List<Double> chartData = orderService.returnChartData();
+        //测试
+//        List<Double> chartData = new ArrayList<>();
+        model.addAttribute("chatData",chartData);
+
+        Double[] nums = orderService.statisticsIncome();
+        model.addAttribute("complaintCount",complaintService.findAllByStatusCount());
+        model.addAttribute("thisMonthIncome",nums[0]);
+        model.addAttribute("todayIncome",nums[1]);
+        model.addAttribute("totalIncome",nums[2]);
+        model.addAttribute("totalNum", nums[3].intValue());
         return "admin/index";
     }
 
@@ -55,14 +72,10 @@ public class APageController {
         User user  = (User)session.getAttribute("adminUser");
         PageInfo<Hotel> list = hotelService.findAll(pageNum,size);
 
+        model.addAttribute("complaintCount",complaintService.findAllByStatusCount());
         model.addAttribute("adminUser",user);
         model.addAttribute("page",list);
         return "admin/hotel";
-    }
-
-    @RequestMapping("/toOrderListPage")
-    public String toOrderListPage(){
-        return "admin/order-list";
     }
 
     @RequestMapping("/toHotelDetailPage")
@@ -73,6 +86,7 @@ public class APageController {
         User user  = (User)session.getAttribute("adminUser");
 
         model.addAttribute("adminUser",user);
+        model.addAttribute("complaintCount",complaintService.findAllByStatusCount());
         model.addAttribute("hotel",hotel);
         return "admin/hotel-detail";
     }
@@ -85,6 +99,7 @@ public class APageController {
         User user  = (User)session.getAttribute("adminUser");
 
         model.addAttribute("hotel",hotel);
+        model.addAttribute("complaintCount",complaintService.findAllByStatusCount());
         model.addAttribute("adminUser",user);
         return "admin/hotel-modify";
     }
@@ -103,13 +118,9 @@ public class APageController {
         PageInfo<Spot> page = spotService.findAll(pageNum, size);
 
         model.addAttribute("adminUser",user);
+        model.addAttribute("complaintCount",complaintService.findAllByStatusCount());
         model.addAttribute("page",page);
         return "admin/spots";
-    }
-
-    @RequestMapping("/toSpotsDetailPage")
-    public String toSpotsDetailPage(){
-        return "admin/spots-detail";
     }
 
     @RequestMapping("/toUsersPage")
@@ -121,6 +132,7 @@ public class APageController {
         PageInfo<User> page = userService.findAllCommonUser(pageNum,size);
 
         model.addAttribute("page",page);
+        model.addAttribute("complaintCount",complaintService.findAllByStatusCount());
         model.addAttribute("adminUser",user);
         return "admin/users";
     }
@@ -129,6 +141,7 @@ public class APageController {
     public String toUserAddPage(Model model,
                                 HttpSession session){
         User user  = (User)session.getAttribute("adminUser");
+        model.addAttribute("complaintCount",complaintService.findAllByStatusCount());
         model.addAttribute("adminUser",user);
 
         return "admin/user-add";
@@ -142,6 +155,7 @@ public class APageController {
         User commonUser = userService.findById(userId);
 
         model.addAttribute("adminUser", user);
+        model.addAttribute("complaintCount",complaintService.findAllByStatusCount());
         model.addAttribute("commonUser", commonUser);
         return "admin/user-modify";
     }
@@ -156,6 +170,7 @@ public class APageController {
         User user  = (User)session.getAttribute("adminUser");
 
         model.addAttribute("page",pageInfo);
+        model.addAttribute("complaintCount",complaintService.findAllByStatusCount());
         model.addAttribute("adminUser", user);
         model.addAttribute("userId",userId);
         return "admin/user-order";
@@ -163,13 +178,12 @@ public class APageController {
     }
 
     @RequestMapping("/toProfilePage")
-    public String toProfilePage(){
+    public String toProfilePage(Model model,
+                                HttpSession session){
+        User user  = (User)session.getAttribute("adminUser");
+        model.addAttribute("adminUser", user);
+        model.addAttribute("complaintCount",complaintService.findAllByStatusCount());
         return "admin/profile";
-    }
-
-    @RequestMapping("/toSettingPage")
-    public String toSettingPage(){
-        return "admin/setting";
     }
 
     @RequestMapping("/toRoomPage")
@@ -183,6 +197,7 @@ public class APageController {
         Hotel hotel = hotelService.findHotelById(hotelId);
 
         model.addAttribute("hotel",hotel);
+        model.addAttribute("complaintCount",complaintService.findAllByStatusCount());
         model.addAttribute("adminUser",user);
         model.addAttribute("page",list);
         return "admin/room";
@@ -196,6 +211,7 @@ public class APageController {
         model.addAttribute("adminUser",user);
 
         model.addAttribute("hotelId", hotelId);
+        model.addAttribute("complaintCount",complaintService.findAllByStatusCount());
         return "admin/room-add";
     }
 
@@ -208,6 +224,7 @@ public class APageController {
 
         model.addAttribute("room",room);
         model.addAttribute("adminUser",user);
+        model.addAttribute("complaintCount",complaintService.findAllByStatusCount());
         return "admin/room-modify";
     }
 
@@ -223,6 +240,7 @@ public class APageController {
         model.addAttribute("hotelName", hotelName);
         model.addAttribute("adminUser",user);
         model.addAttribute("page",page);
+        model.addAttribute("complaintCount",complaintService.findAllByStatusCount());
         return "admin/hotel-search";
     }
 
@@ -237,8 +255,23 @@ public class APageController {
 
         model.addAttribute("adminUser",user);
         model.addAttribute("username",username);
+        model.addAttribute("complaintCount",complaintService.findAllByStatusCount());
         model.addAttribute("page",page);
         return "admin/user-search";
+    }
+
+    @RequestMapping("/toComplaintPage")
+    public String toComplaintPage(Model model,
+                                  HttpSession session,
+                                  @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
+                                  @RequestParam(value = "size",defaultValue = "7") int size){
+        User user  = (User)session.getAttribute("adminUser");
+        model.addAttribute("adminUser",user);
+
+        PageInfo<Complaint> page = complaintService.findAll(pageNum, size);
+        model.addAttribute("page",page);
+        model.addAttribute("complaintCount",complaintService.findAllByStatusCount());
+        return "admin/complaint";
     }
 
 }

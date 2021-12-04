@@ -34,4 +34,6 @@ public interface UserDao {
     void updateUserStatusToGood(@Param("userId") int userId);
 
     List<User> findCommonByUserName(@Param("username") String username);
+
+    void updateUsernameAndPicture(@Param("user") User user);
 }

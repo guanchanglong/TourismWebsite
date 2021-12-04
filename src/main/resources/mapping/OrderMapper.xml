@@ -34,4 +34,12 @@
     <update id="updateOrderShowToUser">
         update t_order set show_to_user = 0 where id = #{orderId}
     </update>
+
+    <delete id="deleteOrder">
+        delete from t_order where id = #{orderId}
+    </delete>
+
+    <select id="findAll" resultMap="orderMap">
+        select * from t_order
+    </select>
 </mapper>

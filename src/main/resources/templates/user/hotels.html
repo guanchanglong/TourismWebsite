@@ -6,11 +6,11 @@
 <meta charset="utf-8">
 <title>酒店</title>
 	<link rel="icon" type="image/x-icon" href="../../static/favicon.png">
-
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 	<link rel="stylesheet" href="../../static/user/css/style.css" />
 	<link rel="stylesheet" href="../../static/user/css/responsive.css" />
 	<link rel="stylesheet" href="../../static/user/css/userLogin.css">
-
+	<link rel="stylesheet" href="../../static/user/css/spots.css">
 	<script src="../../static/js/html5.js"></script>
 </head>
 
@@ -81,231 +81,66 @@
 		</div>
 
 		<div id="content">
-
-			<!--侧边信息栏-->
-			<div class="one-third">
-
-				<div id="searchmodule">
-					<ul class="tab-control">
-						<li class="ui-tabs-selected">
-							<a id="#">酒店查询</a>
-						</li>
-					</ul>
-					<div id="hotel-search" class="tab-content">
-						<form action="#">
-							<div class="field half">
-								<label for="hotelName-input">酒店名称:</label>
-								<input type="text" id="hotelName-input" class="input-text" placeholder="输入名称" autocomplete="off" />
-							</div>
-							<div class="field half">
-								<label for="hotelAddress-input">酒店地址:</label>
-								<input type="text" id="hotelAddress-input" class="input-text" placeholder="输入地址" autocomplete="off" />
-							</div>
-							<div class="field half">
-								<label for="checkInTime-input">入住日期:</label>
-								<input type="text" id="checkInTime-input" class="input-text input-cal" placeholder="点击选择" autocomplete="off" />
-							</div>
-							<div class="field half even">
-								<label for="checkOutTime-input">离店日期:</label>
-								<input type="text" id="checkOutTime-input" class="input-text input-cal" placeholder="点击选择" autocomplete="off" />
-							</div>
-							<div class="field half">
-								<label>房间类型:</label>
-								<select id="bedType-input">
-									<option value="">请选择</option>
-									<option value="1">标准间</option>
-									<option value="2">大床房</option>
-									<option value="3">总统套房</option>
-								</select>
-							</div>
-							<button type="submit" class="submit" id="hotel-search-a">查询</button>
-							<br class="clear" />
-						</form>
-					</div>
-				</div>
-
-				<div class="widget refine-search">
-					<div class="h3 widget-title">
-						优化搜索
-					</div>
-					<div class="widget-content">
-						<h5>服务星级</h5>
-						<ul class="pointer">
-							<li>
-								<a href="#" class="easy-search sprite-stars star1" data-key="star" data-val="1">1 Star</a>
-								<small>12 Places</small>
-							</li>
-							<li>
-								<a href="#" class="easy-search sprite-stars star2" data-key="star" data-val="2">2 Star</a>
-								<small>12 Places</small>
-							</li>
-							<li>
-								<a href="#" class="easy-search sprite-stars star3" data-key="star" data-val="3">3 Star</a>
-								<small>12 Places</small>
-							</li>
-							<li>
-								<a href="#" class="easy-search sprite-stars star4" data-key="star" data-val="4">4 Star</a>
-								<small>12 Places</small>
-							</li>
-							<li>
-								<a href="#" class="easy-search sprite-stars star5" data-key="star" data-val="5">5 Star</a>
-								<small>12 Places</small>
-							</li>
-						</ul>
-
-						<h5>酒店价格 (￥)</h5>
-						<ul class="pointer">
-							<li>
-								<a href="#" class="easy-search" data-key="hotelPrice" data-val="1,100">1 - 100</a>
-								<small>23 Places</small>
-							</li>
-							<li>
-								<a href="#" class="easy-search" data-key="hotelPrice" data-val="100,300">100 - 300</a>
-								<small>12 Places</small>
-							</li>
-							<li>
-								<a href="#" class="easy-search" data-key="hotelPrice" data-val="300,500">300 - 500</a>
-								<small>19 Places</small>
-							</li>
-							<li>
-								<a href="#" class="easy-search" data-key="hotelPrice" data-val="500,1000">500 - 1000</a>
-								<small>11 Places</small>
-							</li>
-							<li>
-								<a href="#" class="easy-search" data-key="hotelPrice" data-val="1000,">&gt; 1000</a>
-								<small>15 Places</small>
-							</li>
-						</ul>
-
-						<h5>优惠类型</h5>
-						<ul class="pointer">
-							<li>
-								<a href="#" class="easy-search" data-key="offerType" data-val="1">淡季特惠</a>
-								<small>23 Places</small>
-							</li>
-							<li>
-								<a href="#" class="easy-search" data-key="offerType" data-val="2">特价特荐</a>
-								<small>12 Places</small>
-							</li>
-							<li>
-								<a href="#" class="easy-search" data-key="offerType" data-val="3">店家优惠</a>
-								<small>19 Places</small>
-							</li>
-							<li>
-								<a href="#" class="easy-search" data-key="offerType" data-val="4">家庭优惠</a>
-								<small>11 Places</small>
-							</li>
-						</ul>
-					</div>
-				</div>
+			<div class="user-searchbox">
+				<form id="searchSpot" action="#" method="get">
+					<input name="spotName" type="text" id="search-spots-input" class="user-search" placeholder="搜索酒店" />
+					<a href="#" id="search-spots" class="button medium red searchbox-button" onclick="document.getElementById('searchSpot').submit();">搜索</a>
+				</form>
 			</div>
 
-			<!--酒店的详细信息展示-->
-			<div class="two-third last" id="post-content">
+			<div class="items" th:each="hotel:${page.getList()}">
 
-				<div class="post-item post-thumb-hor" id="own-spots">
-					<div class="image-place">
-						<img src="../../static/user/images/uploads/hotel/泰安云巢宾馆.jpg" style="width: 200px;height: 200px" alt="image" />
+				<div class="item">
+					<div class="right_describe">
+						<div class="lookForView">
+							<a href="#"><div>查看酒店>></div></a>
+						</div>
+						<div class="price" th:text="'价格: '+${hotel.getMinPrice()} + '￥'">价格:1280￥</div>
+						<span class="comment">12条留言</span>
 					</div>
-					<div class="post-content">
-						<h2 class="post-title">泰安云巢宾馆</h2>
-						<p class="post-excerpt">泰安云巢宾馆位于泰山岱顶核心景区南天门里北天街，毗邻泰山岱顶桃花源索道上站，地理位置优越。 宾馆以帝王文化和泰山封禅文化为寄托，融合传统东方美学，
-							将辉煌蓬勃的帝王元素重组，融入现在旅游度假酒店的养生、祈福、揽胜的自然理念，呈天人合一之美。</p>
-						<ul class="post-content-detail">
-							<li>
-								<span>评分</span>
-								<strong class="sprite-stars star4">4 星</strong>
-							</li>
-							<li>
-								<span>价格</span>
-								<strong class="price">￥ 1045~1066</strong>
-							</li>
-						</ul>
-					</div>
-					<div class="post-meta">
-						<span class="icon-place">山东, 泰山</span>
-						<span class="offer-type">无餐食</span>
-					</div>
-				</div>
-
-				<div class="post-item post-thumb-hor">
-					<div class="image-place">
-						<img src="../../static/user/images/uploads/hotel/西安华山国际酒店.jpg" style="width: 200px;height: 200px" alt="image" />
-					</div>
-					<div class="post-content">
-						<h2 class="post-title">西安华山国际酒店</h2>
-						<p class="post-excerpt">西安华山国际酒店位于西安市北大街西七路口，位置优越、交通便利。步行数分钟就可欣赏到古城中心繁华街景，与北城门和明城墙咫尺之遥。
-						</p>
-						<ul class="post-content-detail">
-							<li>
-								<span>评分</span>
-								<strong class="sprite-stars star4">4 星</strong>
-							</li>
-							<li>
-								<span>价格</span>
-								<strong class="price">￥ 380~448</strong>
-							</li>
-						</ul>
-					</div>
-					<div class="post-meta">
-						<span class="icon-place">陕西, 西安</span>
-						<span class="offer-type">无餐食</span>
-					</div>
-				</div>
-
-				<div class="post-item post-thumb-hor">
-					<div class="image-place">
-						<img src="../../static/user/images/uploads/hotel/登封禅武大酒店.jpg" style="width: 200px;height: 200px" alt="image" />
-					</div>
-					<div class="post-content">
-						<h2 class="post-title">登封禅武大酒店</h2>
-						<p class="post-excerpt">登封禅武大酒店位于中国优秀旅游城市河南省登封市大禹路西段，地理位置优越，交通便利，距千年古刹禅宗少林祖庭少林寺9公里，
-							距道教圣地中岳庙7公里，距宋代四大书院之一的嵩阳书院2公里，距禅宗少林•音乐大典4公里，距郑少洛高速路西出口2公里。</p>
-						<ul class="post-content-detail">
-							<li>
-								<span>评分</span>
-								<strong class="sprite-stars star4">4 星</strong>
-							</li>
-							<li>
-								<span>价格</span>
-								<strong class="price">￥ 520~551</strong>
-							</li>
-						</ul>
-					</div>
-					<div class="post-meta">
-						<span class="icon-place">河南, 登封</span>
-						<span class="offer-type">无餐食</span>
-					</div>
-				</div>
-
-				<div class="post-item post-thumb-hor">
-					<div class="image-place">
-						<img src="../../static/user/images/uploads/hotel/柏曼酒店.jpg" style="width: 200px;height: 200px" alt="image" />
-					</div>
-					<div class="post-content">
-						<h2 class="post-title">柏曼酒店</h2>
-						<p class="post-excerpt">柏曼酒店(广州塔客村地铁站琶洲会展旗舰店)位于新港中路，毗邻琶洲国际会展中心、新领事馆区、TIT创意园、科技创业园、珠江夜游、
-							处在地铁8号线与3号线之间。</p>
-						<ul class="post-content-detail">
-							<li>
-								<span>评分</span>
-								<strong class="sprite-stars star4">4 星</strong>
-							</li>
-							<li>
-								<span>价格</span>
-								<strong class="price">￥ 255~758</strong>
-							</li>
-						</ul>
-					</div>
-					<div class="post-meta">
-						<span class="icon-place">广东, 广州</span>
-						<span class="offer-type">无餐食</span>
-					</div>
+					<img class="item_img" src="../../static/user/images/uploads/220x135/auckland-city.jpg" th:src="${hotel.getPicture()}" alt="">
+					<span class="top_describe" th:text="${hotel.getName()}">xxx酒店</span>
+					<div class="bottom_describe" th:text="${hotel.getInfo()}">西安的五星级酒店</div>
 				</div>
 
 			</div>
+
+			<br>
+			<br>
+			<div class="pagination" style="display:flex;justify-content:center">
+				<!-- 首页 -->
+				<li style="float: left;list-style: none">
+					<a th:href="'/page/toHotelPage?pageNum=1'">首页</a>
+				</li>
+
+				<!-- 上一页 -->
+				<li th:if="${!page.isFirstPage}" style="float: left;list-style: none">
+					<a th:href="'/page/toHotelPage?pageNum=' + ${page.getPrePage()}">上一页</a>
+				</li>
+
+				<!-- 中间页 -->
+				<li th:each="pageNum:${#numbers.sequence(1, page.getPages())}" style="float: left;list-style: none">
+					<a th:href="'/page/toHotelPage?pageNum=' + ${pageNum}" th:text="${pageNum}" th:if="${pageNum ne page.getPageNum()}"></a>
+					<a th:href="'/page/toHotelPage?pageNum=' + ${pageNum}" th:text="${pageNum}" th:if="${pageNum eq page.getPageNum()}" th:style="'font-weight:bold;background: #6faed9;'"></a>
+				</li>
+
+				<!-- 下一页 -->
+				<li th:if="${!page.isIsLastPage()}" style="float: left;list-style: none">
+					<a th:href="'/page/toHotelPage?pageNum=' + ${page.getNextPage()}">下一页</a>
+				</li>
+
+				<!-- 尾页 -->
+				<li style="float: left;list-style: none">
+					<a th:href="'/page/toHotelPage?pageNum=' + ${page.getPages()}">尾页</a>
+				</li>
+
+			</div>
+
+
 
 			<br class="clear" />
+
+
 		</div>
 	
 	</div>
@@ -367,6 +202,8 @@
 <script type="text/javascript" src="../../static/user/js/global.js"></script>
 <script type="text/javascript" src="../../static/user/js/jquerysession.js"></script>
 <script type="text/javascript" src="../../static/user/js/include.js"></script>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
 <script>
 	$('.userLogin').click(function(){
 

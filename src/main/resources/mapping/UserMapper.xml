@@ -66,4 +66,11 @@
         select * from t_user where role != 0 and username like #{username}
     </select>
 
+    <update id="updateUsernameAndPicture" parameterType="com.xupt.demo1.entity.User">
+        update t_user
+            set username = #{user.username},picture = #{user.picture}
+                where id = #{user.id}
+    </update>
+
+
 </mapper>
