@@ -46,4 +46,9 @@ public class ComplaintServiceImpl implements ComplaintService {
     public int findAllByStatusCount(){
         return complaintDao.findAllByStatus().size();
     }
+
+    @Override
+    public void insertComplaint(Complaint complaint){
+        complaintDao.insertComplaint(complaint);
+    }
 }

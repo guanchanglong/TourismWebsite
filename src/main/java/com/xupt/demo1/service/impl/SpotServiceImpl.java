@@ -1,5 +1,6 @@
 package com.xupt.demo1.service.impl;
 
+import com.xupt.demo1.controller.admin.APageController;
 import com.xupt.demo1.dao.SpotAndSpotDetailDao;
 import com.xupt.demo1.dao.SpotDao;
 import com.xupt.demo1.dao.SpotDetailDao;
@@ -10,11 +11,17 @@ import com.xupt.demo1.utils.SpotDataCrawler;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.springframework.ui.Model;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSessionContext;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.Set;
 
@@ -133,6 +140,7 @@ public class SpotServiceImpl implements SpotService {
      * 爬取页数的景点简介数据并保存
      * @param pageNum 爬取 1~pageNum 页的数据
      */
+    @Async
     public void getSpotDataAndSave(int pageNum){
 
         //现在表中的数据数
@@ -178,10 +186,10 @@ public class SpotServiceImpl implements SpotService {
 
 
     /**
-     * 爬取所有景点详细信息数据
-     * @return
+     * 保存和关联所有景点详细信息
      */
-    public List<Object> getAllDetailData(){
+    @Async
+    public void findAllSpotNameAndSpotWebId(){
 
         //获取景点简介数据
         List<Spot> listSpot = spotDao.findAllReturnIdAndNameAndSpotWebId();
@@ -191,7 +199,7 @@ public class SpotServiceImpl implements SpotService {
         //开始遍历爬取
         for (int i = 0;i < listSpot.size();i++){
             Spot spot = listSpot.get(i);
-            Object[] param = SpotDataCrawler.requestSpotDetailData(spot.getName(),spot.getId(),spot.getSpotWebId());
+            Object[] params = SpotDataCrawler.requestSpotDetailData(spot.getName(),spot.getId(),spot.getSpotWebId());
 
             //生成1-10的随机数
             int random = (int)(1+Math.random()*(10-1+1));
@@ -204,23 +212,15 @@ public class SpotServiceImpl implements SpotService {
             }
 
             //爬取信息是否成功
-            if (param==null){
+            if (params==null){
                 i--;
             }else{
                 //成功就添加到集合中去
-                result.add(param);
+                result.add(params);
             }
         }
 
-        return result;
-    }
 
-
-    /**
-     * 保存和关联所有景点详细信息
-     * @param param 景点详细信息
-     */
-    public void findAllSpotNameAndSpotWebId(List<Object> param){
 
         //获取景点详情界面在数据库的长度
         int totalSpotDetailSize = spotAndSpotDetailDao.countNotNullNum();
@@ -228,8 +228,8 @@ public class SpotServiceImpl implements SpotService {
         int index = 1;
 
         //获取所有的景点详细信息
-        for (int i = 0;i < param.size();i++){
-            Object[]data = (Object[]) param.get(i);
+        for (int i = 0;i < result.size();i++){
+            Object[]data = (Object[]) result.get(i);
 
             Spot spotToUpdate = (Spot) data[0];
             if (spotToUpdate!=null){

@@ -3,7 +3,9 @@ package com.xupt.demo1.service;
 import com.github.pagehelper.PageInfo;
 import com.xupt.demo1.entity.Spot;
 import com.xupt.demo1.entity.SpotDetail;
+import org.springframework.ui.Model;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -25,7 +27,5 @@ public interface SpotService {
 
     void getSpotDataAndSave(int pageNum);
 
-    List<Object> getAllDetailData();
-
-    void findAllSpotNameAndSpotWebId(List<Object> param);
+    void findAllSpotNameAndSpotWebId();
 }

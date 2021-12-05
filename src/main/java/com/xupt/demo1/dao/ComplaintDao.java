@@ -20,4 +20,6 @@ public interface ComplaintDao {
     void deleteComplaint(@Param("complaintId") int complaintId);
 
     List<Complaint> findAllByStatus();
+
+    void insertComplaint(@Param("complaint") Complaint complaint);
 }

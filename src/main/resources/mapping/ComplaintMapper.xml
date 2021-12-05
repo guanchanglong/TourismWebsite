@@ -19,4 +19,8 @@
     <delete id="deleteComplaint">
         delete from t_complaint where id = #{complaintId}
     </delete>
+
+    <insert id="insertComplaint" parameterType="com.xupt.demo1.entity.Complaint">
+        insert into t_complaint(email,time,status,content) values(#{complaint.email},#{complaint.time},0,#{complaint.content})
+    </insert>
 </mapper>

@@ -169,9 +169,12 @@
             </tr>
 
             <tr th:each="complaint:${page.getList()}">
-              <td th:text="${complaint.getEmail()}">123456@qq.com</td>
-              <td th:text="${complaint.getTimeToShow()}">2021年12月2日 11:12:13</td>
-              <td th:text="${complaint.getContent()}">系统做的太烂了</td>
+              <td th:if="${complaint.getStatus()==1}" style="color: green" th:text="${complaint.getEmail()}">123456@qq.com</td>
+              <td th:if="${complaint.getStatus()==0}" style="color: red" th:text="${complaint.getEmail()}">123456@qq.com</td>
+              <td th:if="${complaint.getStatus()==1}" style="color: green;" th:text="${complaint.getTimeToShow()}">2021年12月2日 11:12:13</td>
+              <td th:if="${complaint.getStatus()==0}" style="color: red;" th:text="${complaint.getTimeToShow()}">2021年12月2日 11:12:13</td>
+              <td th:if="${complaint.getStatus()==1}" style="color: green" th:text="${complaint.getContent()}">系统做的太烂了</td>
+              <td th:if="${complaint.getStatus()==0}" style="color: red" th:text="${complaint.getContent()}">系统做的太烂了</td>
               <td class="relative">
                 <a class="action-btn " href="javascript:void(0); ">
                 <svg class="default-size " viewBox="0 0 341.333 341.333 ">
@@ -193,6 +196,7 @@
                   </ul>
                 </div>
               </td>
+
             </tr>
 
             </tbody>

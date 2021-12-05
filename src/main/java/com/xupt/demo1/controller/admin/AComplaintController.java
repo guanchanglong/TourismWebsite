@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @Controller
 @RequestMapping("/admin/complaint")
-public class ComplaintController {
+public class AComplaintController {
     @Autowired
     private ComplaintService complaintService;
 

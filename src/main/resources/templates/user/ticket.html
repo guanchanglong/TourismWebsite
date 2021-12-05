@@ -33,24 +33,31 @@
           <a href="login.html" th:href="@{/user/toLoginPage}"><button type="button" class="user-offline-title user-login">登录</button></a>
         </div>
         <div class="userLogin" th:if="${user}!=null">
-          <img class="userLogin_img" src="../../static/user/images/user.png" alt="">
+          <img th:if="${user.getPicture()==null || user.getPicture().length()==0}" class="user-img" src="../../static/user/images/user.png" alt="">
+          <img th:if="${user.getPicture()!=null && user.getPicture().length()!=0}" class="user-img" src="../../static/user/images/user.png" th:src="${user.getPicture()}" alt="">
           <span class="userLogin_welcome">欢迎</span>
           <img class="userLogin_img1" src="../../static/user/images/downsanjiao.png" alt="">
           <div class="userLogin_hidden" style="z-index:100">
             <a href="#" th:href="@{/orders/showOrder}">
-            <div class="userLogin_hidden_item1">
+              <div class="userLogin_hidden_item1">
                 <img src="../../static/user/images/order.png" alt="">
                 <span>我的订单</span>
               </div>
             </a>
-            <a href="#">
+            <a href="modifyUserData.html" th:href="@{/page/toModifyUserDataPage}">
               <div class="userLogin_hidden_item2">
                 <img src="../../static/user/images/set.png" alt="">
-                <span>修改密码</span>
+                <span>修改信息</span>
+              </div>
+            </a>
+            <a href="complaint.html" th:href="@{/page/toComplaintPage}">
+              <div class="userLogin_hidden_item3">
+                <img src="../../static/user/images/order.png" alt="">
+                <span>意见反馈</span>
               </div>
             </a>
             <a href="#" th:href="@{/user/loginOut}">
-              <div class="userLogin_hidden_item3">
+              <div class="userLogin_hidden_item4">
                 <img src="../../static/user/images/logout.png" alt="">
                 <span>退出登录</span>
               </div>

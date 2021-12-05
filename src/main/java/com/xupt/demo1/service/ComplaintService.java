@@ -15,4 +15,6 @@ public interface ComplaintService {
     void deleteComplaint(int complaintId);
 
     int findAllByStatusCount();
+
+    void insertComplaint(Complaint complaint);
 }

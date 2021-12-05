@@ -32,6 +32,11 @@ public class PageController {
         return "user/ticket";
     }
 
+    @RequestMapping("/toFindPasswordPage")
+    public String toFindPasswordPage(){
+        return "user/findPassword";
+    }
+
     @RequestMapping("/toOrderPage")
     public String toOrderPage(Model model,HttpSession session){
         User user = (User)session.getAttribute("user");
@@ -66,6 +71,22 @@ public class PageController {
         User user = (User)session.getAttribute("user");
         model.addAttribute("user",user);
         return "user/spotsDetails";
+    }
+
+    @RequestMapping("/toComplaintPage")
+    public String toComplaintPage(Model model,
+                                  HttpSession session){
+        User user = (User)session.getAttribute("user");
+        model.addAttribute("user",user);
+        return "user/complaint";
+    }
+
+    @RequestMapping("/toModifyUserDataPage")
+    public String toModifyUserDataPage(Model model,
+                                       HttpSession session){
+        User user = (User) session.getAttribute("user");
+        model.addAttribute("user",user);
+        return "user/modifyUserData";
     }
 
 }

@@ -1,15 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+
 	<meta charset="utf-8">
-	<title>景点浏览</title>
+	<title>修改信息</title>
 	<link rel="icon" type="image/x-icon" href="../../static/favicon.png">
-	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-	<link rel="stylesheet" href="../../static/user/css/style.css" />
-	<link rel="stylesheet" href="../../static/user/css/responsive.css" />
-	<link rel="stylesheet" href="../../static/user/css/spots.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- 用户状态显示 -->
 	<link rel="stylesheet" href="../../static/user/css/userLogin.css">
+	<link rel="stylesheet" href="../../static/user/css/style.css" />
+	<link rel="stylesheet" href="../../static/user/css/responsive.css"/>
+	<link rel="stylesheet" href="../../static/user/css/order.css">
 	<script src="../../static/user/js/html5.js"></script>
 </head>
 
@@ -71,87 +72,62 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<ul id="nav">
 					<li><a href="index.html" th:href="@{/page/index}">首页</a></li>
-					<li class="selected"><a href="spots.html" th:href="@{/page/toSpotsPage}">景点</a>
+					<li><a href="spots.html" th:href="@{/page/toSpotsPage}">景点</a>
 					<li><a href="hotels.html" th:href="@{/page/toHotelPage}">酒店</a></li>
 					<li><a href="ticket.html" th:href="@{/page/toTicketPage}">火车票</a></li>
 				</ul>
 			</div>
 		</header>
-		
+
 		<div class="subheader">
 			<div class="left">
-				<span class="page-title">景点浏览</span>
-				<span class="page-desc">网罗天下美景，助您直达完美之旅。</span>			
+				<span class="page-title">用户信息修改</span>
+<!--				<span class="page-desc">订单列表</span>-->
 			</div>
 		</div>
-		
-		
+
+
 		<div id="content">
-                <div class="user-searchbox">
-					<form id="searchSpot" action="#" th:action="@{/spot/searchSpot}" method="get">
-						<input name="spotName" type="text" id="search-spots-input" class="user-search" placeholder="搜索景点" />
-						<a href="#" id="search-spots" class="button medium red searchbox-button" onclick="document.getElementById('searchSpot').submit();">搜索</a>
-					</form>
-				</div>
-
-			<h1 th:if="${page==null}">未查询到该景点~_~</h1>
-
-			<div th:if="${page!=null}" class="tag-filter-container" id="post-content">
-
-				<div class="items" th:each="spot:${page.getList()}">
-
-					<div class="item">
-						<div class="right_describe">
-							<div class="lookForView">
-								<div>查看景点>></div>
-							</div>
-							<div class="price">价格:128</div>
-							<span class="comment">12条留言</span>
-							<a class="know_more" href="#">了解更多</a>
-						</div>
-						<img class="item_img" src="../../static/user/images/uploads/220x135/auckland-city.jpg" th:src="${spot.getPicture()}" alt="">
-						<span class="top_describe" th:text="${spot.getName()}">马尔代夫旅行</span>
-						<div class="bottom_describe" th:text="${spot.getInfo()}">坐落于马尔代夫的emboodhufinolhu岛——马尔代夫的最大岛屿之一。</div>
+			<div class="orderItems" style="text-align: center;">
+				<h1 th:text="${message}" style="color: red">修改成功</h1>
+				<form action="#" method="post" th:action="@{/user/changeUserData}">
+					<h4>邮箱：</h4>
+					<div class="field">
+						<input id="email" name="email" placeholder="请输入您的邮箱" th:value="*{user.getEmail()}">
 					</div>
+					<br>
+					<h4>电话：</h4>
+					<div class="field">
+						<input id="phone" name="phone" placeholder="请输入您的电话" th:value="${user.getPhone()}">
+					</div>
+					<br>
+					<h4>用户名：</h4>
+					<div class="field">
+						<input id="username" name="username" placeholder="请输入您的用户名" th:value="*{user.getUsername()}">
+					</div>
+					<br>
+					<h4>头像图片链接：</h4>
+					<div class="field">
+						<input id="picture" name="picture" placeholder="请输入您的头像图片链接" th:value="*{user.getPicture()}">
+					</div>
+					<br>
+					<h4>密码：</h4>
+					<div class="field">
+						<input id="password" name="password" type="password" placeholder="请输入您的密码">
+					</div>
+					<br>
+					<button style="font-size: 20px;color: red" onclick="return isNull()">提交</button>
 
-				</div>
+				</form>
 
 			</div>
 
-			<br>
-			<div class="pagination" style="display:flex;justify-content:center">
-				<!-- 首页 -->
 
-				<li style="float: left;list-style: none">
-					<a th:href="'/spot/searchSpot?pageNum=1&spotName='+${name}">首页</a>
-				</li>
+			<br class="clear" />
 
-				<!-- 上一页 -->
-				<li th:if="${!page.isFirstPage}" style="float: left;list-style: none">
-					<a th:href="'/spot/searchSpot?spotName=' + ${name} + '&pageNum=' + ${page.getPrePage()}">上一页</a>
-				</li>
-
-				<!-- 中间页 -->
-				<li th:each="pageNum:${#numbers.sequence(1, page.getPages())}" style="float: left;list-style: none">
-					<a th:href="'/spot/searchSpot?spotName=' + ${name} + '&pageNum=' + ${pageNum}" th:text="${pageNum}" th:if="${pageNum ne page.getPageNum()}"></a>
-					<a th:href="'/spot/searchSpot?spotName=' + ${name} + '&pageNum=' + ${pageNum}" th:text="${pageNum}" th:if="${pageNum eq page.getPageNum()}" th:style="'font-weight:bold;background: #6faed9;'"></a>
-				</li>
-
-				<!-- 下一页 -->
-				<li th:if="${!page.isIsLastPage()}" style="float: left;list-style: none">
-					<a th:href="'/spot/searchSpot?spotName=' + ${name} + '&pageNum=' + ${page.getNextPage()}">下一页</a>
-				</li>
-
-				<!-- 尾页 -->
-				<li style="float: left;list-style: none">
-					<a th:href="'/spot/searchSpot?spotName=' + ${name} + '&pageNum=' + ${page.getPages()}">尾页</a>
-				</li>
-			</div>
-
-
-			<br class="clear" />	
 		</div>
-	
+
+
 	</div>
 
 	<footer id="footer">
@@ -195,9 +171,7 @@
 			<br class="clear" />
 		</div>
 	</footer>
-	
 </div>
-
 <script type="text/javascript" src="../../static/user/js/jquery-1.8.2.min.js"></script>
 <script type="text/javascript" src="../../static/user/js/jquery-ui-1.8.24.custom.min.js"></script>
 <script type="text/javascript" src="../../static/user/js/jquery.mobile.customized.min.js"></script>
@@ -211,8 +185,6 @@
 <script type="text/javascript" src="../../static/user/js/global.js"></script>
 <script type="text/javascript" src="../../static/user/js/jquerysession.js"></script>
 <script type="text/javascript" src="../../static/user/js/include.js"></script>
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
-<script src="https://unpkg.com/element-ui/lib/index.js"></script>
 <script>
 	$('.userLogin').click(function(){
 
@@ -224,6 +196,34 @@
 		}
 
 	})
+
+	function isNull(){
+		var email = $('#email').val();
+		var phone = $('#phone').val();
+		var username = $('#username').val();
+		var picture = $('#picture').val();
+		var password = $('#password').val();
+		if (email == ""){
+			alert("邮箱不能为空");
+			return false;
+		}
+		if (phone == ""){
+			alert("电话不能为空");
+			return false;
+		}
+		if (username == ""){
+			alert("用户名不能为空");
+			return false;
+		}
+		if (picture == ""){
+			alert("头像图片链接不能为空");
+			return false
+		}
+		if (password == ""){
+			alert("密码不能为空");
+			return false;
+		}
+	}
 </script>
 </body>
 </html>

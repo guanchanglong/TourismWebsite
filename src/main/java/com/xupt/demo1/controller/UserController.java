@@ -149,6 +149,58 @@ public class UserController {
         }
     }
 
+    @PostMapping("/findBackThePassword")
+    public String findBackThePassword(@RequestParam(value = "email") String email,
+                                      @RequestParam(value = "password") String password,
+                                      @RequestParam(value = "confirmPassword") String confirmPassword,
+                                      @RequestParam(value = "code") String code,
+                                      HttpSession session,
+                                      RedirectAttributes attributes){
+        String trueCode = (String) session.getAttribute("code" + email);
+        if (!password.equals(confirmPassword)){
+            attributes.addFlashAttribute("message","两次输入的密码不一致");
+            return "redirect:/user/toRegisterPage";
+        }
+
+        //判断用户输入的code跟我们发送到邮箱的code是否一致
+        if (!code.equals(trueCode)){
+            attributes.addFlashAttribute("message","验证码有误");
+            return "redirect:/user/toRegisterPage";
+        }else{
+            //更新用户的注册信息
+            User user = userService.findByEmail(email);
+            user.setPassword(password);
+            userService.updateUser(user);
+            //移除用户保存在session的验证码，释放内存
+            session.removeAttribute("code" + email);
+            return "redirect:/user/toLoginPage";
+        }
+    }
+
+    @PostMapping("/changeUserData")
+    public String changeUserData(HttpSession session,
+                                 RedirectAttributes attributes,
+                                 @RequestParam(value = "email") String email,
+                                 @RequestParam(value = "phone") String phone,
+                                 @RequestParam(value = "username") String username,
+                                 @RequestParam(value = "picture") String picture,
+                                 @RequestParam(value = "password") String password){
+        User user = (User) session.getAttribute("user");
+        User toConfirm = userService.findByEmail(email);
+        if (toConfirm!=null && user.getId()!=toConfirm.getId()){
+            attributes.addFlashAttribute("message","该邮箱已被注册");
+            return "redirect:/page/toModifyUserDataPage";
+        }
+        user.setEmail(email);
+        user.setPhone(phone);
+        user.setUsername(username);
+        user.setPicture(picture);
+        user.setPassword(password);
+        userService.updateUser(user);
+        attributes.addFlashAttribute("message","信息修改成功");
+        return "redirect:/page/toModifyUserDataPage";
+    }
+
     /**
      * 退出系统
      * @param session
@@ -158,6 +210,6 @@ public class UserController {
     public String loginOut(HttpSession session){
         //清空session里面的数据
         session.removeAttribute("user");
-        return "user/index";
+        return "redirect:/page/index";
     }
 }
