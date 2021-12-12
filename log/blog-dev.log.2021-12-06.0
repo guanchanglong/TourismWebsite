@@ -1,0 +1,294 @@
+2021-12-06 10:53:01.701  INFO 3404 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 3404 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-12-06 10:53:01.706  INFO 3404 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-12-06 10:53:02.570  INFO 3404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-12-06 10:53:02.576  INFO 3404 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-06 10:53:02.576  INFO 3404 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-06 10:53:02.637  INFO 3404 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-06 10:53:02.637  INFO 3404 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 892 ms
+2021-12-06 10:53:03.385  INFO 3404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-12-06 10:53:03.391  INFO 3404 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.033 seconds (JVM running for 2.868)
+2021-12-06 11:07:45.268  INFO 3404 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-12-06 11:07:45.272  INFO 3404 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-06 11:07:45.272  INFO 3404 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-06 11:07:45.274  INFO 3404 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-12-06 11:07:45.289  INFO 3404 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-06 11:07:45.293  INFO 3404 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-06 11:07:45.342  INFO 3404 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4]}
+2021-12-06 11:07:45.357  INFO 3404 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-06 11:07:46.311  INFO 3404 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-06 11:07:46.341  INFO 3404 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-06 11:27:29.002  INFO 3404 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toHotelPage;jsessionid=BF05BEB3AAC59D2FC07EFDF5B18076ED', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toSpotsRecommend', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 1, 10]}
+2021-12-06 11:27:29.029  INFO 3404 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Result：user/hotels
+2021-12-06 11:37:23.108  INFO 3404 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-06 11:37:23.109  INFO 3404 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-06 11:37:23.115  INFO 3404 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4]}
+2021-12-06 11:37:23.120  INFO 3404 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-06 11:37:43.675  INFO 3404 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toSpotsPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toSpotsPage', args=[]}
+2021-12-06 11:37:43.675  INFO 3404 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/showSpot
+2021-12-06 11:37:43.684  INFO 3404 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/showSpot', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.showClassList', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 1, 10]}
+2021-12-06 11:37:43.693  INFO 3404 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Result：user/spots
+2021-12-06 11:37:47.679  INFO 3404 --- [http-nio-8888-exec-4] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/showSpotDetail', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.showSpotDetail', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 1]}
+2021-12-06 11:37:47.685  INFO 3404 --- [http-nio-8888-exec-4] com.xupt.demo1.aspect.LogAspect          : Result：user/spotsDetails
+2021-12-06 11:37:51.049  INFO 3404 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toSpotsPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toSpotsPage', args=[]}
+2021-12-06 11:37:51.049  INFO 3404 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/showSpot
+2021-12-06 11:37:51.060  INFO 3404 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/showSpot', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.showClassList', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 1, 10]}
+2021-12-06 11:37:51.066  INFO 3404 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：user/spots
+2021-12-06 11:38:44.559  INFO 3404 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/showSpot', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.showClassList', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 15, 10]}
+2021-12-06 11:38:44.565  INFO 3404 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Result：user/spots
+2021-12-06 11:39:17.706  INFO 3404 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toHotelPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toSpotsRecommend', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 1, 10]}
+2021-12-06 11:39:17.714  INFO 3404 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Result：user/hotels
+2021-12-06 11:40:33.875  INFO 3404 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toTicketPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toHotelPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4]}
+2021-12-06 11:40:33.876  INFO 3404 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Result：user/ticket
+2021-12-06 11:40:34.309  INFO 3404 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toHotelPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toSpotsRecommend', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 1, 10]}
+2021-12-06 11:40:34.319  INFO 3404 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Result：user/hotels
+2021-12-06 11:40:58.171  INFO 3404 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toHotelPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toSpotsRecommend', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 1, 10]}
+2021-12-06 11:40:58.178  INFO 3404 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：user/hotels
+2021-12-06 11:41:03.565  INFO 3404 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toTicketPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toHotelPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4]}
+2021-12-06 11:41:03.565  INFO 3404 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：user/ticket
+2021-12-06 11:41:42.955  INFO 3404 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Request : {url='/trainClasses/searchClasses', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.TrainClassesController.searchClasses', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 2021-12-23, 北京, 上海]}
+2021-12-06 11:41:44.789  INFO 3404 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Request : {url='/trainClasses/searchClasses', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.TrainClassesController.searchClasses', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 2021-12-23, 北京, 上海]}
+2021-12-06 11:41:45.166 ERROR 3404 --- [http-nio-8888-exec-9] c.x.d.h.ControllerExceptionHandler       : Request URL : /trainClasses/searchClasses,Exception : syntax error, pos 1, line 1, column 2<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>铁路客户服务中心</title>
+<link href="/mormhweb/images/global.css" rel="stylesheet" type="text/css">
+<link href="/mormhweb/images/err.css" rel="stylesheet" type="text/css"/>
+<style type="text/css"> 
+<!--
+html,body{background:#fff;}
+
+
+-->
+</style>
+
+
+</head>
+
+<body>
+<div class="err_text">
+						 <ul id="error" >
+                         <li id="err_top">
+                         
+                         </li>
+                                                  <li id="err_bot">　　网络可能存在问题，请您重试一下！
+												  
+												  <div class="time">						 <SCRIPT language="javascript">
+<!--
+function initArray() {
+	for (i = 0; i < initArray.arguments.length; i++)
+		this[i] = initArray.arguments[i];
+}
+var isnMonths = new initArray("1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月");
+var isnDays = new initArray("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日");
+today = new Date();
+hrs = today.getHours();
+min = today.getMinutes();
+sec = today.getSeconds();
+clckh = "" + ((hrs > 12) ? hrs - 12 : hrs);
+clckm = ((min < 10) ? "0" : "") + min;
+clcks = ((sec < 10) ? "0" : "") + sec;
+clck = (hrs >= 12) ? "下午" : "上午";
+var stnr = "";
+var ns = "0123456789";
+var a = "";
+
+function getFullYear(d) {
+	yr = d.getYear();
+	if (yr < 1000)
+		yr += 1900;
+	return yr;
+}
+
+document.write(getFullYear(today) + "年" + isnMonths[today.getMonth()] + today.getDate() + "日" + " " + clckh + ":" + clckm + ":" + clcks + " " +  isnDays[today.getDay()]);
+
+//-->
+</SCRIPT></div>
+							
+                         
+                         </li>
+
+                         </ul>
+
+</div>
+</body>
+</html>
+2021-12-06 11:41:46.031 ERROR 3404 --- [http-nio-8888-exec-10] c.x.d.h.ControllerExceptionHandler       : Request URL : /trainClasses/searchClasses,Exception : syntax error, pos 1, line 1, column 2<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>铁路客户服务中心</title>
+<link href="/mormhweb/images/global.css" rel="stylesheet" type="text/css">
+<link href="/mormhweb/images/err.css" rel="stylesheet" type="text/css"/>
+<style type="text/css"> 
+<!--
+html,body{background:#fff;}
+
+
+-->
+</style>
+
+
+</head>
+
+<body>
+<div class="err_text">
+						 <ul id="error" >
+                         <li id="err_top">
+                         
+                         </li>
+                                                  <li id="err_bot">　　网络可能存在问题，请您重试一下！
+												  
+												  <div class="time">						 <SCRIPT language="javascript">
+<!--
+function initArray() {
+	for (i = 0; i < initArray.arguments.length; i++)
+		this[i] = initArray.arguments[i];
+}
+var isnMonths = new initArray("1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月");
+var isnDays = new initArray("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日");
+today = new Date();
+hrs = today.getHours();
+min = today.getMinutes();
+sec = today.getSeconds();
+clckh = "" + ((hrs > 12) ? hrs - 12 : hrs);
+clckm = ((min < 10) ? "0" : "") + min;
+clcks = ((sec < 10) ? "0" : "") + sec;
+clck = (hrs >= 12) ? "下午" : "上午";
+var stnr = "";
+var ns = "0123456789";
+var a = "";
+
+function getFullYear(d) {
+	yr = d.getYear();
+	if (yr < 1000)
+		yr += 1900;
+	return yr;
+}
+
+document.write(getFullYear(today) + "年" + isnMonths[today.getMonth()] + today.getDate() + "日" + " " + clckh + ":" + clckm + ":" + clcks + " " +  isnDays[today.getDay()]);
+
+//-->
+</SCRIPT></div>
+							
+                         
+                         </li>
+
+                         </ul>
+
+</div>
+</body>
+</html>
+2021-12-06 11:41:46.096  INFO 3404 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/trainClasses/searchClasses', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.TrainClassesController.searchClasses', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 2021-12-23, 北京, 上海]}
+2021-12-06 11:41:47.219 ERROR 3404 --- [http-nio-8888-exec-1] c.x.d.h.ControllerExceptionHandler       : Request URL : /trainClasses/searchClasses,Exception : syntax error, pos 1, line 1, column 2<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>铁路客户服务中心</title>
+<link href="/mormhweb/images/global.css" rel="stylesheet" type="text/css">
+<link href="/mormhweb/images/err.css" rel="stylesheet" type="text/css"/>
+<style type="text/css"> 
+<!--
+html,body{background:#fff;}
+
+
+-->
+</style>
+
+
+</head>
+
+<body>
+<div class="err_text">
+						 <ul id="error" >
+                         <li id="err_top">
+                         
+                         </li>
+                                                  <li id="err_bot">　　网络可能存在问题，请您重试一下！
+												  
+												  <div class="time">						 <SCRIPT language="javascript">
+<!--
+function initArray() {
+	for (i = 0; i < initArray.arguments.length; i++)
+		this[i] = initArray.arguments[i];
+}
+var isnMonths = new initArray("1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月");
+var isnDays = new initArray("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日");
+today = new Date();
+hrs = today.getHours();
+min = today.getMinutes();
+sec = today.getSeconds();
+clckh = "" + ((hrs > 12) ? hrs - 12 : hrs);
+clckm = ((min < 10) ? "0" : "") + min;
+clcks = ((sec < 10) ? "0" : "") + sec;
+clck = (hrs >= 12) ? "下午" : "上午";
+var stnr = "";
+var ns = "0123456789";
+var a = "";
+
+function getFullYear(d) {
+	yr = d.getYear();
+	if (yr < 1000)
+		yr += 1900;
+	return yr;
+}
+
+document.write(getFullYear(today) + "年" + isnMonths[today.getMonth()] + today.getDate() + "日" + " " + clckh + ":" + clckm + ":" + clcks + " " +  isnDays[today.getDay()]);
+
+//-->
+</SCRIPT></div>
+							
+                         
+                         </li>
+
+                         </ul>
+
+</div>
+</body>
+</html>
+2021-12-06 11:41:57.840  INFO 3404 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Request : {url='/trainClasses/searchClasses', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.TrainClassesController.searchClasses', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 2021-12-15, 北京, 上海]}
+2021-12-06 11:41:58.383  INFO 3404 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Result：user/ticket
+2021-12-06 11:42:38.018  INFO 3404 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toSpotsPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toSpotsPage', args=[]}
+2021-12-06 11:42:38.018  INFO 3404 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/showSpot
+2021-12-06 11:42:38.024  INFO 3404 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/showSpot', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.showClassList', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 1, 10]}
+2021-12-06 11:42:38.032  INFO 3404 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：user/spots
+2021-12-06 11:43:00.551  INFO 3404 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/searchSpot', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.searchSpot', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 长恨歌, 1, 10]}
+2021-12-06 11:43:00.561  INFO 3404 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Result：user/spotsToSearch
+2021-12-06 11:43:17.702  INFO 3404 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/showSpotDetail', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.showSpotDetail', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 1]}
+2021-12-06 11:43:17.706  INFO 3404 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Result：user/spotsDetails
+2021-12-06 11:43:23.878  INFO 3404 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toLoginPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.toLoginPage', args=[]}
+2021-12-06 11:43:23.886  INFO 3404 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/login
+2021-12-06 11:43:29.748  INFO 3404 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/login', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.login', args=[506921079@qq.com, 123456, org.apache.catalina.session.StandardSessionFacade@225f97b4, {}]}
+2021-12-06 11:43:29.751  INFO 3404 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page/index
+2021-12-06 11:43:29.761  INFO 3404 --- [http-nio-8888-exec-4] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-06 11:43:29.761  INFO 3404 --- [http-nio-8888-exec-4] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-06 11:43:29.766  INFO 3404 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4]}
+2021-12-06 11:43:29.768  INFO 3404 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-06 11:43:33.105  INFO 3404 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/orders/showOrder', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.OrderController.showOrder', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 1, 10]}
+2021-12-06 11:43:33.124  INFO 3404 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：user/order
+2021-12-06 11:43:36.547  INFO 3404 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/orders/showOrder', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.OrderController.showOrder', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 2, 10]}
+2021-12-06 11:43:36.553  INFO 3404 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：user/order
+2021-12-06 11:43:40.175  INFO 3404 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Request : {url='/orders/showOrder', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.OrderController.showOrder', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 2, 10]}
+2021-12-06 11:43:40.182  INFO 3404 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Result：user/order
+2021-12-06 11:43:42.219  INFO 3404 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Request : {url='/orders/showOrder', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.OrderController.showOrder', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 1, 10]}
+2021-12-06 11:43:42.231  INFO 3404 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Result：user/order
+2021-12-06 11:43:46.843  INFO 3404 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/orders/showOrder', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.OrderController.showOrder', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 2, 10]}
+2021-12-06 11:43:46.848  INFO 3404 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/order
+2021-12-06 11:43:55.580  INFO 3404 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toSpotsPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toSpotsPage', args=[]}
+2021-12-06 11:43:55.580  INFO 3404 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/showSpot
+2021-12-06 11:43:55.587  INFO 3404 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/showSpot', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.showClassList', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 1, 10]}
+2021-12-06 11:43:55.616  INFO 3404 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Result：user/spots
+2021-12-06 11:43:58.013  INFO 3404 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/showSpotDetail', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.showSpotDetail', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 3]}
+2021-12-06 11:43:58.016  INFO 3404 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：user/spotsDetails
+2021-12-06 11:43:59.455  INFO 3404 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/orders/pay', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.OrderController.pay', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 0, 3]}
+2021-12-06 11:43:59.935  INFO 3404 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：user/paySuccess
+2021-12-06 11:44:03.642  INFO 3404 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Request : {url='/orders/showOrder', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.OrderController.showOrder', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 1, 10]}
+2021-12-06 11:44:03.651  INFO 3404 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Result：user/order
+2021-12-06 11:44:08.414  INFO 3404 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/orders/showOrder', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.OrderController.showOrder', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 2, 10]}
+2021-12-06 11:44:08.420  INFO 3404 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/order
+2021-12-06 11:44:11.657  INFO 3404 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Request : {url='/orders/deleteOrderRecord', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.OrderController.deleteOrderRecord', args=[45]}
+2021-12-06 11:44:11.798  INFO 3404 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/orders/showOrder
+2021-12-06 11:44:11.811  INFO 3404 --- [http-nio-8888-exec-4] com.xupt.demo1.aspect.LogAspect          : Request : {url='/orders/showOrder', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.OrderController.showOrder', args=[{}, org.apache.catalina.session.StandardSessionFacade@225f97b4, 1, 10]}
+2021-12-06 11:44:11.824  INFO 3404 --- [http-nio-8888-exec-4] com.xupt.demo1.aspect.LogAspect          : Result：user/order
+2021-12-06 12:23:49.336  WARN 3404 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=36m33s639ms765µs700ns).

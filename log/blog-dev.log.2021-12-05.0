@@ -1,0 +1,722 @@
+2021-12-05 11:12:19.600  INFO 16516 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 16516 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-12-05 11:12:19.620  INFO 16516 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-12-05 11:12:22.345  INFO 16516 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-12-05 11:12:22.353  INFO 16516 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-05 11:12:22.353  INFO 16516 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-05 11:12:22.574  INFO 16516 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-05 11:12:22.574  INFO 16516 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2906 ms
+2021-12-05 11:12:24.548  INFO 16516 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-12-05 11:12:24.561  INFO 16516 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 5.918 seconds (JVM running for 8.127)
+2021-12-05 11:12:35.931  INFO 16516 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-12-05 11:12:35.935  INFO 16516 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-05 11:12:35.935  INFO 16516 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-05 11:12:35.936  INFO 16516 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-12-05 11:12:35.956  INFO 16516 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 11:12:35.961  INFO 16516 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 11:12:36.001  INFO 16516 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@257eba25]}
+2021-12-05 11:12:36.044  INFO 16516 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-05 11:12:37.522  INFO 16516 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-05 11:12:37.735  INFO 16516 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 11:12:50.999  INFO 16516 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toSpotsPage;jsessionid=BE7C53C145BD6BC764C5DC686F5C0C84', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toSpotsPage', args=[]}
+2021-12-05 11:12:50.999  INFO 16516 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/showSpot
+2021-12-05 11:12:51.125  INFO 16516 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/showSpot', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.showClassList', args=[{}, org.apache.catalina.session.StandardSessionFacade@257eba25, 1, 10]}
+2021-12-05 11:12:51.320  INFO 16516 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：user/spots
+2021-12-05 11:13:00.630  INFO 16516 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toTicketPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toHotelPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@257eba25]}
+2021-12-05 11:13:00.630  INFO 16516 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Result：user/ticket
+2021-12-05 11:13:03.109  INFO 16516 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toLoginPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.toLoginPage', args=[]}
+2021-12-05 11:13:03.112  INFO 16516 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Result：user/login
+2021-12-05 11:13:06.386  INFO 16516 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toRegisterPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.toRegisterPage', args=[]}
+2021-12-05 11:13:06.386  INFO 16516 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：user/register
+2021-12-05 11:24:45.066  INFO 1480 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 1480 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-12-05 11:24:45.068  INFO 1480 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-12-05 11:24:45.917  INFO 1480 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-12-05 11:24:45.922  INFO 1480 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-05 11:24:45.922  INFO 1480 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-05 11:24:45.971  INFO 1480 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-05 11:24:45.971  INFO 1480 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 875 ms
+2021-12-05 11:24:46.715  INFO 1480 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-12-05 11:24:46.722  INFO 1480 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.024 seconds (JVM running for 2.861)
+2021-12-05 11:24:54.580  INFO 1480 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; JSESSIONID=BE7C53C145BD6BC764C5DC686F5C0C84] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-12-05 11:24:54.584  INFO 1480 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-05 11:24:54.585  INFO 1480 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-05 11:24:54.585  INFO 1480 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-12-05 11:24:54.599  INFO 1480 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 11:24:54.602  INFO 1480 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 11:24:54.630  INFO 1480 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@4eb95c6b]}
+2021-12-05 11:24:54.644  INFO 1480 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-05 11:24:55.272  INFO 1480 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-05 11:24:55.300  INFO 1480 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 11:24:57.649  INFO 1480 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toLoginPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.toLoginPage', args=[]}
+2021-12-05 11:24:57.652  INFO 1480 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Result：user/login
+2021-12-05 11:25:23.604  INFO 4356 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 4356 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-12-05 11:25:23.606  INFO 4356 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-12-05 11:25:24.449  INFO 4356 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-12-05 11:25:24.455  INFO 4356 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-05 11:25:24.455  INFO 4356 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-05 11:25:24.506  INFO 4356 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-05 11:25:24.507  INFO 4356 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 874 ms
+2021-12-05 11:25:25.259  INFO 4356 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-12-05 11:25:25.266  INFO 4356 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.049 seconds (JVM running for 2.938)
+2021-12-05 11:25:40.809  INFO 4356 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; JSESSIONID=99421B8FE7F764541F2AAE4CDA3D8D13; __session:0.24446668480444567:=http:] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-12-05 11:25:40.813  INFO 4356 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-05 11:25:40.813  INFO 4356 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-05 11:25:40.814  INFO 4356 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-12-05 11:25:40.829  INFO 4356 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 11:25:40.833  INFO 4356 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 11:25:40.857  INFO 4356 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@1038b706]}
+2021-12-05 11:25:40.874  INFO 4356 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-05 11:25:41.481  INFO 4356 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-05 11:25:41.510  INFO 4356 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 11:25:43.108  INFO 4356 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toLoginPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.toLoginPage', args=[]}
+2021-12-05 11:25:43.112  INFO 4356 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Result：user/login
+2021-12-05 11:25:45.154  INFO 4356 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toFindPasswordPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toFindPasswordPage', args=[]}
+2021-12-05 11:25:45.155  INFO 4356 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：user/findPassword
+2021-12-05 11:25:50.375  INFO 4356 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/sendEmail', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.sendCode', args=[506921079@qq.com, org.apache.catalina.session.StandardSessionFacade@1038b706]}
+2021-12-05 11:25:56.094  INFO 4356 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：user/register
+2021-12-05 11:26:14.818  INFO 4356 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/findBackThePassword', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.findBackThePassword', args=[506921079@qq.com, 123456, 123456, 348181, org.apache.catalina.session.StandardSessionFacade@1038b706, {}]}
+2021-12-05 11:26:14.962  INFO 4356 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/user/toLoginPage
+2021-12-05 11:26:14.966  INFO 4356 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toLoginPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.toLoginPage', args=[]}
+2021-12-05 11:26:14.966  INFO 4356 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Result：user/login
+2021-12-05 11:26:23.506  INFO 4356 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/login', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.login', args=[506921079@qq.com, 123456, org.apache.catalina.session.StandardSessionFacade@1038b706, {}]}
+2021-12-05 11:26:23.508  INFO 4356 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page/index
+2021-12-05 11:26:23.512  INFO 4356 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 11:26:23.513  INFO 4356 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 11:26:23.516  INFO 4356 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@1038b706]}
+2021-12-05 11:26:23.518  INFO 4356 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 11:29:36.596  INFO 9700 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 9700 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-12-05 11:29:36.599  INFO 9700 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-12-05 11:29:37.799  INFO 9700 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-12-05 11:29:37.807  INFO 9700 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-05 11:29:37.808  INFO 9700 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-05 11:29:37.903  INFO 9700 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-05 11:29:37.904  INFO 9700 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1260 ms
+2021-12-05 11:29:39.163  INFO 9700 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-12-05 11:29:39.169  INFO 9700 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 3.074 seconds (JVM running for 4.368)
+2021-12-05 11:29:45.745  INFO 9700 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; JSESSIONID=6FE1CE422D4805B2DBEF96DA558998B3; __session:0.8452307951835232:=http:; __session:0.6149391287829176:=http:] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-12-05 11:29:45.749  INFO 9700 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-05 11:29:45.750  INFO 9700 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-05 11:29:45.751  INFO 9700 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-12-05 11:29:45.764  INFO 9700 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 11:29:45.768  INFO 9700 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 11:29:45.790  INFO 9700 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@85550e5]}
+2021-12-05 11:29:45.804  INFO 9700 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-05 11:29:46.396  INFO 9700 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-05 11:29:46.435  INFO 9700 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 11:29:52.241  INFO 9700 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@85550e5]}
+2021-12-05 11:29:52.245  INFO 9700 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 11:30:11.211  INFO 9700 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toSpotsPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toSpotsPage', args=[]}
+2021-12-05 11:30:11.212  INFO 9700 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/showSpot
+2021-12-05 11:30:11.219  INFO 9700 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/showSpot', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.showClassList', args=[{}, org.apache.catalina.session.StandardSessionFacade@85550e5, 1, 10]}
+2021-12-05 11:30:11.243  INFO 9700 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：user/spots
+2021-12-05 11:30:15.025  INFO 9700 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toHotelPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toSpotsRecommend', args=[{}, org.apache.catalina.session.StandardSessionFacade@85550e5, 1, 10]}
+2021-12-05 11:30:15.516  INFO 9700 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/hotels
+2021-12-05 11:30:19.169  INFO 9700 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toTicketPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toHotelPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@85550e5]}
+2021-12-05 11:30:19.169  INFO 9700 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Result：user/ticket
+2021-12-05 11:30:20.884  INFO 9700 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toLoginPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.toLoginPage', args=[]}
+2021-12-05 11:30:20.888  INFO 9700 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Result：user/login
+2021-12-05 11:30:25.512  INFO 9700 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/login', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.login', args=[506921079@qq.com, 123456, org.apache.catalina.session.StandardSessionFacade@85550e5, {}]}
+2021-12-05 11:30:25.514  INFO 9700 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page/index
+2021-12-05 11:30:25.517  INFO 9700 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 11:30:25.517  INFO 9700 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 11:30:25.522  INFO 9700 --- [http-nio-8888-exec-4] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@85550e5]}
+2021-12-05 11:30:25.524  INFO 9700 --- [http-nio-8888-exec-4] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 11:30:30.532  INFO 9700 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toSpotsPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toSpotsPage', args=[]}
+2021-12-05 11:30:30.532  INFO 9700 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/showSpot
+2021-12-05 11:30:30.538  INFO 9700 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/showSpot', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.showClassList', args=[{}, org.apache.catalina.session.StandardSessionFacade@85550e5, 1, 10]}
+2021-12-05 11:30:30.542  INFO 9700 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：user/spots
+2021-12-05 11:30:36.444  INFO 9700 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/searchSpot', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.searchSpot', args=[{}, org.apache.catalina.session.StandardSessionFacade@85550e5, 兵马俑, 1, 10]}
+2021-12-05 11:30:36.447  INFO 9700 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/spotsToSearch
+2021-12-05 11:30:38.095  INFO 9700 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/searchSpot', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.searchSpot', args=[{}, org.apache.catalina.session.StandardSessionFacade@85550e5, 兵马俑, 1, 10]}
+2021-12-05 11:30:38.099  INFO 9700 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Result：user/spotsToSearch
+2021-12-05 11:30:41.414  INFO 9700 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toHotelPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toSpotsRecommend', args=[{}, org.apache.catalina.session.StandardSessionFacade@85550e5, 1, 10]}
+2021-12-05 11:30:41.421  INFO 9700 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Result：user/hotels
+2021-12-05 11:30:49.208  INFO 9700 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toTicketPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toHotelPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@85550e5]}
+2021-12-05 11:30:49.208  INFO 9700 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Result：user/ticket
+2021-12-05 12:30:47.972  INFO 13240 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 13240 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-12-05 12:30:47.974  INFO 13240 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-12-05 12:30:48.844  INFO 13240 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-12-05 12:30:48.850  INFO 13240 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-05 12:30:48.850  INFO 13240 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-05 12:30:48.902  INFO 13240 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-05 12:30:48.902  INFO 13240 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 898 ms
+2021-12-05 12:30:49.675  INFO 13240 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-12-05 12:30:49.682  INFO 13240 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.096 seconds (JVM running for 3.187)
+2021-12-05 12:31:06.960  INFO 13240 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; JSESSIONID=4EAD3AB1ED7A66C72E92332055AB24B9; __session:0.6493181664862502:=http:] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-12-05 12:31:06.965  INFO 13240 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-05 12:31:06.965  INFO 13240 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-05 12:31:06.966  INFO 13240 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-12-05 12:31:06.980  INFO 13240 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 12:31:06.983  INFO 13240 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 12:31:07.004  INFO 13240 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@3e7376af]}
+2021-12-05 12:31:07.019  INFO 13240 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-05 12:31:07.632  INFO 13240 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-05 12:31:07.660  INFO 13240 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 12:31:09.834  INFO 13240 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toLoginPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.toLoginPage', args=[]}
+2021-12-05 12:31:09.837  INFO 13240 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Result：user/login
+2021-12-05 12:31:14.367  INFO 13240 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/login', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.login', args=[506921079@qq.com, 123456, org.apache.catalina.session.StandardSessionFacade@3e7376af, {}]}
+2021-12-05 12:31:14.372  INFO 13240 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page/index
+2021-12-05 12:31:14.378  INFO 13240 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 12:31:14.378  INFO 13240 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 12:31:14.382  INFO 13240 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@3e7376af]}
+2021-12-05 12:31:14.384  INFO 13240 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 12:31:19.033  INFO 13240 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@3e7376af]}
+2021-12-05 12:31:19.036  INFO 13240 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 12:31:22.054  INFO 13240 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toComplaintPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toComplaintPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@3e7376af]}
+2021-12-05 12:31:22.055  INFO 13240 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：user/complaint
+2021-12-05 12:31:26.233  INFO 13240 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 12:31:26.234  INFO 13240 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 12:31:26.237  INFO 13240 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@3e7376af]}
+2021-12-05 12:31:26.241  INFO 13240 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 12:31:38.238  INFO 13240 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toComplaintPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toComplaintPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@3e7376af]}
+2021-12-05 12:31:38.239  INFO 13240 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：user/complaint
+2021-12-05 12:32:34.878  INFO 13240 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 12:32:34.878  INFO 13240 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 12:32:34.884  INFO 13240 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@3e7376af]}
+2021-12-05 12:32:34.886  INFO 13240 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 12:32:35.952  INFO 13240 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toSpotsPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toSpotsPage', args=[]}
+2021-12-05 12:32:35.952  INFO 13240 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/showSpot
+2021-12-05 12:32:35.957  INFO 13240 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/showSpot', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.showClassList', args=[{}, org.apache.catalina.session.StandardSessionFacade@3e7376af, 1, 10]}
+2021-12-05 12:32:35.978  INFO 13240 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Result：user/spots
+2021-12-05 12:32:38.836  INFO 13240 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toHotelPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toSpotsRecommend', args=[{}, org.apache.catalina.session.StandardSessionFacade@3e7376af, 1, 10]}
+2021-12-05 12:32:38.841  INFO 13240 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Result：user/hotels
+2021-12-05 12:32:40.234  INFO 13240 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toTicketPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toHotelPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@3e7376af]}
+2021-12-05 12:32:40.234  INFO 13240 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：user/ticket
+2021-12-05 12:32:43.079  INFO 13240 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toComplaintPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toComplaintPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@3e7376af]}
+2021-12-05 12:32:43.079  INFO 13240 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：user/complaint
+2021-12-05 12:33:00.167  INFO 13240 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 12:33:00.167  INFO 13240 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 12:33:00.171  INFO 13240 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@3e7376af]}
+2021-12-05 12:33:00.173  INFO 13240 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 12:33:13.486  INFO 15000 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 15000 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-12-05 12:33:13.488  INFO 15000 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-12-05 12:33:15.128  INFO 15000 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-12-05 12:33:15.147  INFO 15000 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-05 12:33:15.148  INFO 15000 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-05 12:33:15.256  INFO 15000 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-05 12:33:15.256  INFO 15000 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1723 ms
+2021-12-05 12:33:16.197  INFO 15000 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-12-05 12:33:16.204  INFO 15000 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 3.176 seconds (JVM running for 4.568)
+2021-12-05 12:33:16.261  INFO 15000 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; JSESSIONID=425DEFED30F8B28E858738E3F17272F4; __session:0.2826187214995972:=http:; __session:0.35596078094091044:=http:] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-12-05 12:33:16.265  INFO 15000 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-05 12:33:16.265  INFO 15000 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-05 12:33:16.266  INFO 15000 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-12-05 12:33:22.264  INFO 15000 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='127.0.0.1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@57d5f187]}
+2021-12-05 12:33:22.279  INFO 15000 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-05 12:33:22.869  INFO 15000 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-05 12:33:22.898  INFO 15000 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 12:33:24.620  INFO 15000 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toLoginPage', ip='127.0.0.1', classMethod='com.xupt.demo1.controller.UserController.toLoginPage', args=[]}
+2021-12-05 12:33:24.634  INFO 15000 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Result：user/login
+2021-12-05 12:33:29.495  INFO 15000 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/login', ip='127.0.0.1', classMethod='com.xupt.demo1.controller.UserController.login', args=[506921079@qq.com, 123456, org.apache.catalina.session.StandardSessionFacade@57d5f187, {}]}
+2021-12-05 12:33:29.499  INFO 15000 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page/index
+2021-12-05 12:33:29.511  INFO 15000 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='127.0.0.1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 12:33:29.514  INFO 15000 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 12:33:29.519  INFO 15000 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='127.0.0.1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@57d5f187]}
+2021-12-05 12:33:29.521  INFO 15000 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 12:33:33.102  INFO 15000 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toComplaintPage', ip='127.0.0.1', classMethod='com.xupt.demo1.controller.PageController.toComplaintPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@57d5f187]}
+2021-12-05 12:33:33.103  INFO 15000 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：user/complaint
+2021-12-05 12:33:53.662  INFO 15000 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/complaint/addComplaint', ip='127.0.0.1', classMethod='com.xupt.demo1.controller.ComplaintController.addComplaint', args=[org.apache.catalina.session.StandardSessionFacade@57d5f187, {}, 前端页面写得太烂了]}
+2021-12-05 12:33:54.108 ERROR 15000 --- [http-nio-8888-exec-2] c.x.d.h.ControllerExceptionHandler       : Request URL : /complaint/addComplaint,Exception : 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.'2021-12-05 12:33:53.665',0,'前端页面写得太烂了')' at line 1
+### The error may exist in file [D:\Web应用开发大作业\demo1\target\classes\mapping\ComplaintMapper.xml]
+### The error may involve com.xupt.demo1.dao.ComplaintDao.insertComplaint-Inline
+### The error occurred while setting parameters
+### SQL: insert into t_complaint(email,time,status,content) values(?.?,0,?)
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.'2021-12-05 12:33:53.665',0,'前端页面写得太烂了')' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.'2021-12-05 12:33:53.665',0,'前端页面写得太烂了')' at line 1
+2021-12-05 12:33:54.448 ERROR 15000 --- [http-nio-8888-exec-3] c.x.d.h.ControllerExceptionHandler       : Request URL : /complaint/addComplaint,Exception : Request method 'GET' not supported
+2021-12-05 12:34:49.120  INFO 12000 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 12000 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-12-05 12:34:49.122  INFO 12000 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-12-05 12:34:49.951  INFO 12000 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-12-05 12:34:49.957  INFO 12000 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-05 12:34:49.957  INFO 12000 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-05 12:34:50.043  INFO 12000 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-05 12:34:50.043  INFO 12000 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 889 ms
+2021-12-05 12:34:50.820  INFO 12000 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-12-05 12:34:50.827  INFO 12000 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.085 seconds (JVM running for 2.938)
+2021-12-05 12:34:58.267  INFO 12000 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; __session:0.2826187214995972:=http:; __session:0.35596078094091044:=http:; JSESSIONID=F14400EB3ADB9D2B665B25BB6D9C1541] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-12-05 12:34:58.272  INFO 12000 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-05 12:34:58.272  INFO 12000 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-05 12:34:58.273  INFO 12000 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-12-05 12:34:58.285  INFO 12000 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 12:34:58.290  INFO 12000 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 12:34:58.311  INFO 12000 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@111459c9]}
+2021-12-05 12:34:58.325  INFO 12000 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-05 12:34:58.905  INFO 12000 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-05 12:34:58.932  INFO 12000 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 12:35:00.611  INFO 12000 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toLoginPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.toLoginPage', args=[]}
+2021-12-05 12:35:00.616  INFO 12000 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：user/login
+2021-12-05 12:35:06.143  INFO 12000 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/login', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.login', args=[506921079@qq.com, 123456, org.apache.catalina.session.StandardSessionFacade@111459c9, {}]}
+2021-12-05 12:35:06.146  INFO 12000 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page/index
+2021-12-05 12:35:06.151  INFO 12000 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 12:35:06.151  INFO 12000 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 12:35:06.156  INFO 12000 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@111459c9]}
+2021-12-05 12:35:06.158  INFO 12000 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 12:36:16.332  INFO 14068 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 14068 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-12-05 12:36:16.334  INFO 14068 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-12-05 12:36:17.141  INFO 14068 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-12-05 12:36:17.146  INFO 14068 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-05 12:36:17.147  INFO 14068 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-05 12:36:17.202  INFO 14068 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-05 12:36:17.202  INFO 14068 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 841 ms
+2021-12-05 12:36:17.990  INFO 14068 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-12-05 12:36:17.997  INFO 14068 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.007 seconds (JVM running for 2.886)
+2021-12-05 12:36:18.166  INFO 14068 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; __session:0.2826187214995972:=http:; JSESSIONID=6CD37357C13CB4BDC1C4C573CF3E5A4B] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-12-05 12:36:18.170  INFO 14068 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-05 12:36:18.170  INFO 14068 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-05 12:36:18.171  INFO 14068 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-12-05 12:36:27.231  INFO 14068 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@30addd93]}
+2021-12-05 12:36:27.248  INFO 14068 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-05 12:36:27.878  INFO 14068 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-05 12:36:27.908  INFO 14068 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 12:36:30.514  INFO 14068 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toLoginPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.toLoginPage', args=[]}
+2021-12-05 12:36:30.517  INFO 14068 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Result：user/login
+2021-12-05 12:36:35.023  INFO 14068 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/login', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.login', args=[506921079@qq.com, 123456, org.apache.catalina.session.StandardSessionFacade@30addd93, {}]}
+2021-12-05 12:36:35.028  INFO 14068 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page/index
+2021-12-05 12:36:35.040  INFO 14068 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 12:36:35.043  INFO 14068 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 12:36:35.047  INFO 14068 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@30addd93]}
+2021-12-05 12:36:35.049  INFO 14068 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 12:36:38.633  INFO 14068 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toComplaintPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toComplaintPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@30addd93]}
+2021-12-05 12:36:38.633  INFO 14068 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：user/complaint
+2021-12-05 12:36:51.102  INFO 14068 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/complaint/addComplaint', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.ComplaintController.addComplaint', args=[org.apache.catalina.session.StandardSessionFacade@30addd93, {}, 前端页面写得太烂了]}
+2021-12-05 12:36:51.280  INFO 14068 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page//toComplaintPage
+2021-12-05 12:36:51.287  INFO 14068 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page//toComplaintPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toComplaintPage', args=[{message=感谢您的反馈}, org.apache.catalina.session.StandardSessionFacade@30addd93]}
+2021-12-05 12:36:51.287  INFO 14068 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Result：user/complaint
+2021-12-05 12:37:36.558  INFO 14068 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page//toComplaintPage', ip='127.0.0.1', classMethod='com.xupt.demo1.controller.PageController.toComplaintPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@30addd93]}
+2021-12-05 12:37:36.559  INFO 14068 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Result：user/complaint
+2021-12-05 12:38:31.923  INFO 12240 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 12240 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-12-05 12:38:31.925  INFO 12240 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-12-05 12:38:32.850  INFO 12240 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-12-05 12:38:32.857  INFO 12240 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-05 12:38:32.857  INFO 12240 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-05 12:38:32.930  INFO 12240 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-05 12:38:32.931  INFO 12240 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 969 ms
+2021-12-05 12:38:33.730  INFO 12240 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-12-05 12:38:33.737  INFO 12240 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.382 seconds (JVM running for 3.91)
+2021-12-05 12:38:51.002  INFO 12240 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; __session:0.2826187214995972:=http:; JSESSIONID=CBE1C172708B25F40DC742B0DC803A1B; __session:0.12296282989905771:=http:] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-12-05 12:38:51.007  INFO 12240 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-05 12:38:51.007  INFO 12240 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-05 12:38:51.007  INFO 12240 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-12-05 12:38:51.022  INFO 12240 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 12:38:51.026  INFO 12240 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 12:38:51.147  INFO 12240 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@370dc3eb]}
+2021-12-05 12:38:51.168  INFO 12240 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-05 12:38:51.754  INFO 12240 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-05 12:38:51.793  INFO 12240 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 12:39:00.032  INFO 12240 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toLoginPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.toLoginPage', args=[]}
+2021-12-05 12:39:00.035  INFO 12240 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Result：user/login
+2021-12-05 12:39:04.240  INFO 12240 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/login', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.login', args=[506921079@qq.com, 123456, org.apache.catalina.session.StandardSessionFacade@370dc3eb, {}]}
+2021-12-05 12:39:04.245  INFO 12240 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page/index
+2021-12-05 12:39:04.250  INFO 12240 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 12:39:04.250  INFO 12240 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 12:39:04.254  INFO 12240 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@370dc3eb]}
+2021-12-05 12:39:04.256  INFO 12240 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 12:39:06.808  INFO 12240 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toComplaintPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toComplaintPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@370dc3eb]}
+2021-12-05 12:39:06.809  INFO 12240 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：user/complaint
+2021-12-05 12:39:27.676  INFO 12240 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toTicketPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toHotelPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@370dc3eb]}
+2021-12-05 12:39:27.676  INFO 12240 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/ticket
+2021-12-05 12:39:29.057  INFO 12240 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toHotelPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toSpotsRecommend', args=[{}, org.apache.catalina.session.StandardSessionFacade@370dc3eb, 1, 10]}
+2021-12-05 12:39:29.079  INFO 12240 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Result：user/hotels
+2021-12-05 12:39:32.265  INFO 12240 --- [http-nio-8888-exec-4] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toSpotsPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toSpotsPage', args=[]}
+2021-12-05 12:39:32.265  INFO 12240 --- [http-nio-8888-exec-4] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/showSpot
+2021-12-05 12:39:32.272  INFO 12240 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/showSpot', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.showClassList', args=[{}, org.apache.catalina.session.StandardSessionFacade@370dc3eb, 1, 10]}
+2021-12-05 12:39:32.278  INFO 12240 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Result：user/spots
+2021-12-05 12:39:34.338  INFO 12240 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 12:39:34.338  INFO 12240 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 12:39:34.342  INFO 12240 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@370dc3eb]}
+2021-12-05 12:39:34.344  INFO 12240 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 13:18:49.893  INFO 13188 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 13188 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-12-05 13:18:49.895  INFO 13188 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-12-05 13:18:50.779  INFO 13188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-12-05 13:18:50.785  INFO 13188 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-05 13:18:50.785  INFO 13188 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-05 13:18:50.836  INFO 13188 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-05 13:18:50.836  INFO 13188 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 907 ms
+2021-12-05 13:18:51.592  INFO 13188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-12-05 13:18:51.598  INFO 13188 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.091 seconds (JVM running for 3.098)
+2021-12-05 13:19:00.226  INFO 13188 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; JSESSIONID=0646234344159692B18AB50E382484D8] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-12-05 13:19:00.230  INFO 13188 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-05 13:19:00.231  INFO 13188 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-05 13:19:00.232  INFO 13188 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-12-05 13:19:00.245  INFO 13188 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 13:19:00.249  INFO 13188 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 13:19:00.282  INFO 13188 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@1ade7f55]}
+2021-12-05 13:19:00.296  INFO 13188 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-05 13:19:00.897  INFO 13188 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-05 13:19:00.924  INFO 13188 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 13:19:03.446  INFO 13188 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toLoginPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.toLoginPage', args=[]}
+2021-12-05 13:19:03.449  INFO 13188 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：user/login
+2021-12-05 13:19:07.736  INFO 13188 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/login', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.login', args=[506921079@qq.com, 123456, org.apache.catalina.session.StandardSessionFacade@1ade7f55, {}]}
+2021-12-05 13:19:07.741  INFO 13188 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page/index
+2021-12-05 13:19:07.746  INFO 13188 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 13:19:07.746  INFO 13188 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 13:19:07.751  INFO 13188 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@1ade7f55]}
+2021-12-05 13:19:07.753  INFO 13188 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 13:25:35.105  INFO 9996 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 9996 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-12-05 13:25:35.107  INFO 9996 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-12-05 13:25:35.950  INFO 9996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-12-05 13:25:35.956  INFO 9996 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-05 13:25:35.956  INFO 9996 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-05 13:25:36.005  INFO 9996 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-05 13:25:36.006  INFO 9996 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 870 ms
+2021-12-05 13:25:36.745  INFO 9996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-12-05 13:25:36.752  INFO 9996 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.019 seconds (JVM running for 3.298)
+2021-12-05 13:25:48.749  INFO 9996 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; JSESSIONID=F198333836BEE6AA3EEED60D0EA40C67] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-12-05 13:25:48.753  INFO 9996 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-05 13:25:48.753  INFO 9996 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-05 13:25:48.754  INFO 9996 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-12-05 13:25:48.768  INFO 9996 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 13:25:48.771  INFO 9996 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 13:25:48.793  INFO 9996 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@22b90a82]}
+2021-12-05 13:25:48.806  INFO 9996 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-05 13:25:49.441  INFO 9996 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-05 13:25:49.481  INFO 9996 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 13:25:51.310  INFO 9996 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toLoginPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.toLoginPage', args=[]}
+2021-12-05 13:25:51.314  INFO 9996 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Result：user/login
+2021-12-05 13:25:55.649  INFO 9996 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/login', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.login', args=[506921079@qq.com, 123456, org.apache.catalina.session.StandardSessionFacade@22b90a82, {}]}
+2021-12-05 13:25:55.653  INFO 9996 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page/index
+2021-12-05 13:25:55.659  INFO 9996 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 13:25:55.659  INFO 9996 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 13:25:55.665  INFO 9996 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@22b90a82]}
+2021-12-05 13:25:55.669  INFO 9996 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 13:26:00.848  INFO 9996 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@22b90a82]}
+2021-12-05 13:26:00.852  INFO 9996 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 13:26:05.259  INFO 9996 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@22b90a82]}
+2021-12-05 13:26:05.267  INFO 9996 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 13:28:14.216  INFO 6852 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 6852 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-12-05 13:28:14.217  INFO 6852 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-12-05 13:28:15.854  INFO 6852 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-12-05 13:28:15.866  INFO 6852 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-05 13:28:15.867  INFO 6852 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-05 13:28:15.964  INFO 6852 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-05 13:28:15.964  INFO 6852 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1714 ms
+2021-12-05 13:28:16.885  INFO 6852 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-12-05 13:28:16.893  INFO 6852 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 3.551 seconds (JVM running for 4.758)
+2021-12-05 13:28:24.703  INFO 6852 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; JSESSIONID=11F61C2DF56C14A6D0AA59A4746E23A4] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-12-05 13:28:24.707  INFO 6852 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-05 13:28:24.708  INFO 6852 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-05 13:28:24.708  INFO 6852 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-12-05 13:28:24.722  INFO 6852 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 13:28:24.724  INFO 6852 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 13:28:24.748  INFO 6852 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@370dc3eb]}
+2021-12-05 13:28:24.761  INFO 6852 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-05 13:28:25.359  INFO 6852 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-05 13:28:25.389  INFO 6852 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 13:28:27.091  INFO 6852 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toLoginPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.toLoginPage', args=[]}
+2021-12-05 13:28:27.094  INFO 6852 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：user/login
+2021-12-05 13:28:31.164  INFO 6852 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/login', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.login', args=[506921079@qq.com, 123456, org.apache.catalina.session.StandardSessionFacade@370dc3eb, {}]}
+2021-12-05 13:28:31.168  INFO 6852 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page/index
+2021-12-05 13:28:31.173  INFO 6852 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 13:28:31.173  INFO 6852 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 13:28:31.176  INFO 6852 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@370dc3eb]}
+2021-12-05 13:28:31.178  INFO 6852 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 13:28:34.728  INFO 6852 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toModifyUserDataPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toModifyUserDataPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@370dc3eb]}
+2021-12-05 13:28:34.729  INFO 6852 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/modifyUserData
+2021-12-05 13:29:48.312  INFO 6852 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/changeUserData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.changeUserData', args=[org.apache.catalina.session.StandardSessionFacade@370dc3eb, {}, 506921079@qq.com, 18277480895, 关昌隆, https://img-blog.csdnimg.cn/fe8de1a209e249a3b44e0c47baf1a078.jpg, 20001114]}
+2021-12-05 13:29:48.436  INFO 6852 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page/toModifyUserDataPage
+2021-12-05 13:29:48.445  INFO 6852 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toModifyUserDataPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toModifyUserDataPage', args=[{message=信息修改成功}, org.apache.catalina.session.StandardSessionFacade@370dc3eb]}
+2021-12-05 13:29:48.445  INFO 6852 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：user/modifyUserData
+2021-12-05 13:29:52.694  INFO 6852 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/loginOut', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.loginOut', args=[org.apache.catalina.session.StandardSessionFacade@370dc3eb]}
+2021-12-05 13:29:52.694  INFO 6852 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 13:29:54.918  INFO 6852 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toLoginPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.toLoginPage', args=[]}
+2021-12-05 13:29:54.918  INFO 6852 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：user/login
+2021-12-05 13:30:01.248  INFO 6852 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/login', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.login', args=[506921079@qq.com, 123456, org.apache.catalina.session.StandardSessionFacade@370dc3eb, {}]}
+2021-12-05 13:30:01.250  INFO 6852 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/user/toLoginPage
+2021-12-05 13:30:01.256  INFO 6852 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toLoginPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.toLoginPage', args=[]}
+2021-12-05 13:30:01.256  INFO 6852 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Result：user/login
+2021-12-05 13:30:06.923  INFO 6852 --- [http-nio-8888-exec-4] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/login', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.login', args=[506921079@qq.com, 20001114, org.apache.catalina.session.StandardSessionFacade@370dc3eb, {}]}
+2021-12-05 13:30:06.925  INFO 6852 --- [http-nio-8888-exec-4] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page/index
+2021-12-05 13:30:06.929  INFO 6852 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 13:30:06.929  INFO 6852 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 13:30:06.933  INFO 6852 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@370dc3eb]}
+2021-12-05 13:30:06.935  INFO 6852 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 13:30:17.008  INFO 6852 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toModifyUserDataPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toModifyUserDataPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@370dc3eb]}
+2021-12-05 13:30:17.009  INFO 6852 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Result：user/modifyUserData
+2021-12-05 13:31:58.630  INFO 12112 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 12112 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-12-05 13:31:58.632  INFO 12112 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-12-05 13:31:59.721  INFO 12112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-12-05 13:31:59.727  INFO 12112 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-05 13:31:59.727  INFO 12112 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-05 13:31:59.782  INFO 12112 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-05 13:31:59.782  INFO 12112 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1114 ms
+2021-12-05 13:32:00.575  INFO 12112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-12-05 13:32:00.582  INFO 12112 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.359 seconds (JVM running for 3.825)
+2021-12-05 13:32:10.271  INFO 12112 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; JSESSIONID=8C7AD5D4B05FD2F7D893CB66B2FA716B; __session:0.30960197628333175:=http:] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-12-05 13:32:10.275  INFO 12112 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-05 13:32:10.275  INFO 12112 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-05 13:32:10.276  INFO 12112 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-12-05 13:32:10.293  INFO 12112 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 13:32:10.297  INFO 12112 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 13:32:10.318  INFO 12112 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@1eec9118]}
+2021-12-05 13:32:10.332  INFO 12112 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-05 13:32:10.914  INFO 12112 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-05 13:32:10.952  INFO 12112 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 13:32:14.928  INFO 12112 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toLoginPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.toLoginPage', args=[]}
+2021-12-05 13:32:14.932  INFO 12112 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：user/login
+2021-12-05 13:32:19.259  INFO 12112 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/login', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.login', args=[506921079@qq.com, 123456, org.apache.catalina.session.StandardSessionFacade@1eec9118, {}]}
+2021-12-05 13:32:19.263  INFO 12112 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/user/toLoginPage
+2021-12-05 13:32:19.269  INFO 12112 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toLoginPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.toLoginPage', args=[]}
+2021-12-05 13:32:19.269  INFO 12112 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：user/login
+2021-12-05 13:32:24.976  INFO 12112 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/login', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.login', args=[506921079@qq.com, 20001114, org.apache.catalina.session.StandardSessionFacade@1eec9118, {}]}
+2021-12-05 13:32:24.979  INFO 12112 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page/index
+2021-12-05 13:32:24.983  INFO 12112 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 13:32:24.983  INFO 12112 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 13:32:24.987  INFO 12112 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@1eec9118]}
+2021-12-05 13:32:24.988  INFO 12112 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 13:32:27.323  INFO 12112 --- [http-nio-8888-exec-4] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toComplaintPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toComplaintPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@1eec9118]}
+2021-12-05 13:32:27.323  INFO 12112 --- [http-nio-8888-exec-4] com.xupt.demo1.aspect.LogAspect          : Result：user/complaint
+2021-12-05 13:32:29.461  INFO 12112 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toModifyUserDataPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toModifyUserDataPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@1eec9118]}
+2021-12-05 13:32:29.461  INFO 12112 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Result：user/modifyUserData
+2021-12-05 13:32:42.925  INFO 12112 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/changeUserData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.changeUserData', args=[org.apache.catalina.session.StandardSessionFacade@1eec9118, {}, 506921079@qq.com, 18277480895, 关昌隆, https://img-blog.csdnimg.cn/e548194d157340948555a0239065d70a.png, 123456]}
+2021-12-05 13:32:43.110  INFO 12112 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page/toModifyUserDataPage
+2021-12-05 13:32:43.115  INFO 12112 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toModifyUserDataPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toModifyUserDataPage', args=[{message=信息修改成功}, org.apache.catalina.session.StandardSessionFacade@1eec9118]}
+2021-12-05 13:32:43.115  INFO 12112 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：user/modifyUserData
+2021-12-05 13:32:48.305  INFO 12112 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toModifyUserDataPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toModifyUserDataPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@1eec9118]}
+2021-12-05 13:32:48.305  INFO 12112 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：user/modifyUserData
+2021-12-05 13:32:56.591  INFO 12112 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/changeUserData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.changeUserData', args=[org.apache.catalina.session.StandardSessionFacade@1eec9118, {}, 27, 18277480895, 关昌隆, https://img-blog.csdnimg.cn/e548194d157340948555a0239065d70a.png, ]}
+2021-12-05 13:32:56.594 ERROR 12112 --- [http-nio-8888-exec-9] c.x.d.h.ControllerExceptionHandler       : Request URL : /user/changeUserData,Exception : null
+2021-12-05 13:32:56.641 ERROR 12112 --- [http-nio-8888-exec-10] c.x.d.h.ControllerExceptionHandler       : Request URL : /user/changeUserData,Exception : Request method 'GET' not supported
+2021-12-05 13:34:18.117  INFO 464 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 464 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-12-05 13:34:18.119  INFO 464 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-12-05 13:34:18.948  INFO 464 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-12-05 13:34:18.954  INFO 464 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-05 13:34:18.954  INFO 464 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-05 13:34:19.003  INFO 464 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-05 13:34:19.003  INFO 464 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 858 ms
+2021-12-05 13:34:19.742  INFO 464 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-12-05 13:34:19.748  INFO 464 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 1.999 seconds (JVM running for 2.82)
+2021-12-05 13:34:27.818  INFO 464 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; __session:0.30960197628333175:=http:; JSESSIONID=72F834A3F325F4F52ABF11E42285F898] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-12-05 13:34:27.822  INFO 464 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-05 13:34:27.822  INFO 464 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-05 13:34:27.823  INFO 464 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-12-05 13:34:27.835  INFO 464 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 13:34:27.839  INFO 464 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 13:34:27.861  INFO 464 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@d4eacde]}
+2021-12-05 13:34:27.877  INFO 464 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-05 13:34:28.478  INFO 464 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-05 13:34:28.507  INFO 464 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 13:34:29.979  INFO 464 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toLoginPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.toLoginPage', args=[]}
+2021-12-05 13:34:29.982  INFO 464 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：user/login
+2021-12-05 13:34:34.092  INFO 464 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/login', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.login', args=[506921079@qq.com, 123456, org.apache.catalina.session.StandardSessionFacade@d4eacde, {}]}
+2021-12-05 13:34:34.096  INFO 464 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page/index
+2021-12-05 13:34:34.101  INFO 464 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 13:34:34.102  INFO 464 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 13:34:34.106  INFO 464 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@d4eacde]}
+2021-12-05 13:34:34.108  INFO 464 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 13:34:36.843  INFO 464 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toModifyUserDataPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toModifyUserDataPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@d4eacde]}
+2021-12-05 13:34:36.843  INFO 464 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/modifyUserData
+2021-12-05 13:34:55.858  INFO 464 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/changeUserData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.changeUserData', args=[org.apache.catalina.session.StandardSessionFacade@d4eacde, {}, 506, 18277480895, 关昌隆, https://img-blog.csdnimg.cn/e548194d157340948555a0239065d70a.png, ]}
+2021-12-05 13:34:56.020  INFO 464 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page/toModifyUserDataPage
+2021-12-05 13:34:56.026  INFO 464 --- [http-nio-8888-exec-4] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toModifyUserDataPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toModifyUserDataPage', args=[{message=信息修改成功}, org.apache.catalina.session.StandardSessionFacade@d4eacde]}
+2021-12-05 13:34:56.026  INFO 464 --- [http-nio-8888-exec-4] com.xupt.demo1.aspect.LogAspect          : Result：user/modifyUserData
+2021-12-05 13:36:34.893  INFO 11696 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 11696 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-12-05 13:36:34.897  INFO 11696 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-12-05 13:36:35.888  INFO 11696 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-12-05 13:36:35.894  INFO 11696 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-05 13:36:35.894  INFO 11696 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-05 13:36:35.965  INFO 11696 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-05 13:36:35.965  INFO 11696 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1036 ms
+2021-12-05 13:36:36.713  INFO 11696 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-12-05 13:36:36.719  INFO 11696 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.389 seconds (JVM running for 3.745)
+2021-12-05 13:36:46.814  INFO 11696 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; __session:0.30960197628333175:=http:; JSESSIONID=ED8A3077C85A49D18B2D84113CDC17FF] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-12-05 13:36:46.819  INFO 11696 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-05 13:36:46.819  INFO 11696 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-05 13:36:46.820  INFO 11696 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-12-05 13:36:46.834  INFO 11696 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 13:36:46.837  INFO 11696 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 13:36:46.858  INFO 11696 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@399b7c87]}
+2021-12-05 13:36:46.873  INFO 11696 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-05 13:36:47.467  INFO 11696 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-05 13:36:47.495  INFO 11696 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 13:36:48.785  INFO 11696 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toLoginPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.toLoginPage', args=[]}
+2021-12-05 13:36:48.788  INFO 11696 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：user/login
+2021-12-05 13:36:52.928  INFO 11696 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/login', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.login', args=[506921079@qq.com, 123456, org.apache.catalina.session.StandardSessionFacade@399b7c87, {}]}
+2021-12-05 13:36:52.932  INFO 11696 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/user/toLoginPage
+2021-12-05 13:36:52.939  INFO 11696 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toLoginPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.toLoginPage', args=[]}
+2021-12-05 13:36:52.939  INFO 11696 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：user/login
+2021-12-05 13:36:55.288  INFO 11696 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/login', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.login', args=[506921079@qq.com, , org.apache.catalina.session.StandardSessionFacade@399b7c87, {}]}
+2021-12-05 13:36:55.290  INFO 11696 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/user/toLoginPage
+2021-12-05 13:36:55.294  INFO 11696 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toLoginPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.toLoginPage', args=[]}
+2021-12-05 13:36:55.295  INFO 11696 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Result：user/login
+2021-12-05 13:37:40.183  INFO 11696 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/login', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.login', args=[506921079@qq.com, 123456, org.apache.catalina.session.StandardSessionFacade@399b7c87, {}]}
+2021-12-05 13:37:40.186  INFO 11696 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page/index
+2021-12-05 13:37:40.191  INFO 11696 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 13:37:40.192  INFO 11696 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 13:37:40.195  INFO 11696 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@399b7c87]}
+2021-12-05 13:37:40.197  INFO 11696 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 13:37:43.176  INFO 11696 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toModifyUserDataPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toModifyUserDataPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@399b7c87]}
+2021-12-05 13:37:43.176  INFO 11696 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：user/modifyUserData
+2021-12-05 13:38:00.112  INFO 11696 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/changeUserData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.changeUserData', args=[org.apache.catalina.session.StandardSessionFacade@399b7c87, {}, 506921079@qq.com, 18277480895, 关昌隆, https://img-blog.csdnimg.cn/e548194d157340948555a0239065d70a.png, 123456]}
+2021-12-05 13:38:00.130  INFO 11696 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page/toModifyUserDataPage
+2021-12-05 13:38:00.135  INFO 11696 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toModifyUserDataPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toModifyUserDataPage', args=[{message=信息修改成功}, org.apache.catalina.session.StandardSessionFacade@399b7c87]}
+2021-12-05 13:38:00.135  INFO 11696 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Result：user/modifyUserData
+2021-12-05 13:38:09.906  INFO 11696 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/changeUserData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.changeUserData', args=[org.apache.catalina.session.StandardSessionFacade@399b7c87, {}, 2731580647@qq.com, 18277480895, 关昌隆, https://img-blog.csdnimg.cn/e548194d157340948555a0239065d70a.png, 123456]}
+2021-12-05 13:38:09.907  INFO 11696 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page/toModifyUserDataPage
+2021-12-05 13:38:09.911  INFO 11696 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toModifyUserDataPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toModifyUserDataPage', args=[{message=该邮箱已被注册}, org.apache.catalina.session.StandardSessionFacade@399b7c87]}
+2021-12-05 13:38:09.911  INFO 11696 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：user/modifyUserData
+2021-12-05 13:38:21.850  INFO 11696 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toComplaintPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toComplaintPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@399b7c87]}
+2021-12-05 13:38:21.850  INFO 11696 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/complaint
+2021-12-05 13:38:27.597  INFO 11696 --- [http-nio-8888-exec-4] com.xupt.demo1.aspect.LogAspect          : Request : {url='/complaint/addComplaint', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.ComplaintController.addComplaint', args=[org.apache.catalina.session.StandardSessionFacade@399b7c87, {}, 哈哈哈]}
+2021-12-05 13:38:27.766  INFO 11696 --- [http-nio-8888-exec-4] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page/toComplaintPage
+2021-12-05 13:38:27.770  INFO 11696 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toComplaintPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toComplaintPage', args=[{message=感谢您的反馈}, org.apache.catalina.session.StandardSessionFacade@399b7c87]}
+2021-12-05 13:38:27.770  INFO 11696 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Result：user/complaint
+2021-12-05 13:38:30.586  INFO 11696 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/loginOut', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.loginOut', args=[org.apache.catalina.session.StandardSessionFacade@399b7c87]}
+2021-12-05 13:38:30.586  INFO 11696 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 13:39:20.250  INFO 10532 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 10532 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-12-05 13:39:20.252  INFO 10532 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-12-05 13:39:21.150  INFO 10532 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-12-05 13:39:21.156  INFO 10532 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-05 13:39:21.156  INFO 10532 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-05 13:39:21.206  INFO 10532 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-05 13:39:21.206  INFO 10532 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 917 ms
+2021-12-05 13:39:21.941  INFO 10532 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-12-05 13:39:21.948  INFO 10532 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.085 seconds (JVM running for 2.932)
+2021-12-05 13:39:27.488  INFO 10532 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; __session:0.30960197628333175:=http:; JSESSIONID=A10551C130B372DAE53B097854FE2BAB] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-12-05 13:39:27.493  INFO 10532 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-05 13:39:27.494  INFO 10532 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-05 13:39:27.495  INFO 10532 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-12-05 13:39:27.509  INFO 10532 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 13:39:27.512  INFO 10532 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 13:39:27.533  INFO 10532 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@592b9beb]}
+2021-12-05 13:39:27.549  INFO 10532 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-05 13:39:28.169  INFO 10532 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-05 13:39:28.199  INFO 10532 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 13:39:29.873  INFO 10532 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/toLoginPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.toLoginPage', args=[]}
+2021-12-05 13:39:29.876  INFO 10532 --- [http-nio-8888-exec-5] com.xupt.demo1.aspect.LogAspect          : Result：user/login
+2021-12-05 13:39:34.042  INFO 10532 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/login', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.login', args=[506921079@qq.com, 123456, org.apache.catalina.session.StandardSessionFacade@592b9beb, {}]}
+2021-12-05 13:39:34.046  INFO 10532 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page/index
+2021-12-05 13:39:34.051  INFO 10532 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 13:39:34.051  INFO 10532 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 13:39:34.056  INFO 10532 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@592b9beb]}
+2021-12-05 13:39:34.058  INFO 10532 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 13:39:35.881  INFO 10532 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/user/loginOut', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.UserController.loginOut', args=[org.apache.catalina.session.StandardSessionFacade@592b9beb]}
+2021-12-05 13:39:35.882  INFO 10532 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：redirect:/page/index
+2021-12-05 13:39:35.887  INFO 10532 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 13:39:35.888  INFO 10532 --- [http-nio-8888-exec-2] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 13:39:35.891  INFO 10532 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@592b9beb]}
+2021-12-05 13:39:35.893  INFO 10532 --- [http-nio-8888-exec-3] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 13:39:39.596  INFO 10532 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toSpotsPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toSpotsPage', args=[]}
+2021-12-05 13:39:39.596  INFO 10532 --- [http-nio-8888-exec-6] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/showSpot
+2021-12-05 13:39:39.604  INFO 10532 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/showSpot', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.showClassList', args=[{}, org.apache.catalina.session.StandardSessionFacade@592b9beb, 1, 10]}
+2021-12-05 13:39:39.625  INFO 10532 --- [http-nio-8888-exec-7] com.xupt.demo1.aspect.LogAspect          : Result：user/spots
+2021-12-05 13:39:42.464  INFO 10532 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toHotelPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toSpotsRecommend', args=[{}, org.apache.catalina.session.StandardSessionFacade@592b9beb, 1, 10]}
+2021-12-05 13:39:42.470  INFO 10532 --- [http-nio-8888-exec-8] com.xupt.demo1.aspect.LogAspect          : Result：user/hotels
+2021-12-05 13:39:47.072  INFO 10532 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/toTicketPage', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.toHotelPage', args=[{}, org.apache.catalina.session.StandardSessionFacade@592b9beb]}
+2021-12-05 13:39:47.072  INFO 10532 --- [http-nio-8888-exec-9] com.xupt.demo1.aspect.LogAspect          : Result：user/ticket
+2021-12-05 13:39:53.229  INFO 10532 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Request : {url='/page/index', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.PageController.index', args=[]}
+2021-12-05 13:39:53.229  INFO 10532 --- [http-nio-8888-exec-10] com.xupt.demo1.aspect.LogAspect          : Result：redirect:../spot/indexShowFourData
+2021-12-05 13:39:53.234  INFO 10532 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Request : {url='/spot/indexShowFourData', ip='0:0:0:0:0:0:0:1', classMethod='com.xupt.demo1.controller.SpotController.indexShowFourData', args=[{}, org.apache.catalina.session.StandardSessionFacade@592b9beb]}
+2021-12-05 13:39:53.236  INFO 10532 --- [http-nio-8888-exec-1] com.xupt.demo1.aspect.LogAspect          : Result：user/index
+2021-12-05 13:44:26.674  INFO 14968 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 14968 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-12-05 13:44:26.676  INFO 14968 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-12-05 13:44:27.818  INFO 14968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-12-05 13:44:27.827  INFO 14968 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-05 13:44:27.827  INFO 14968 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-05 13:44:27.891  INFO 14968 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-05 13:44:27.891  INFO 14968 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1178 ms
+2021-12-05 13:44:29.080  INFO 14968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-12-05 13:44:29.093  INFO 14968 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 3.424 seconds (JVM running for 4.406)
+2021-12-05 13:44:34.717  INFO 14968 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; JSESSIONID=CC4D34FFE2B1F129DDAA9C700CF46204] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-12-05 13:44:34.721  INFO 14968 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-05 13:44:34.721  INFO 14968 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-05 13:44:34.722  INFO 14968 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-12-05 13:44:40.224  INFO 14968 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-05 13:44:40.828  INFO 14968 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-05 14:21:05.556  INFO 9832 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 9832 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-12-05 14:21:05.558  INFO 9832 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-12-05 14:21:06.460  INFO 9832 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-12-05 14:21:06.466  INFO 9832 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-05 14:21:06.466  INFO 9832 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-05 14:21:06.519  INFO 9832 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-05 14:21:06.519  INFO 9832 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 929 ms
+2021-12-05 14:21:06.846  WARN 9832 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orderController': Unsatisfied dependency expressed through field 'spotService'; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'spotServiceImpl': Bean with name 'spotServiceImpl' has been injected into other beans [APageController] in its raw version as part of a circular reference, but has eventually been wrapped. This means that said other beans do not use the final version of the bean. This is often the result of over-eager type matching - consider using 'getBeanNamesForType' with the 'allowEagerInit' flag turned off, for example.
+2021-12-05 14:21:06.849  INFO 9832 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-12-05 14:21:06.869  INFO 9832 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-12-05 14:21:06.946 ERROR 9832 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orderController': Unsatisfied dependency expressed through field 'spotService'; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'spotServiceImpl': Bean with name 'spotServiceImpl' has been injected into other beans [APageController] in its raw version as part of a circular reference, but has eventually been wrapped. This means that said other beans do not use the final version of the bean. This is often the result of over-eager type matching - consider using 'getBeanNamesForType' with the 'allowEagerInit' flag turned off, for example.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1413)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.xupt.demo1.Demo1Application.main(Demo1Application.java:12)
+Caused by: org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'spotServiceImpl': Bean with name 'spotServiceImpl' has been injected into other beans [APageController] in its raw version as part of a circular reference, but has eventually been wrapped. This means that said other beans do not use the final version of the bean. This is often the result of over-eager type matching - consider using 'getBeanNamesForType' with the 'allowEagerInit' flag turned off, for example.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:631)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
+	... 20 common frames omitted
+
+2021-12-05 14:21:32.796  INFO 12460 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 12460 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-12-05 14:21:32.798  INFO 12460 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-12-05 14:21:33.629  INFO 12460 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-12-05 14:21:33.634  INFO 12460 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-05 14:21:33.634  INFO 12460 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-05 14:21:33.683  INFO 12460 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-05 14:21:33.683  INFO 12460 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 858 ms
+2021-12-05 14:21:34.428  INFO 12460 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-12-05 14:21:34.434  INFO 12460 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 1.991 seconds (JVM running for 2.82)
+2021-12-05 14:21:44.161  INFO 12460 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355; JSESSIONID=99E6B80972E8F41BDE7A28FC1A825003] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-12-05 14:21:44.166  INFO 12460 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-05 14:21:44.166  INFO 12460 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-05 14:21:44.167  INFO 12460 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-12-05 14:21:48.650  INFO 12460 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-05 14:21:49.275  INFO 12460 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-05 18:30:26.601  INFO 13760 --- [main] com.xupt.demo1.Demo1Application          : Starting Demo1Application using Java 1.8.0_152 on 小关同学 with PID 13760 (D:\Web应用开发大作业\demo1\target\classes started by 关昌隆 in D:\Web应用开发大作业\demo1)
+2021-12-05 18:30:26.602  INFO 13760 --- [main] com.xupt.demo1.Demo1Application          : The following profiles are active: dev
+2021-12-05 18:30:27.443  INFO 13760 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-12-05 18:30:27.449  INFO 13760 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-05 18:30:27.450  INFO 13760 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-05 18:30:27.501  INFO 13760 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-05 18:30:27.501  INFO 13760 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 872 ms
+2021-12-05 18:30:28.375  INFO 13760 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-12-05 18:30:28.383  INFO 13760 --- [main] com.xupt.demo1.Demo1Application          : Started Demo1Application in 2.136 seconds (JVM running for 3.027)
+2021-12-05 18:30:58.755  INFO 13760 --- [http-nio-8888-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1629212794,1629222267,1629265177; Hm_lvt_6b1eb02bacb648d682681dc81149e144=1631960936,1633171290,1633358355; Hm_lvt_2bfc05a1c19c23b09afa56201053d18e=1633358355] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2021-12-05 18:30:58.759  INFO 13760 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-05 18:30:58.759  INFO 13760 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-05 18:30:58.761  INFO 13760 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-12-05 18:31:03.497  INFO 13760 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-05 18:31:04.149  INFO 13760 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
