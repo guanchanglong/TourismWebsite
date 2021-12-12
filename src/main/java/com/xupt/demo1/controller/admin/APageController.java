@@ -105,7 +105,10 @@ public class APageController {
     }
 
     @RequestMapping("/toHotelAddPage")
-    public String toHotelAddPage(){
+    public String toHotelAddPage(Model model,
+                                 HttpSession session){
+        User user  = (User)session.getAttribute("adminUser");
+        model.addAttribute("adminUser",user);
         return "admin/hotel-add";
     }
 

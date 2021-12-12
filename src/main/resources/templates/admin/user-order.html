@@ -212,7 +212,7 @@
 
                 <!-- 上一页 -->
                 <li class="page-item " th:if="${!page.isFirstPage}" style="float: left;list-style: none">
-                  <a class="page-link" th:href="'/admin/page/toUserOrderPage?pageNum=' + ${page.getPrePage()} + '&userId=' + ${userId}">上一页</a>
+                  <a class="page-link" th:href="'/admin/page/toUserOrderPage?pageNum=' + ${page.getPrePage()} + '&userId=' + ${userId}">上页</a>
                 </li>
 
                 <!-- 中间页 -->
@@ -223,7 +223,7 @@
 
                 <!-- 下一页 -->
                 <li class="page-item " th:if="${!page.isIsLastPage()}" style="float: left;list-style: none">
-                  <a class="page-link" th:href="'/admin/page/toUserOrderPage?pageNum=' + ${page.getNextPage()} + '&userId=' + ${userId}">下一页</a>
+                  <a class="page-link" th:href="'/admin/page/toUserOrderPage?pageNum=' + ${page.getNextPage()} + '&userId=' + ${userId}">下页</a>
                 </li>
 
                 <!-- 尾页 -->

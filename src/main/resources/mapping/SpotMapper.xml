@@ -57,16 +57,16 @@
             values(#{spot.id},#{spot.name},#{spot.area},#{spot.info},#{spot.picture},#{spot.price},#{spot.spotWebId});
     </insert>
 
-    <insert id="updateSpotData" parameterType="com.xupt.demo1.entity.Spot">
+    <update id="updateSpotData" parameterType="com.xupt.demo1.entity.Spot">
         update t_spot
-            set id = #{spot.id},
-                name = #{spot.name},
+            set name = #{spot.name},
                 area = #{spot.area},
                 info = #{spot.info},
                 picture = #{spot.picture},
                 price = #{spot.price},
                 spot_web_id = #{spot.spotWebId}
-    </insert>
+                where id = #{spot.id}
+    </update>
 
     <update id="updateSpot" parameterType="com.xupt.demo1.entity.Spot">
         update t_spot
