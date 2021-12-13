@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -51,15 +52,17 @@ public class APageController {
         model.addAttribute("adminUser",user);
 
         List<Double> chartData = orderService.returnChartData();
-        //测试
-//        List<Double> chartData = new ArrayList<>();
-        model.addAttribute("chatData",chartData);
+        List<Integer> result = new ArrayList<>(chartData.size());
+        for(Double num:chartData){
+            result.add(num.intValue());
+        }
+        model.addAttribute("chatData",result);
 
         Double[] nums = orderService.statisticsIncome();
         model.addAttribute("complaintCount",complaintService.findAllByStatusCount());
-        model.addAttribute("thisMonthIncome",nums[0]);
-        model.addAttribute("todayIncome",nums[1]);
-        model.addAttribute("totalIncome",nums[2]);
+        model.addAttribute("thisMonthIncome",nums[0].intValue());
+        model.addAttribute("todayIncome",nums[1].intValue());
+        model.addAttribute("totalIncome",nums[2].intValue());
         model.addAttribute("totalNum", nums[3].intValue());
         return "admin/index";
     }
